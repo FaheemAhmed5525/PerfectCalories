@@ -5,6 +5,7 @@
 //  Created by Faheeam Ahmed on 23/08/2024.
 //
 
+
 import UIKit
 
 class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
@@ -15,10 +16,8 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
     // Stack view that contains viewboxes
     let itemListContainer = UIStackView()
     
-    
-    
-    // itemViewBox array store UIViews that dispaly items
-    let itemViewBoxs: [UIView] = []
+    // itemViewBox array store UIViews that display items
+    var itemViewBoxs: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,36 +25,35 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
         setupScrollView()
         setupItemListContainer()
         setupItemBoxs()
+        view.bringSubviewToFront(sidebar)
     }
     
-    //overriding the function to change the title of the screen
+    // Overriding the function to change the title of the screen
     override func setupScreenTitle() {
         super.setupScreenTitle()
         screenTitle.text = "Food List"
     }
     
-    /// function setupScrollView customize the scrollView
+    /// Function setupScrollView customizes the scrollView
     func setupScrollView() {
         view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .init(red: 200/255, green: 200/255, blue: 240/255, alpha: 1.0) //AppCommons.appBackgroundColor
+        scrollView.backgroundColor = .init(red: 200/255, green: 200/255, blue: 240/255, alpha: 1.0)
         scrollView.layer.borderColor = AppCommons.lightBorderColor
         scrollView.layer.borderWidth = 2.0
         scrollView.layer.cornerRadius = 12.0
         scrollView.isScrollEnabled = true
         
-            NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 6),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6)])
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6)
+        ])
     }
     
-    
-    
-    
-    /// function setupImteListContainer customize the itemListContianers
+    /// Function setupItemListContainer customizes the itemListContainer
     func setupItemListContainer() {
         scrollView.addSubview(itemListContainer)
         
@@ -71,11 +69,11 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             itemListContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
             itemListContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             itemListContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            itemListContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)])
+            itemListContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+        ])
     }
-
     
-    //function setupItemBoxs customizes the itemViewBoxs and places data in them.
+    // Function setupItemBoxs customizes the itemViewBoxs and places data in them
     func setupItemBoxs() {
         for i in 0...(AppCommons.foods.foodItems.count-1) {
             
@@ -88,18 +86,23 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             box.layer.cornerRadius = 12.0
             box.heightAnchor.constraint(equalToConstant: 70).isActive = true
             box.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+
+            // Assign a unique tag to the box for identifying which item was clicked
+            box.tag = i
             
+            // Adding tap gesture to the box that takes it to FoodItemsDetailView
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(showItemDetails(_:)))
+            box.addGestureRecognizer(gesture)
             
-            /// nameLabel print the name of the food item
+            // NameLabel prints the name of the food item
             let nameLabel = UILabel()
             nameLabel.translatesAutoresizingMaskIntoConstraints = false
             nameLabel.text = String(AppCommons.foods.foodItems[i].Name)
             nameLabel.textColor = AppCommons.textColor
-            nameLabel.font = .systemFont(ofSize: 40, weight: .bold)
+            nameLabel.font = .systemFont(ofSize: 32, weight: .bold)
             nameLabel.layer.borderWidth = 0
             
-            
-            ///averageWeight print the average weight of the item
+            // AverageWeight prints the average weight of the item
             let perWeekLabel = UILabel()
             perWeekLabel.translatesAutoresizingMaskIntoConstraints = false
             perWeekLabel.text = String(AppCommons.foods.foodItems[i].prescribedPerWeek) + " per week"
@@ -107,8 +110,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             perWeekLabel.font = .systemFont(ofSize: 20)
             perWeekLabel.layer.borderWidth = 0.0
             
-            
-            ///typeLabel show the type of the fooditem like fruit, vegitable or else
+            // TypeLabel shows the type of the food item like fruit, vegetable, or else
             let typeLabel = UILabel()
             typeLabel.translatesAutoresizingMaskIntoConstraints = false
             typeLabel.text = "Type: " + String(AppCommons.foods.foodItems[i].type)
@@ -116,33 +118,22 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             typeLabel.font = .systemFont(ofSize: 20)
             typeLabel.layer.borderWidth = 0.0
             
-            
-            /// caloriesLabel print the total calories in food item
+            // CaloriesLabel prints the total calories in food item
             let caloriesLabel = UILabel()
             caloriesLabel.translatesAutoresizingMaskIntoConstraints = false
-            caloriesLabel.text = "Total Calories: " + String(AppCommons.foods.foodItems[i].totalCaluries)
+            caloriesLabel.text = "Total Calories: " + String(AppCommons.foods.foodItems[i].totalCalories)
             caloriesLabel.textColor = AppCommons.textColor3
             caloriesLabel.font = .systemFont(ofSize: 20)
             caloriesLabel.layer.borderWidth = 0
 
-            let goButton = UIButton()
-            goButton.translatesAutoresizingMaskIntoConstraints = false
-            goButton.setTitle(" ", for: .normal)
-            goButton.backgroundColor = .none
-            goButton.layer.borderWidth = 0
-            goButton.layer.cornerRadius = 12.0
-            goButton.addTarget(self, action: #selector(showItemDetails), for: .touchUpInside)
-            
-            /// Adding labels to view: box
+            // Adding labels to view: box
             box.addSubview(nameLabel)
             box.addSubview(caloriesLabel)
             box.addSubview(perWeekLabel)
             box.addSubview(typeLabel)
-            box.addSubview(goButton)
-            
-            /// Applying constriants to the labels to put them view: box
+
+            // Applying constraints to the labels to put them in view: box
             NSLayoutConstraint.activate([
-                
                 nameLabel.topAnchor.constraint(equalTo: box.topAnchor, constant: 2),
                 nameLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 20),
                 nameLabel.widthAnchor.constraint(equalToConstant: 300),
@@ -162,27 +153,25 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
                 caloriesLabel.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -4),
                 caloriesLabel.widthAnchor.constraint(equalToConstant: 180),
                 caloriesLabel.heightAnchor.constraint(equalToConstant: 20),
-               
-                goButton.topAnchor.constraint(equalTo: box.topAnchor),
-                goButton.bottomAnchor.constraint(equalTo: box.bottomAnchor),
-                goButton.leadingAnchor.constraint(equalTo: box.leadingAnchor),
-                goButton.trailingAnchor.constraint(equalTo: box.trailingAnchor)
             ])
         }
     }
     
-    
-    @objc func showItemDetails() {
-        print("-----------Food List detials Screen-----------")
-        HomeScreenFormat.selectedFood = AppCommons.foods.foodItems[0]
+    @objc func showItemDetails(_ sender: UITapGestureRecognizer) {
+        // Get the tapped view and its tag
+        guard let tappedBox = sender.view else { return }
+        let itemIndex = tappedBox.tag
+        
+        // Print the food item index
+        print("Selected food item index: \(itemIndex)")
+        
+        // Get the selected food item
+      //  let selectedFoodItem = AppCommons.foods.foodItems[itemIndex]
+        
+        // Pass the selected food item to the next screen
         let nextScreen = FoodItemDetailViewController()
+        nextScreen.foodItem = AppCommons.foods.foodItems[itemIndex] // Assuming you have a foodItem property in FoodItemDetailViewController
+        
         navigationController?.pushViewController(nextScreen, animated: true)
     }
-
 }
-//
-//extension ViewController: UIGestureRecognizerDelegate {
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith  otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        return true
-//    }
-//}

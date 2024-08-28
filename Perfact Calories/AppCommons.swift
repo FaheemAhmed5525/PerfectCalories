@@ -25,7 +25,7 @@ class AppCommons: UIViewController {
     //user variables to store data
     static var user = User()
     
-    //instantiating the food item
+    //instantiating the food item, all food item will be added to array by initilizer
     static let foods = FoodItems()
 
     
@@ -41,7 +41,7 @@ class AppCommons: UIViewController {
         view.backgroundColor = AppCommons.appBackgroundColor
         
         //adding all fooditems to the food item array
-        AppCommons.foods.addFoodItemsToArray()
+       // AppCommons.foods.addFoodItemsToArray()
     
         
     }

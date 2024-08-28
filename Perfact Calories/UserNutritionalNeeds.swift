@@ -27,6 +27,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         addElementToArray()
         setupTableView()
 
+        view.bringSubviewToFront(sidebar)
     }
     
     

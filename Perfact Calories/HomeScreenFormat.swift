@@ -115,7 +115,6 @@ class HomeScreenFormat: AppCommons {
         sidebar.backgroundColor = .none
         sidebar.isHidden = true
         sidebar.clipsToBounds = true
-        sidebar.layer.zPosition = 1
         NSLayoutConstraint.activate([
             sidebar.topAnchor.constraint(equalTo: topbar.bottomAnchor),
             sidebar.rightAnchor.constraint(equalTo: view.rightAnchor),

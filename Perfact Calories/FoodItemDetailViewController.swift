@@ -25,10 +25,13 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
     //it will display the nutritional elements details in tabular format
     let tableView = UITableView()
     
-    //
+    // Image to be displayed for the specic foodItem
     let imageView = UIImageView()
     
-    static var dataValue: [(String, Float)] = []
+    // a foodItem Object that will contain item received from previous screen
+    var foodItem: FoodItem? = nil
+    
+    var dataValue: [(String, Float)] = []
     
     //box to contain detais
     let box = UIView()
@@ -52,7 +55,8 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         
 //        ///Observe for landscape and portrait and adjust the screen accordingly
 //        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
+        view.bringSubviewToFront(sidebar)
+
     }
     
     
@@ -70,7 +74,7 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         view.addSubview(itemName)
         
         itemName.translatesAutoresizingMaskIntoConstraints = false
-        let name: String = HomeScreenFormat.self.selectedFood?.Name ?? "No Food Item"
+        let name: String = foodItem?.Name ?? "No Food Item"
         itemName.text = name
         itemName.font = .systemFont(ofSize: 32, weight: .bold)
         itemName.textAlignment = .center
@@ -87,7 +91,7 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
     ///display the image of the item the user
     func setupImageView() {
         
-        imageView.image = HomeScreenFormat.self.selectedFood?.Image ?? .apple3
+        imageView.image = foodItem?.Image ?? .apple3
         itemListContainer.addArrangedSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 12.0
@@ -172,8 +176,8 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("this \(FoodItemDetailViewController.dataValue.count)")
-        return FoodItemDetailViewController.dataValue.count
+//        print("this \(dataValue.count)")
+        return dataValue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -186,7 +190,7 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         }
         
         //getting one row
-        let rowData = FoodItemDetailViewController.dataValue[indexPath.row]
+        let rowData = dataValue[indexPath.row]
         
         //Print the name of the fruit
         let nameLabel = UILabel()
@@ -197,6 +201,8 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        //converting small value in mg and 
         valueLabel.text = "\(rowData.1)"
 //        print("\(rowData.1)")
         valueLabel.font = .systemFont(ofSize: 20)
@@ -216,6 +222,7 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -223,30 +230,32 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
     //convert to array to print
     func addElementToArray() {
         
-        FoodItemDetailViewController.dataValue.append(("Weight", Float(HomeScreenFormat.selectedFood?.Weight ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Total Calories", Float(HomeScreenFormat.selectedFood?.totalCaluries ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Water", Float(HomeScreenFormat.selectedFood?.water ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Protiens", Float(HomeScreenFormat.selectedFood?.proteins ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin C", Float(HomeScreenFormat.selectedFood?.vitaminC ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Iron", Float(HomeScreenFormat.selectedFood?.iron ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Calcium", Float(HomeScreenFormat.selectedFood?.calcium ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Potassium", Float(HomeScreenFormat.selectedFood?.potassium ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Fat", Float(HomeScreenFormat.selectedFood?.fat ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Fiber", Float(HomeScreenFormat.selectedFood?.fiber ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Magnesium", Float(HomeScreenFormat.selectedFood?.magnesium ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin B6", Float(HomeScreenFormat.selectedFood?.vitaminB2 ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin B2", Float(HomeScreenFormat.selectedFood?.vitaminB2 ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin A", Float(HomeScreenFormat.selectedFood?.vitaminA ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Zinc", Float(HomeScreenFormat.selectedFood?.zinc ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Copper", Float(HomeScreenFormat.selectedFood?.copper ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Manganese", Float(HomeScreenFormat.selectedFood?.manganese ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Phosphorus", Float(HomeScreenFormat.selectedFood?.phosphorus ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Sodium", Float(HomeScreenFormat.selectedFood?.sodium ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Sugar", Float(HomeScreenFormat.selectedFood?.sugar ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Sulfer", Float(HomeScreenFormat.selectedFood?.sulfer ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin E", Float(HomeScreenFormat.selectedFood?.vitaminE ?? 0.0)))
-        FoodItemDetailViewController.dataValue.append(("Vitamin K", Float(HomeScreenFormat.selectedFood?.vitaminK ?? 0.0)))
+        
+        dataValue.append(("Weight", Float(foodItem?.Weight ?? 0.0)))
+        dataValue.append(("Total Calories", Float(foodItem?.totalCalories ?? 0.0)))
+        dataValue.append(("Water", Float(foodItem?.water ?? 0.0)))
+        dataValue.append(("Protiens", Float(foodItem?.proteins ?? 0.0)))
+        dataValue.append(("Vitamin C", Float(foodItem?.vitaminC ?? 0.0)))
+        dataValue.append(("Iron", Float(foodItem?.iron ?? 0.0)))
+        dataValue.append(("Calcium", Float(foodItem?.calcium ?? 0.0)))
+        dataValue.append(("Potassium", Float(HomeScreenFormat.selectedFood?.potassium ?? 0.0)))
+        dataValue.append(("Fat", Float(foodItem?.fat ?? 0.0)))
+        dataValue.append(("Fiber", Float(foodItem?.fiber ?? 0.0)))
+        dataValue.append(("Magnesium", Float(foodItem?.magnesium ?? 0.0)))
+        dataValue.append(("Vitamin B6", Float(foodItem?.vitaminB2 ?? 0.0)))
+        dataValue.append(("Vitamin B2", Float(foodItem?.vitaminB2 ?? 0.0)))
+        dataValue.append(("Vitamin A", Float(foodItem?.vitaminA ?? 0.0)))
+        dataValue.append(("Zinc", Float(HomeScreenFormat.selectedFood?.zinc ?? 0.0)))
+        dataValue.append(("Copper", Float(foodItem?.copper ?? 0.0)))
+        dataValue.append(("Manganese", Float(foodItem?.manganese ?? 0.0)))
+        dataValue.append(("Phosphorus", Float(foodItem?.phosphorus ?? 0.0)))
+        dataValue.append(("Sodium", Float(foodItem?.sodium ?? 0.0)))
+        dataValue.append(("Sugar", Float(foodItem?.sugar ?? 0.0)))
+        dataValue.append(("Sulfer", Float(foodItem?.sulfer ?? 0.0)))
+        dataValue.append(("Vitamin E", Float(foodItem?.vitaminE ?? 0.0)))
+        dataValue.append(("Vitamin K", Float(foodItem?.vitaminK ?? 0.0)))
 
+        
     }
     
     
