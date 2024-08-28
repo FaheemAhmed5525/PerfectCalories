@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1AF7CB2C7875970092D25E /* FoodItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */; };
+		0D43AA8B2C7D5A6400E8B415 /* HumanNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */; };
+		0D6875762C7A158C00D32C36 /* FoodItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6875752C7A158C00D32C36 /* FoodItemDetailViewController.swift */; };
+		0DA95D472C7DF50C0045755D /* UserNutritionalNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */; };
+		0DAA4E872C7352BD00C3880C /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E862C7352BD00C3880C /* GetInfo.swift */; };
+		0DAA4E892C73530D00C3880C /* SignInFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E882C73530D00C3880C /* SignInFormat.swift */; };
+		0DAA4E8B2C7367D000C3880C /* HomeScreenFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E8A2C7367D000C3880C /* HomeScreenFormat.swift */; };
+		0DAA4E8D2C73680700C3880C /* AppCommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E8C2C73680700C3880C /* AppCommons.swift */; };
+		0DAA4E8F2C736B9500C3880C /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */; };
+		0DB1187F2C76F04E000DD1A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1187E2C76F04E000DD1A6 /* ViewController.swift */; };
+		0DC2B8DB2C75BBF500B65EC8 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */; };
 		0DCBCE272C73165900A45528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE262C73165900A45528 /* AppDelegate.swift */; };
 		0DCBCE292C73165900A45528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE282C73165900A45528 /* SceneDelegate.swift */; };
-		0DCBCE2B2C73165900A45528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE2A2C73165900A45528 /* ViewController.swift */; };
-		0DCBCE2E2C73165900A45528 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0DCBCE2D2C73165900A45528 /* Base */; };
 		0DCBCE302C73165C00A45528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCBCE2F2C73165C00A45528 /* Assets.xcassets */; };
 		0DCBCE332C73165C00A45528 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0DCBCE322C73165C00A45528 /* Base */; };
 		0DCBCE3E2C73165D00A45528 /* Perfact_CaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE3D2C73165D00A45528 /* Perfact_CaloriesTests.swift */; };
 		0DCBCE482C73165D00A45528 /* Perfact_CaloriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE472C73165D00A45528 /* Perfact_CaloriesUITests.swift */; };
 		0DCBCE4A2C73165D00A45528 /* Perfact_CaloriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE492C73165D00A45528 /* Perfact_CaloriesUITestsLaunchTests.swift */; };
+		0DCBCE592C734CC000A45528 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE582C734CC000A45528 /* UserLogin.swift */; };
+		0DCBCE5D2C734E3000A45528 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE5C2C734E3000A45528 /* User.swift */; };
+		0DEDCF702C7483A5003EA7E8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEDCF6F2C7483A5003EA7E8 /* KeychainAccess */; };
+		0DEDCF722C7483B6003EA7E8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEDCF712C7483B6003EA7E8 /* KeychainAccess */; };
+		0DEDCF742C7483BE003EA7E8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0DEDCF732C7483BE003EA7E8 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemsViewController.swift; sourceTree = "<group>"; };
+		0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanNeeds.swift; sourceTree = "<group>"; };
+		0D6875752C7A158C00D32C36 /* FoodItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemDetailViewController.swift; sourceTree = "<group>"; };
+		0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNutritionalNeeds.swift; sourceTree = "<group>"; };
+		0DAA4E862C7352BD00C3880C /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
+		0DAA4E882C73530D00C3880C /* SignInFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFormat.swift; sourceTree = "<group>"; };
+		0DAA4E8A2C7367D000C3880C /* HomeScreenFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFormat.swift; sourceTree = "<group>"; };
+		0DAA4E8C2C73680700C3880C /* AppCommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommons.swift; sourceTree = "<group>"; };
+		0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		0DB1187E2C76F04E000DD1A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		0DCBCE232C73165900A45528 /* Perfact Calories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Perfact Calories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCBCE262C73165900A45528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DCBCE282C73165900A45528 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0DCBCE2A2C73165900A45528 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0DCBCE2D2C73165900A45528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DCBCE2F2C73165C00A45528 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DCBCE322C73165C00A45528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DCBCE342C73165C00A45528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +72,8 @@
 		0DCBCE432C73165D00A45528 /* Perfact CaloriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Perfact CaloriesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCBCE472C73165D00A45528 /* Perfact_CaloriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfact_CaloriesUITests.swift; sourceTree = "<group>"; };
 		0DCBCE492C73165D00A45528 /* Perfact_CaloriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfact_CaloriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0DCBCE582C734CC000A45528 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		0DCBCE5C2C734E3000A45528 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEDCF702C7483A5003EA7E8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEDCF722C7483B6003EA7E8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEDCF742C7483BE003EA7E8 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +128,23 @@
 			isa = PBXGroup;
 			children = (
 				0DCBCE262C73165900A45528 /* AppDelegate.swift */,
+				0DCBCE5C2C734E3000A45528 /* User.swift */,
 				0DCBCE282C73165900A45528 /* SceneDelegate.swift */,
-				0DCBCE2A2C73165900A45528 /* ViewController.swift */,
-				0DCBCE2C2C73165900A45528 /* Main.storyboard */,
+				0DCBCE582C734CC000A45528 /* UserLogin.swift */,
 				0DCBCE2F2C73165C00A45528 /* Assets.xcassets */,
 				0DCBCE312C73165C00A45528 /* LaunchScreen.storyboard */,
 				0DCBCE342C73165C00A45528 /* Info.plist */,
+				0DAA4E862C7352BD00C3880C /* GetInfo.swift */,
+				0DAA4E882C73530D00C3880C /* SignInFormat.swift */,
+				0DAA4E8C2C73680700C3880C /* AppCommons.swift */,
+				0DAA4E8A2C7367D000C3880C /* HomeScreenFormat.swift */,
+				0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */,
+				0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */,
+				0DB1187E2C76F04E000DD1A6 /* ViewController.swift */,
+				0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */,
+				0D6875752C7A158C00D32C36 /* FoodItemDetailViewController.swift */,
+				0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */,
+				0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */,
 			);
 			path = "Perfact Calories";
 			sourceTree = "<group>";
@@ -143,6 +182,9 @@
 			dependencies = (
 			);
 			name = "Perfact Calories";
+			packageProductDependencies = (
+				0DEDCF6F2C7483A5003EA7E8 /* KeychainAccess */,
+			);
 			productName = "Perfact Calories";
 			productReference = 0DCBCE232C73165900A45528 /* Perfact Calories.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +203,9 @@
 				0DCBCE3B2C73165D00A45528 /* PBXTargetDependency */,
 			);
 			name = "Perfact CaloriesTests";
+			packageProductDependencies = (
+				0DEDCF712C7483B6003EA7E8 /* KeychainAccess */,
+			);
 			productName = "Perfact CaloriesTests";
 			productReference = 0DCBCE392C73165D00A45528 /* Perfact CaloriesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -179,6 +224,9 @@
 				0DCBCE452C73165D00A45528 /* PBXTargetDependency */,
 			);
 			name = "Perfact CaloriesUITests";
+			packageProductDependencies = (
+				0DEDCF732C7483BE003EA7E8 /* KeychainAccess */,
+			);
 			productName = "Perfact CaloriesUITests";
 			productReference = 0DCBCE432C73165D00A45528 /* Perfact CaloriesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -215,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 0DCBCE1A2C73165900A45528;
+			packageReferences = (
+				0DEDCF6B2C7476CA003EA7E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 0DCBCE242C73165900A45528 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +284,6 @@
 			files = (
 				0DCBCE302C73165C00A45528 /* Assets.xcassets in Resources */,
 				0DCBCE332C73165C00A45528 /* Base in Resources */,
-				0DCBCE2E2C73165900A45528 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +308,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCBCE2B2C73165900A45528 /* ViewController.swift in Sources */,
+				0D6875762C7A158C00D32C36 /* FoodItemDetailViewController.swift in Sources */,
+				0D1AF7CB2C7875970092D25E /* FoodItemsViewController.swift in Sources */,
+				0DAA4E8D2C73680700C3880C /* AppCommons.swift in Sources */,
+				0D43AA8B2C7D5A6400E8B415 /* HumanNeeds.swift in Sources */,
+				0DAA4E892C73530D00C3880C /* SignInFormat.swift in Sources */,
+				0DA95D472C7DF50C0045755D /* UserNutritionalNeeds.swift in Sources */,
 				0DCBCE272C73165900A45528 /* AppDelegate.swift in Sources */,
+				0DAA4E8B2C7367D000C3880C /* HomeScreenFormat.swift in Sources */,
+				0DB1187F2C76F04E000DD1A6 /* ViewController.swift in Sources */,
+				0DC2B8DB2C75BBF500B65EC8 /* FoodItem.swift in Sources */,
+				0DCBCE592C734CC000A45528 /* UserLogin.swift in Sources */,
+				0DAA4E8F2C736B9500C3880C /* HomeScreen.swift in Sources */,
+				0DCBCE5D2C734E3000A45528 /* User.swift in Sources */,
+				0DAA4E872C7352BD00C3880C /* GetInfo.swift in Sources */,
 				0DCBCE292C73165900A45528 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +359,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0DCBCE2C2C73165900A45528 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DCBCE2D2C73165900A45528 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0DCBCE312C73165C00A45528 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,9 +500,9 @@
 				INFOPLIST_FILE = "Perfact Calories/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,9 +527,9 @@
 				INFOPLIST_FILE = "Perfact Calories/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,6 +655,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DEDCF6B2C7476CA003EA7E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0DEDCF6F2C7483A5003EA7E8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DEDCF6B2C7476CA003EA7E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		0DEDCF712C7483B6003EA7E8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DEDCF6B2C7476CA003EA7E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		0DEDCF732C7483BE003EA7E8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DEDCF6B2C7476CA003EA7E8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DCBCE1B2C73165900A45528 /* Project object */;
 }

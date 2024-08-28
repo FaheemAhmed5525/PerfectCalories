@@ -7,23 +7,197 @@
 
 import UIKit
 
-class HomeScreenFormat: UIViewController {
 
+class HomeScreenFormat: AppCommons {
+
+    //title to be displayed of the screen
+    let screenTitle = UILabel()
+    
+    //sidebar view that contain items
+    let sidebar = UIView()
+    
+    //sidebarButton: hide and unhide sidebar
+    let sidebarButton = UIButton()
+    
+    //sidebar buttons: link to pages
+    let homeButton = UIButton()
+    let foodItemsButton = UIButton()
+    let humanNeedsButton = UIButton()
+    let perfectPlateButton = UIButton()
+
+    
+    //topbar view contains app title, and sidebar button
+    let topbar = UIView()
+
+    // a foodItem Object that will contain item that will be passed between the screens
+    static var selectedFood: FoodItem? = nil
+    
+    static let ageGroups = HumanNeeds()
+    
+    static var selectedAgeGroup: NeedGroup? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupTopbar()
+        setupSidebar()
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    ///func setupTopbar customizes topbar
+    func setupTopbar() {
+        view.addSubview(topbar)
+        
+        topbar.translatesAutoresizingMaskIntoConstraints = false
+        topbar.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        topbar.layer.borderWidth = 0.0
+        
+        NSLayoutConstraint.activate([
+            topbar.topAnchor.constraint(equalTo: view.topAnchor),
+            topbar.heightAnchor.constraint(equalTo:view.heightAnchor, multiplier: 1/7),
+            topbar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topbar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        setupScreenTitle()
+        setupSidebarButton()
     }
-    */
+    
+    ///function setupScreenTitle customizes title of the screen
+    func setupScreenTitle() {
+        topbar.addSubview(screenTitle)
+        
+        screenTitle.translatesAutoresizingMaskIntoConstraints = false
+        screenTitle.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        screenTitle.text = "Perfact Calories"
+        screenTitle.textColor = AppCommons.textColor
+        screenTitle.textAlignment = .left
+        screenTitle.font = .systemFont(ofSize: 40, weight: .bold)
+        
+        NSLayoutConstraint.activate([
+            screenTitle.bottomAnchor.constraint(equalTo: topbar.bottomAnchor),
+            screenTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            screenTitle.widthAnchor.constraint(equalToConstant: 300),
+            screenTitle.heightAnchor.constraint(equalToConstant: 42)])
+    }
+    
+    ///func setupSidebar customizes sidebar
+    func setupSidebarButton() {
+        topbar.addSubview(sidebarButton)
+        
+        sidebarButton.translatesAutoresizingMaskIntoConstraints = false
+        sidebarButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        sidebarButton.setTitle("\\/", for: .normal)
+        sidebarButton.titleLabel?.font = .systemFont(ofSize: 20)
+        sidebarButton.setTitleColor(AppCommons.textColor3, for: .normal)
+        sidebarButton.titleLabel?.textAlignment = .center
+        sidebarButton.layer.borderWidth = 0.0
+        sidebarButton.layer.cornerRadius = 4.0
+        sidebarButton.addTarget(self, action: #selector(sidebarButtonTapped), for:.touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            sidebarButton.bottomAnchor.constraint(equalTo: topbar.bottomAnchor),
+            sidebarButton.rightAnchor.constraint(equalTo: topbar.safeAreaLayoutGuide.rightAnchor, constant: -6.0),
+            sidebarButton.widthAnchor.constraint(equalToConstant: 40),
+            sidebarButton.heightAnchor.constraint(equalToConstant: 40)])
+    }
+    
+    ///function setupSidebar customizes sidebar
+    func setupSidebar() {
+        view.addSubview(sidebar)
+        
+        sidebar.translatesAutoresizingMaskIntoConstraints = false
+        sidebar.layer.borderColor = AppCommons.borderColor
+        sidebar.layer.borderWidth = 1
+        sidebar.layer.cornerRadius = 12
+        sidebar.backgroundColor = .none
+        sidebar.isHidden = true
+        sidebar.clipsToBounds = true
+        sidebar.layer.zPosition = 1
+        NSLayoutConstraint.activate([
+            sidebar.topAnchor.constraint(equalTo: topbar.bottomAnchor),
+            sidebar.rightAnchor.constraint(equalTo: view.rightAnchor),
+            sidebar.widthAnchor.constraint(equalToConstant: 200),
+            sidebar.heightAnchor.constraint(equalToConstant: 200)])
+        
+        /// adding targets to the buttons:
+        homeButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
+        foodItemsButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+        humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+
+        
+        
+        sidebar.setupAsSidebarButton(button: homeButton, title: "Home", position: 0)
+        sidebar.setupAsSidebarButton(button: foodItemsButton, title: "Food Itmes", position: 1)
+        sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 2)
+        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 3)
+        
+    }
+    
+        
+    
+    @objc func sidebarButtonTapped() {
+        //Mark: to implemented for some animation
+        sidebar.isHidden = !(sidebar.isHidden)
+        
+    }
+    
+    //controler functions
+    @objc func goToHome() {
+        sidebar.isHidden = true
+        print("----------Home Screen-----------")
+        let homeScreen = HomeScreen()
+        navigationController?.setViewControllers([homeScreen], animated: true)
+    }
+    
+    @objc func goToFoodList() {
+        sidebar.isHidden = true
+        print("----------Foodlist Screen-----------")
+        let nextScreen = FoodItemsViewController()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+    @objc func goToNutritionalNeeds() {
+        sidebar.isHidden = true
+        print("----------Nutritional Needs-------")
+        let nextScreen = UserNutritionalNeeds()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+
+    
 
 }
+
+extension UIView {
+    func setupAsSidebarButton(button: UIButton, title: String, position: Int) {
+        self.addSubview(button)
+        
+        let height = 50
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24)
+        button.titleLabel?.textAlignment = .left
+        button.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        button.layer.cornerRadius = 2.0
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = AppCommons.themeColor
+
+        
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: self.topAnchor, constant: CGFloat(height * position) ),
+            button.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+    }
+    
+    
+    
+}
+
+

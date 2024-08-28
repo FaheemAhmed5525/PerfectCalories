@@ -7,23 +7,54 @@
 
 import UIKit
 
-class SignInFormat: UIViewController {
+class SignInFormat: AppCommons {
 
+
+    //screenLabel is to be displayed on the top of the screen
+    let screenLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 300, height: 100))
+    
+    //elementsBox contians UI elements
+    let elementsBox = UIView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(screenLabel)
+        
+        setupScreenLabel()
 
-        // Do any additional setup after loading the view.
     }
     
+    
+    ///func setupScreenLabel customizes the screenLabel
+    func setupScreenLabel() {
+        view.addSubview(screenLabel)
+        
+        screenLabel.text = "Your Name"
+        screenLabel.textColor = UIColor(cgColor: AppCommons.themeColor)
+        screenLabel.textAlignment = .center
+        screenLabel.font = UIFont.boldSystemFont(ofSize: 32)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    ///function setupElementsBox customizes the elementsBox
+    func setupElementsBox() {
+        view.addSubview(elementsBox)
+        
+        elementsBox.translatesAutoresizingMaskIntoConstraints = false
+        elementsBox.layer.borderColor = AppCommons.themeColor
+        elementsBox.layer.borderWidth = 2.0
+        elementsBox.layer.cornerRadius = 12.0
+        elementsBox.backgroundColor = .white
+        
+        NSLayoutConstraint.activate([
+            elementsBox.widthAnchor.constraint(equalToConstant: 330),
+            elementsBox.heightAnchor.constraint(equalToConstant: 350),
+            elementsBox.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            elementsBox.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+    }
+
 
 }
+
