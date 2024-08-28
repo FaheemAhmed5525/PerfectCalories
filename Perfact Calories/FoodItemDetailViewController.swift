@@ -203,7 +203,21 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
         //converting small value in mg and 
-        valueLabel.text = "\(rowData.1)"
+        let value = rowData.1
+        var valueString: String
+        if value >= 1000 {
+            valueString = "\(value / 1000) kg"
+        }
+        else if value >= 1{
+            valueString = "\(value)  g"
+        }
+        else if value >= 0.001{
+            valueString = "\(value * 1000) mg"
+        }
+        else {
+            valueString = "\(value * 1000000) µm"
+        }
+        valueLabel.text = "\(valueString)"
 //        print("\(rowData.1)")
         valueLabel.font = .systemFont(ofSize: 20)
         valueLabel.textAlignment = .right

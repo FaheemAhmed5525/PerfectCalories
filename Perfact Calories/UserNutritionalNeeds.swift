@@ -104,7 +104,23 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        valueLabel.text = "\(rowData.1) g"
+        
+        //converting small value in mg and
+        let value = rowData.1
+        var valueString: String
+        if value >= 1000 {
+            valueString = "\(value / 1000) kg"
+        }
+        else if value >= 1{
+            valueString = "\(value)  g"
+        }
+        else if value >= 0.001{
+            valueString = "\(value * 1000) mg"
+        }
+        else {
+            valueString = "\(value * 1000000) µm"
+        }
+        valueLabel.text = "\(valueString)"
         valueLabel.font = .systemFont(ofSize: 20)
         valueLabel.textAlignment = .right
         
