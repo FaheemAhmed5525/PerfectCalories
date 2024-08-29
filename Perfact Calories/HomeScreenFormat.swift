@@ -21,7 +21,9 @@ class HomeScreenFormat: AppCommons {
     
     //sidebar buttons: link to pages
     let homeButton = UIButton()
-    let foodItemsButton = UIButton()
+    let fruitsButton = UIButton()
+    let dryFruitListButton = UIButton()
+    let vegetableListButton = UIButton()
     let humanNeedsButton = UIButton()
     let perfectPlateButton = UIButton()
 
@@ -119,20 +121,24 @@ class HomeScreenFormat: AppCommons {
             sidebar.topAnchor.constraint(equalTo: topbar.bottomAnchor),
             sidebar.rightAnchor.constraint(equalTo: view.rightAnchor),
             sidebar.widthAnchor.constraint(equalToConstant: 200),
-            sidebar.heightAnchor.constraint(equalToConstant: 200)])
+            sidebar.heightAnchor.constraint(equalToConstant: 320)])
         
         /// adding targets to the buttons:
         homeButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
-        foodItemsButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+        fruitsButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
+        dryFruitListButton.addTarget(self, action: #selector(goToDryFruitList), for: .touchUpInside)
+        vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
-        perfectPlateButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
 
         
         
         sidebar.setupAsSidebarButton(button: homeButton, title: "Home", position: 0)
-        sidebar.setupAsSidebarButton(button: foodItemsButton, title: "Food Itmes", position: 1)
-        sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 2)
-        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 3)
+        sidebar.setupAsSidebarButton(button: fruitsButton, title: "Fruits", position: 1)
+        sidebar.setupAsSidebarButton(button: dryFruitListButton, title: "Dry Fruits", position: 2)
+        sidebar.setupAsSidebarButton(button: vegetableListButton, title: "Vegetables", position: 3)
+        sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 4)
+        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 5)
         
     }
     
@@ -152,10 +158,27 @@ class HomeScreenFormat: AppCommons {
         navigationController?.setViewControllers([homeScreen], animated: true)
     }
     
-    @objc func goToFoodList() {
+    @objc func goToFruitList() {
         sidebar.isHidden = true
-        print("----------Foodlist Screen-----------")
+        print("----------Fruit list Screen-----------")
         let nextScreen = FoodItemsViewController()
+        nextScreen.foodItems = AppCommons.foods.fruits
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+    @objc func goToDryFruitList() {
+        sidebar.isHidden = true
+        print("__________Dry Fruit List----------")
+        let nextScreen = FoodItemsViewController()
+        nextScreen.foodItems = AppCommons.foods.dryFruits
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
+    @objc func goToVegetableList() {
+        sidebar.isHidden = true
+        print("__________Vegetable List----------")
+        let nextScreen = FoodItemsViewController()
+        nextScreen.foodItems = AppCommons.foods.vegetables
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     

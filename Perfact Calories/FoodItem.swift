@@ -35,20 +35,20 @@ class FoodItem {
     let phosphorus: Float
     let sodium: Float
     let sugar: Float
-    let sulfer: Float
+    let sulfur: Float
     let vitaminE: Float
     let vitaminK: Float
 
     
     
     ///Parametrized initilizer
-    init(Name: String, Type: String, Image: UIImage, Weight: Float, PrecribedPerWeek: String, TotalCaluries: Float, TotalMinerals: Float, Carbohydrates: Float, Water: Float, Proteins: Float, VitaminC: Float, Iron: Float, Calcium: Float, Potassium: Float, Fat: Float, Fiber: Float, Magnesium: Float, VitaminB6: Float, VitaminB2: Float, VitaminA: Float, Zinc: Float, Copper: Float, Manganese: Float, Phosphorus: Float, Sodium: Float, Sugar: Float, Sulfer: Float, VitaminE: Float, VitaminK: Float) {
+    init(Name: String, Type: String, Image: UIImage, Weight: Float, PrecribedPerWeek: String, TotalCalories: Float, TotalMinerals: Float, Carbohydrates: Float, Water: Float, Proteins: Float, VitaminC: Float, Iron: Float, Calcium: Float, Potassium: Float, Fat: Float, Fiber: Float, Magnesium: Float, VitaminB6: Float, VitaminB2: Float, VitaminA: Float, Zinc: Float, Copper: Float, Manganese: Float, Phosphorus: Float, Sodium: Float, Sugar: Float, Sulfur: Float, VitaminE: Float, VitaminK: Float) {
         self.Name = Name
         self.type = Type
         self.Image = Image
         self.Weight = Weight
         self.prescribedPerWeek = PrecribedPerWeek
-        self.totalCalories = TotalCaluries
+        self.totalCalories = TotalCalories
         self.totalMinerals = TotalMinerals
         self.carbohydrates = Carbohydrates
         self.water = Water
@@ -69,7 +69,7 @@ class FoodItem {
         self.phosphorus = Phosphorus
         self.sodium = Sodium
         self.sugar = Sugar
-        self.sulfer = Sulfer
+        self.sulfur = Sulfur
         self.vitaminE = VitaminE
         self.vitaminK = VitaminK
     }
@@ -81,20 +81,27 @@ struct FoodItems {
     
    // var foodItem: FoodItem
     //array of food itmes
-    var foodItems: [FoodItem] = []
+    
+    var fruits: [FoodItem] = []
+    
+    var dryFruits: [FoodItem] = []
+
+    var vegetables: [FoodItem] = []
+    
+    var beverages: [FoodItem] = []
     
 //    //FoodItems
-//    static let Apple = FoodItem(Name: "Apple", Type: "Fruits", Image: (UIImage(named: "Apple.png")) ?? .apple1, Weight: 100, PrecribedPerWeek: "5-7", TotalCaluries: 52, TotalMinerals: 0.135, Carbohydrates: 13.6, Water: 85.45, Proteins: 0.28, VitaminC: 4.63, Iron: 0.00012, Calcium: 0.058, Potassium: 0.00011, Fat: 0.18, Fiber: 2.38, Magnesium: 0.0005, VitaminB6: 0.00004, VitaminB2: 0.00003, VitaminA: 0000003, Zinc: 0.00004, Copper: 0.00004, Manganese: 0.000036, Phosphorus: 0.012, Sodium: 0.001, Sugar: 10.3, Sulfer: 0, VitaminE: 0.017, VitaminK: 0.000002)
-//    static let Apple2 = FoodItem(Name: "Apple2", Type: "Fruits", Image: (UIImage(named: "Apple.png")) ?? .apple1, Weight: 100, PrecribedPerWeek: "5-7", TotalCaluries: 51, TotalMinerals: 0.135, Carbohydrates: 13.6, Water: 85.45, Proteins: 0.28, VitaminC: 4.63, Iron: 0.00012, Calcium: 0.058, Potassium: 0.00011, Fat: 0.18, Fiber: 2.38, Magnesium: 0.0005, VitaminB6: 0.00004, VitaminB2: 0.00003, VitaminA: 0000003, Zinc: 0.00004, Copper: 0.00004, Manganese: 0.000036, Phosphorus: 0.012, Sodium: 0.001, Sugar: 10.3, Sulfer: 0, VitaminE: 0.017, VitaminK: 0.000002)
+//    static let Apple = FoodItem(Name: "Apple", Type: "Fruits", Image: (UIImage(named: "Apple.png")) ?? .apple1, Weight: 100, PrecribedPerWeek: "5-7", TotalCalories: 52, TotalMinerals: 0.135, Carbohydrates: 13.6, Water: 85.45, Proteins: 0.28, VitaminC: 4.63, Iron: 0.00012, Calcium: 0.058, Potassium: 0.00011, Fat: 0.18, Fiber: 2.38, Magnesium: 0.0005, VitaminB6: 0.00004, VitaminB2: 0.00003, VitaminA: 0000003, Zinc: 0.00004, Copper: 0.00004, Manganese: 0.000036, Phosphorus: 0.012, Sodium: 0.001, Sugar: 10.3, Sulfur: 0, VitaminE: 0.017, VitaminK: 0.000002)
+//    static let Apple2 = FoodItem(Name: "Apple2", Type: "Fruits", Image: (UIImage(named: "Apple.png")) ?? .apple1, Weight: 100, PrecribedPerWeek: "5-7", TotalCalories: 51, TotalMinerals: 0.135, Carbohydrates: 13.6, Water: 85.45, Proteins: 0.28, VitaminC: 4.63, Iron: 0.00012, Calcium: 0.058, Potassium: 0.00011, Fat: 0.18, Fiber: 2.38, Magnesium: 0.0005, VitaminB6: 0.00004, VitaminB2: 0.00003, VitaminA: 0000003, Zinc: 0.00004, Copper: 0.00004, Manganese: 0.000036, Phosphorus: 0.012, Sodium: 0.001, Sugar: 10.3, Sulfur: 0, VitaminE: 0.017, VitaminK: 0.000002)
 //    
     init() {
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Apple",
             Type: "Fruits",
             Image: (UIImage(named: "Apple1.png")) ?? UIImage(named: "fruits.png") ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 52,
+            TotalCalories: 52,
             TotalMinerals: 0.135,
             Carbohydrates: 13.6,
             Water: 85.45,
@@ -115,20 +122,20 @@ struct FoodItems {
             Phosphorus: 0.012,
             Sodium: 0.001,
             Sugar: 10.3,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.017, 
             VitaminK: 0.000002
         ))
         
         
         
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Apricot",
             Type: "Fruits",
             Image: ((UIImage(named: "Apricot.png")) ?? UIImage(named: "fruits.png")) ?? .fruits,
             Weight: 35,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 17,
+            TotalCalories: 17,
             TotalMinerals: 0.03,
             Carbohydrates: 4.2,
             Water: 0.088,
@@ -149,19 +156,19 @@ struct FoodItems {
             Phosphorus: 0.00002,
             Sodium: 0.0001,
             Sugar: 0.0039,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Avocado",
             Type: "Fruits",
             Image: (UIImage(named: "Avocado.png")) ?? .fruits,
             Weight: 150,
             PrecribedPerWeek: "3-4",
-            TotalCaluries: 240,
+            TotalCalories: 240,
             TotalMinerals: 0.12,
             Carbohydrates: 12.8,
             Water: 0.73,
@@ -182,19 +189,19 @@ struct FoodItems {
             Phosphorus: 0.034,
             Sodium: 0.007,
             Sugar: 0.2,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.00207,
             VitaminK: 0.000021
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Banana",
             Type: "Fruits",
             Image: (UIImage(named: "Banana.png")) ?? .fruits,
             Weight: 120,
             PrecribedPerWeek: "7-10",
-            TotalCaluries: 105,
+            TotalCalories: 105,
             TotalMinerals: 0.15,
             Carbohydrates: 27,
             Water: 0.74,
@@ -215,19 +222,19 @@ struct FoodItems {
             Phosphorus: 0.026,
             Sodium: 0.001,
             Sugar: 14,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0000005
         ))
         
         
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Blackberry",
             Type: "Fruits",
             Image: (UIImage(named: "Blackberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 43,
+            TotalCalories: 43,
             TotalMinerals: 0.05,
             Carbohydrates: 9.6,
             Water: 0.88,
@@ -248,19 +255,19 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 4.9,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.001,
             VitaminK: 0.001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Blackcurrant",
             Type: "Fruits",
             Image: (UIImage(named: "Blackcurrant.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 63,
+            TotalCalories: 63,
             TotalMinerals: 0.09,
             Carbohydrates: 15.4,
             Water: 0.81,
@@ -281,19 +288,19 @@ struct FoodItems {
             Phosphorus: 0.04,
             Sodium: 0.001,
             Sugar: 8.6,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.001,
             VitaminK: 0.00002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Blueberry",
             Type: "Fruits",
             Image: (UIImage(named: "Blueberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 57,
+            TotalCalories: 57,
             TotalMinerals: 0.07,
             Carbohydrates: 14.5,
             Water: 0.84,
@@ -314,19 +321,19 @@ struct FoodItems {
             Phosphorus: 0.01,
             Sodium: 0.001,
             Sugar: 9.7,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Boysenberry",
             Type: "Fruits",
             Image: (UIImage(named: "Boysenberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 50,
+            TotalCalories: 50,
             TotalMinerals: 0.08,
             Carbohydrates: 12.4,
             Water: 0.88,
@@ -347,19 +354,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 9.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Capers",
             Type: "Vegetables",
             Image: (UIImage(named: "Capers.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 23,
+            TotalCalories: 23,
             TotalMinerals: 0.23,
             Carbohydrates: 4.4,
             Water: 0.82,
@@ -380,19 +387,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.07,
             Sugar: 0.3,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0003
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Cherimoya",
             Type: "Fruits",
             Image: (UIImage(named: "Cherimoya.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 75,
+            TotalCalories: 75,
             TotalMinerals: 0.16,
             Carbohydrates: 19.7,
             Water: 0.82,
@@ -413,19 +420,19 @@ struct FoodItems {
             Phosphorus: 0.019,
             Sodium: 0.001,
             Sugar: 16.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Cherry",
             Type: "Fruits",
             Image: (UIImage(named: "Cherry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "7-10",
-            TotalCaluries: 63,
+            TotalCalories: 63,
             TotalMinerals: 0.10,
             Carbohydrates: 16.0,
             Water: 0.82,
@@ -446,19 +453,19 @@ struct FoodItems {
             Phosphorus: 0.01,
             Sodium: 0.001,
             Sugar: 12.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Black Chokeberry",
             Type: "Fruits",
             Image: (UIImage(named: "BlackChokeberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "3-5",
-            TotalCaluries: 50,
+            TotalCalories: 50,
             TotalMinerals: 0.11,
             Carbohydrates: 12.0,
             Water: 0.83,
@@ -479,19 +486,19 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 8.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Cranberry",
             Type: "Fruits",
             Image: (UIImage(named: "Cranberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "5-7",
-            TotalCaluries: 46,
+            TotalCalories: 46,
             TotalMinerals: 0.10,
             Carbohydrates: 12.2,
             Water: 0.87,
@@ -512,18 +519,18 @@ struct FoodItems {
             Phosphorus: 0.01,
             Sodium: 0.001,
             Sugar: 4.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0002
         ))
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Date Palm",
             Type: "Fruits",
             Image: (UIImage(named: "DatePalm.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 282,
+            TotalCalories: 282,
             TotalMinerals: 0.32,
             Carbohydrates: 75.0,
             Water: 0.21,
@@ -544,19 +551,19 @@ struct FoodItems {
             Phosphorus: 0.06,
             Sodium: 0.001,
             Sugar: 66.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Durian",
             Type: "Fruits",
             Image: (UIImage(named: "Durian.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 133,
+            TotalCalories: 133,
             TotalMinerals: 0.35,
             Carbohydrates: 33.0,
             Water: 0.65,
@@ -577,20 +584,20 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.002,
             Sugar: 28.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.001,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Elderberry",
             Type: "Fruits",
             Image: (UIImage(named: "Elderberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 73,
+            TotalCalories: 73,
             TotalMinerals: 0.20,
             Carbohydrates: 18.4,
             Water: 0.82,
@@ -611,20 +618,20 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 7.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Golden Berries",
             Type: "Fruits",
             Image: (UIImage(named: "GoldenBerries.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 53,
+            TotalCalories: 53,
             TotalMinerals: 0.25,
             Carbohydrates: 12.3,
             Water: 0.89,
@@ -645,20 +652,20 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 6.5,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0003,
             VitaminK: 0.0002
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Gooseberries",
             Type: "Fruits",
             Image: (UIImage(named: "Gooseberries.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 44,
+            TotalCalories: 44,
             TotalMinerals: 0.30,
             Carbohydrates: 10.2,
             Water: 0.85,
@@ -679,19 +686,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 5.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Grapes",
             Type: "Fruits",
             Image: (UIImage(named: "Grapes.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 69,
+            TotalCalories: 69,
             TotalMinerals: 0.20,
             Carbohydrates: 18.1,
             Water: 0.81,
@@ -712,53 +719,21 @@ struct FoodItems {
             Phosphorus: 0.017,
             Sodium: 0.002,
             Sugar: 15.5,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
-            Name: "Grapefruit",
-            Type: "Fruits",
-            Image: (UIImage(named: "Grapefruit.png")) ?? .fruits,
-            Weight: 240,
-            PrecribedPerWeek: "2-3",
-            TotalCaluries: 100.8,
-            TotalMinerals: 0.60,
-            Carbohydrates: 25.2,
-            Water: 2.11,
-            Proteins: 1.9,
-            VitaminC: 0.744,
-            Iron: 0.00072,
-            Calcium: 0.0288,
-            Potassium: 0.324,
-            Fat: 0.24,
-            Fiber: 3.36,
-            Magnesium: 0.036,
-            VitaminB6: 0.048,
-            VitaminB2: 0.048,
-            VitaminA: 0.000048,
-            Zinc: 0.00024,
-            Copper: 0.00024,
-            Manganese: 0.00048,
-            Phosphorus: 0.036,
-            Sodium: 0.0024,
-            Sugar: 19.2,
-            Sulfer: 0,
-            VitaminE: 0.00024,
-            VitaminK: 0.00012
-        ))
 
-
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Grapefruit",
             Type: "Fruits",
             Image: (UIImage(named: "Grapefruit.png")) ?? .fruits,
             Weight: 270,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 113.4,
+            TotalCalories: 113.4,
             TotalMinerals: 0.675,
             Carbohydrates: 28.35,
             Water: 2.376,
@@ -779,52 +754,19 @@ struct FoodItems {
             Phosphorus: 0.027,
             Sodium: 0.0027,
             Sugar: 21.6,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.00027,
             VitaminK: 0.000135
         ))
 
 
-        foodItems.append(FoodItem(
-            Name: "Jackfruit",
-            Type: "Fruits",
-            Image: (UIImage(named: "Jackfruit.png")) ?? .fruits,
-            Weight: 15000,
-            PrecribedPerWeek: "1-2",
-            TotalCaluries: 1500,
-            TotalMinerals: 15.00,
-            Carbohydrates: 3750,
-            Water: 12750,
-            Proteins: 150,
-            VitaminC: 45.0,
-            Iron: 0.015,
-            Calcium: 1.80,
-            Potassium: 3.00,
-            Fat: 15,
-            Fiber: 75,
-            Magnesium: 0.90,
-            VitaminB6: 0.30,
-            VitaminB2: 0.30,
-            VitaminA: 0.0003,
-            Zinc: 0.0015,
-            Copper: 0.0015,
-            Manganese: 0.003,
-            Phosphorus: 0.30,
-            Sodium: 0.015,
-            Sugar: 2250,
-            Sulfer: 0,
-            VitaminE: 0.0015,
-            VitaminK: 0.00075
-        ))
-
-
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Jackfruit",
             Type: "Fruits",
             Image: (UIImage(named: "Jackfruit.png")) ?? .fruits,
             Weight: 1000,
             PrecribedPerWeek: "3-4",  // Adjusted for a more typical weekly consumption
-            TotalCaluries: 500,
+            TotalCalories: 500,
             TotalMinerals: 1.00,
             Carbohydrates: 1250,
             Water: 850,
@@ -845,20 +787,20 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 150,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.00005
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Jujube",
             Type: "Fruits",
             Image: (UIImage(named: "Jujube.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 79,
+            TotalCalories: 79,
             TotalMinerals: 0.45,
             Carbohydrates: 20.0,
             Water: 0.80,
@@ -879,7 +821,7 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.002,
             Sugar: 18.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
@@ -887,13 +829,13 @@ struct FoodItems {
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Kiwi",
             Type: "Fruits",
             Image: (UIImage(named: "Kiwi.png")) ?? .fruits,
             Weight: 84,
             PrecribedPerWeek: "4-5",
-            TotalCaluries: 50.4,
+            TotalCalories: 50.4,
             TotalMinerals: 0.17,
             Carbohydrates: 11.6,
             Water: 0.78,
@@ -914,20 +856,20 @@ struct FoodItems {
             Phosphorus: 0.014,
             Sodium: 0.0014,
             Sugar: 9.48,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.00017,
             VitaminK: 0.00007
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Lemon",
             Type: "Fruits",
             Image: (UIImage(named: "Lemon.png")) ?? .fruits,
             Weight: 125,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 36.25,
+            TotalCalories: 36.25,
             TotalMinerals: 0.375,
             Carbohydrates: 11.625,
             Water: 1.1125,
@@ -948,19 +890,19 @@ struct FoodItems {
             Phosphorus: 0.025,
             Sodium: 0.00125,
             Sugar: 3.125,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.000125,
             VitaminK: 0.000125
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Lime",
             Type: "Fruits",
             Image: (UIImage(named: "Lime.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "3-4",
-            TotalCaluries: 30,
+            TotalCalories: 30,
             TotalMinerals: 0.32,
             Carbohydrates: 7.0,
             Water: 0.88,
@@ -981,20 +923,20 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 1.8,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Longan",
             Type: "Fruits",
             Image: (UIImage(named: "Longan.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 60,
+            TotalCalories: 60,
             TotalMinerals: 0.40,
             Carbohydrates: 15.0,
             Water: 0.81,
@@ -1015,20 +957,20 @@ struct FoodItems {
             Phosphorus: 0.025,
             Sodium: 0.001,
             Sugar: 15.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Lychee",
             Type: "Fruits",
             Image: (UIImage(named: "Lychee.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "3-4",
-            TotalCaluries: 66,
+            TotalCalories: 66,
             TotalMinerals: 0.45,
             Carbohydrates: 16.5,
             Water: 0.81,
@@ -1049,19 +991,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 15.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Mango",
             Type: "Fruits",
             Image: (UIImage(named: "Mango.png")) ?? .fruits,
             Weight: 230,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 138,
+            TotalCalories: 138,
             TotalMinerals: 0.575,
             Carbohydrates: 34.5,
             Water: 1.91,
@@ -1082,19 +1024,19 @@ struct FoodItems {
             Phosphorus: 0.046,
             Sodium: 0.0023,
             Sugar: 34.04,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.00069,
             VitaminK: 0.00023
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Cantaloupe",
             Type: "Fruits",
             Image: (UIImage(named: "Cantaloupe.png")) ?? .fruits,
             Weight: 800,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 256,
+            TotalCalories: 256,
             TotalMinerals: 1.60,
             Carbohydrates: 64.0,
             Water: 7.12,
@@ -1115,19 +1057,19 @@ struct FoodItems {
             Phosphorus: 0.08,
             Sodium: 0.008,
             Sugar: 64.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.00128,
             VitaminK: 0.00064
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Honeydew",
             Type: "Fruits",
             Image: (UIImage(named: "Honeydew.png")) ?? .fruits,
             Weight: 1000,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 360,
+            TotalCalories: 360,
             TotalMinerals: 2.00,
             Carbohydrates: 91.0,
             Water: 9.0,
@@ -1148,20 +1090,20 @@ struct FoodItems {
             Phosphorus: 0.12,
             Sodium: 0.01,
             Sugar: 91.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0016,
             VitaminK: 0.0008
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Watermelon",
             Type: "Fruits",
             Image: (UIImage(named: "Watermelon.png")) ?? .fruits,
             Weight: 5000,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 1500,
+            TotalCalories: 1500,
             TotalMinerals: 5.00,
             Carbohydrates: 375.0,
             Water: 45.0,
@@ -1182,19 +1124,19 @@ struct FoodItems {
             Phosphorus: 0.6,
             Sodium: 0.05,
             Sugar: 375.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.003,
             VitaminK: 0.001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Mulberry",
             Type: "Fruits",
             Image: (UIImage(named: "Mulberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 43,
+            TotalCalories: 43,
             TotalMinerals: 0.50,
             Carbohydrates: 9.8,
             Water: 0.88,
@@ -1215,19 +1157,19 @@ struct FoodItems {
             Phosphorus: 0.04,
             Sodium: 0.002,
             Sugar: 8.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0003,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Nectarine",
             Type: "Fruits",
             Image: (UIImage(named: "Nectarine.png")) ?? .fruits,
             Weight: 180,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 72,
+            TotalCalories: 72,
             TotalMinerals: 0.54,
             Carbohydrates: 18.0,
             Water: 1.45,
@@ -1248,20 +1190,20 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 16.2,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Olive",
             Type: "Fruits",
             Image: (UIImage(named: "Olive.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 115,
+            TotalCalories: 115,
             TotalMinerals: 2.00,
             Carbohydrates: 6.0,
             Water: 0.80,
@@ -1282,19 +1224,19 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.002,
             Sugar: 0.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0005,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Orange",
             Type: "Fruits",
             Image: (UIImage(named: "Orange.png")) ?? .fruits,
             Weight: 170,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 85,
+            TotalCalories: 85,
             TotalMinerals: 0.57,
             Carbohydrates: 21.7,
             Water: 1.43,
@@ -1315,20 +1257,20 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 16.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Papaya",
             Type: "Fruits",
             Image: (UIImage(named: "Papaya.png")) ?? .fruits,
             Weight: 750,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 300,
+            TotalCalories: 300,
             TotalMinerals: 1.88,
             Carbohydrates: 75.0,
             Water: 5.85,
@@ -1349,20 +1291,20 @@ struct FoodItems {
             Phosphorus: 0.11,
             Sodium: 0.0075,
             Sugar: 75.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0012,
             VitaminK: 0.0006
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Passion Fruit",
             Type: "Fruits",
             Image: (UIImage(named: "PassionFruit.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 97,
+            TotalCalories: 97,
             TotalMinerals: 0.8,
             Carbohydrates: 23.4,
             Water: 0.73,
@@ -1383,19 +1325,19 @@ struct FoodItems {
             Phosphorus: 0.05,
             Sodium: 0.001,
             Sugar: 11.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0003,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Pear",
             Type: "Fruits",
             Image: (UIImage(named: "Pear.png")) ?? .fruits,
             Weight: 200,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 102,
+            TotalCalories: 102,
             TotalMinerals: 0.8,
             Carbohydrates: 27.0,
             Water: 1.64,
@@ -1416,19 +1358,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 22.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Persimmon",
             Type: "Fruits",
             Image: (UIImage(named: "Persimmon.png")) ?? .fruits,
             Weight: 190,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 127,
+            TotalCalories: 127,
             TotalMinerals: 1.30,
             Carbohydrates: 33.0,
             Water: 1.40,
@@ -1449,19 +1391,19 @@ struct FoodItems {
             Phosphorus: 0.04,
             Sodium: 0.002,
             Sugar: 31.4,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0004,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Pineapple",
             Type: "Fruits",
             Image: (UIImage(named: "Pineapple.png")) ?? .fruits,
             Weight: 1300,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 650,
+            TotalCalories: 650,
             TotalMinerals: 2.60,
             Carbohydrates: 169.0,
             Water: 10.73,
@@ -1482,20 +1424,20 @@ struct FoodItems {
             Phosphorus: 0.17,
             Sodium: 0.013,
             Sugar: 169.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0016,
             VitaminK: 0.0008
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Plum",
             Type: "Fruits",
             Image: (UIImage(named: "Plum.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 46,
+            TotalCalories: 46,
             TotalMinerals: 0.30,
             Carbohydrates: 11.4,
             Water: 0.86,
@@ -1516,20 +1458,20 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 9.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0001,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Pomegranate",
             Type: "Fruits",
             Image: (UIImage(named: "Pomegranate.png")) ?? .fruits,
             Weight: 300,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 165,
+            TotalCalories: 165,
             TotalMinerals: 2.40,
             Carbohydrates: 42.0,
             Water: 2.19,
@@ -1550,19 +1492,19 @@ struct FoodItems {
             Phosphorus: 0.12,
             Sodium: 0.003,
             Sugar: 42.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0010,
             VitaminK: 0.0005
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Pomelo",
             Type: "Fruits",
             Image: (UIImage(named: "Pomelo.png")) ?? .fruits,
             Weight: 1400,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 420,
+            TotalCalories: 420,
             TotalMinerals: 2.50,
             Carbohydrates: 105.0,
             Water: 8.08,
@@ -1583,19 +1525,19 @@ struct FoodItems {
             Phosphorus: 0.15,
             Sodium: 0.007,
             Sugar: 105.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0015,
             VitaminK: 0.0008
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Rambutan",
             Type: "Fruits",
             Image: (UIImage(named: "Rambutan.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 68,
+            TotalCalories: 68,
             TotalMinerals: 0.4,
             Carbohydrates: 16.5,
             Water: 0.82,
@@ -1616,19 +1558,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 16.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Raspberry",
             Type: "Fruits",
             Image: (UIImage(named: "Raspberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 52,
+            TotalCalories: 52,
             TotalMinerals: 1.1,
             Carbohydrates: 11.9,
             Water: 0.86,
@@ -1649,19 +1591,19 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 4.4,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0004,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Redberry",
             Type: "Fruits",
             Image: (UIImage(named: "Redberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 57,
+            TotalCalories: 57,
             TotalMinerals: 0.9,
             Carbohydrates: 14.0,
             Water: 0.84,
@@ -1682,19 +1624,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 8.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0003,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Carambola",
             Type: "Fruits",
             Image: (UIImage(named: "Carambola.png")) ?? .fruits,
             Weight: 220,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 66,
+            TotalCalories: 66,
             TotalMinerals: 0.7,
             Carbohydrates: 15.4,
             Water: 1.60,
@@ -1715,20 +1657,20 @@ struct FoodItems {
             Phosphorus: 0.04,
             Sodium: 0.001,
             Sugar: 14.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Strawberry",
             Type: "Fruits",
             Image: (UIImage(named: "Strawberry.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 32,
+            TotalCalories: 32,
             TotalMinerals: 0.6,
             Carbohydrates: 7.7,
             Water: 0.91,
@@ -1749,19 +1691,19 @@ struct FoodItems {
             Phosphorus: 0.02,
             Sodium: 0.001,
             Sugar: 4.9,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0002
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Tangerine",
             Type: "Fruits",
             Image: (UIImage(named: "Tangerine.png")) ?? .fruits,
             Weight: 140,
             PrecribedPerWeek: "2-3",
-            TotalCaluries: 56,
+            TotalCalories: 56,
             TotalMinerals: 0.7,
             Carbohydrates: 13.0,
             Water: 1.20,
@@ -1782,19 +1724,19 @@ struct FoodItems {
             Phosphorus: 0.03,
             Sodium: 0.001,
             Sugar: 12.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0002,
             VitaminK: 0.0001
         ))
 
 
-        foodItems.append(FoodItem(
+        fruits.append(FoodItem(
             Name: "Ugli Orange",
             Type: "Fruits",
             Image: (UIImage(named: "UgliOrange.png")) ?? .fruits,
             Weight: 325,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 143,
+            TotalCalories: 143,
             TotalMinerals: 1.2,
             Carbohydrates: 37.0,
             Water: 2.68,
@@ -1815,7 +1757,7 @@ struct FoodItems {
             Phosphorus: 0.07,
             Sodium: 0.002,
             Sugar: 37.0,
-            Sulfer: 0,
+            Sulfur: 0,
             VitaminE: 0.0003,
             VitaminK: 0.0002
         ))
@@ -1828,13 +1770,493 @@ struct FoodItems {
 
 
 
-        foodItems.append(FoodItem(
+        
+
+
+        
+        
+        //Dry fruits initilizations
+        
+        dryFruits.append(FoodItem(
+            Name: "Raisin",
+            Type: "Dry Fruits",
+            Image: (UIImage(named: "Raisin.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 299,
+            TotalMinerals: 3.0,
+            Carbohydrates: 79.0,
+            Water: 15.0,
+            Proteins: 3.1,
+            VitaminC: 2.3,
+            Iron: 0.003,
+            Calcium: 0.05,
+            Potassium: 0.75,
+            Fat: 0.5,
+            Fiber: 3.7,
+            Magnesium: 0.05,
+            VitaminB6: 0.07,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.0005,
+            Copper: 0.0010,
+            Manganese: 0.0020,
+            Phosphorus: 0.04,
+            Sodium: 0.002,
+            Sugar: 59.0,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Prune",
+            Type: "Dry Fruits",
+            Image: (UIImage(named: "Prune.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 240,
+            TotalMinerals: 2.0,
+            Carbohydrates: 64.0,
+            Water: 20.0,
+            Proteins: 2.0,
+            VitaminC: 0.0,
+            Iron: 0.003,
+            Calcium: 0.05,
+            Potassium: 0.30,
+            Fat: 0.3,
+            Fiber: 7.0,
+            Magnesium: 0.05,
+            VitaminB6: 0.02,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.0003,
+            Copper: 0.0003,
+            Manganese: 0.0010,
+            Phosphorus: 0.05,
+            Sodium: 0.002,
+            Sugar: 38.0,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Fig",
+            Type: "Dry Fruits",
+            Image: (UIImage(named: "Fig.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 74,
+            TotalMinerals: 0.8,
+            Carbohydrates: 19.2,
+            Water: 79.0,
+            Proteins: 0.8,
+            VitaminC: 2.0,
+            Iron: 0.002,
+            Calcium: 0.18,
+            Potassium: 0.17,
+            Fat: 0.3,
+            Fiber: 2.9,
+            Magnesium: 0.07,
+            VitaminB6: 0.03,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0002,
+            Manganese: 0.0010,
+            Phosphorus: 0.03,
+            Sodium: 0.001,
+            Sugar: 16.3,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+
+        dryFruits.append(FoodItem(
+            Name: "Fresh Fig",
+            Type: "Fruits",
+            Image: (UIImage(named: "FreshFig.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 74,
+            TotalMinerals: 0.3,
+            Carbohydrates: 19.2,
+            Water: 79.0,
+            Proteins: 0.8,
+            VitaminC: 2.0,
+            Iron: 0.001,
+            Calcium: 0.18,
+            Potassium: 0.17,
+            Fat: 0.3,
+            Fiber: 2.9,
+            Magnesium: 0.07,
+            VitaminB6: 0.03,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0002,
+            Manganese: 0.0010,
+            Phosphorus: 0.03,
+            Sodium: 0.001,
+            Sugar: 16.3,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Almond",
+            Type: "Nuts",
+            Image: (UIImage(named: "Almond.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 579,
+            TotalMinerals: 5.0,
+            Carbohydrates: 21.6,
+            Water: 4.4,
+            Proteins: 21.1,
+            VitaminC: 0.0,
+            Iron: 0.0037,
+            Calcium: 0.269,
+            Potassium: 0.705,
+            Fat: 49.4,
+            Fiber: 12.5,
+            Magnesium: 0.270,
+            VitaminB6: 0.14,
+            VitaminB2: 0.34,
+            VitaminA: 0.0005,
+            Zinc: 0.003,
+            Copper: 0.001,
+            Manganese: 0.003,
+            Phosphorus: 0.48,
+            Sodium: 0.001,
+            Sugar: 4.2,
+            Sulfur: 0,
+            VitaminE: 25.6,
+            VitaminK: 0.0002
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Cashew",
+            Type: "Nuts",
+            Image: (UIImage(named: "Cashew.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 553,
+            TotalMinerals: 4.7,
+            Carbohydrates: 30.2,
+            Water: 5.0,
+            Proteins: 18.2,
+            VitaminC: 0.5,
+            Iron: 0.006,
+            Calcium: 0.37,
+            Potassium: 0.565,
+            Fat: 43.9,
+            Fiber: 3.3,
+            Magnesium: 0.292,
+            VitaminB6: 0.06,
+            VitaminB2: 0.06,
+            VitaminA: 0.0002,
+            Zinc: 0.0009,
+            Copper: 0.0019,
+            Manganese: 0.0017,
+            Phosphorus: 0.57,
+            Sodium: 0.003,
+            Sugar: 5.9,
+            Sulfur: 0,
+            VitaminE: 0.9,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Pistachio",
+            Type: "Nuts",
+            Image: (UIImage(named: "Pistachio.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 562,
+            TotalMinerals: 4.0,
+            Carbohydrates: 28.0,
+            Water: 4.0,
+            Proteins: 20.2,
+            VitaminC: 1.2,
+            Iron: 0.0039,
+            Calcium: 0.10,
+            Potassium: 0.12,
+            Fat: 45.4,
+            Fiber: 10.6,
+            Magnesium: 0.12,
+            VitaminB6: 0.15,
+            VitaminB2: 0.14,
+            VitaminA: 0.0002,
+            Zinc: 0.0009,
+            Copper: 0.0012,
+            Manganese: 0.0011,
+            Phosphorus: 0.49,
+            Sodium: 0.002,
+            Sugar: 7.8,
+            Sulfur: 0,
+            VitaminE: 0.0,
+            VitaminK: 0.0001
+        ))
+
+
+
+        dryFruits.append(FoodItem(
+            Name: "Dried Dates",
+            Type: "Dry Fruits",
+            Image: (UIImage(named: "DriedDates.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 277,
+            TotalMinerals: 2.0,
+            Carbohydrates: 75.0,
+            Water: 15.0,
+            Proteins: 2.0,
+            VitaminC: 0.4,
+            Iron: 0.9,
+            Calcium: 0.064,
+            Potassium: 0.696,
+            Fat: 0.2,
+            Fiber: 6.7,
+            Magnesium: 0.054,
+            VitaminB6: 0.02,
+            VitaminB2: 0.01,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0004,
+            Manganese: 0.0009,
+            Phosphorus: 0.05,
+            Sodium: 0.001,
+            Sugar: 66.0,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+
+        dryFruits.append(FoodItem(
+            Name: "Walnut",
+            Type: "Nuts",
+            Image: (UIImage(named: "Walnut.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 654,
+            TotalMinerals: 6.0,
+            Carbohydrates: 13.7,
+            Water: 4.0,
+            Proteins: 15.2,
+            VitaminC: 1.3,
+            Iron: 0.038,
+            Calcium: 0.98,
+            Potassium: 0.441,
+            Fat: 65.2,
+            Fiber: 6.7,
+            Magnesium: 0.158,
+            VitaminB6: 0.14,
+            VitaminB2: 0.14,
+            VitaminA: 0.0001,
+            Zinc: 0.003,
+            Copper: 0.0016,
+            Manganese: 0.0036,
+            Phosphorus: 0.34,
+            Sodium: 0.001,
+            Sugar: 2.6,
+            Sulfur: 0,
+            VitaminE: 0.7,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Peanut",
+            Type: "Nuts",
+            Image: (UIImage(named: "Peanut.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 567,
+            TotalMinerals: 3.0,
+            Carbohydrates: 16.1,
+            Water: 7.0,
+            Proteins: 25.8,
+            VitaminC: 0.0,
+            Iron: 0.003,
+            Calcium: 0.92,
+            Potassium: 0.705,
+            Fat: 49.2,
+            Fiber: 8.5,
+            Magnesium: 0.168,
+            VitaminB6: 0.13,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.003,
+            Copper: 0.0018,
+            Manganese: 0.0019,
+            Phosphorus: 0.34,
+            Sodium: 0.02,
+            Sugar: 4.7,
+            Sulfur: 0,
+            VitaminE: 0.0,
+            VitaminK: 0.0001
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Coconut",
+            Type: "Fruits",
+            Image: (UIImage(named: "Coconut.png")) ?? .fruits,
+            Weight: 260,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 354,
+            TotalMinerals: 4.0,
+            Carbohydrates: 15.2,
+            Water: 6.0,
+            Proteins: 3.3,
+            VitaminC: 3.3,
+            Iron: 0.003,
+            Calcium: 0.34,
+            Potassium: 0.56,
+            Fat: 33.1,
+            Fiber: 9.0,
+            Magnesium: 0.91,
+            VitaminB6: 0.07,
+            VitaminB2: 0.03,
+            VitaminA: 0.0001,
+            Zinc: 0.0007,
+            Copper: 0.0008,
+            Manganese: 0.005,
+            Phosphorus: 0.34,
+            Sodium: 0.003,
+            Sugar: 6.0,
+            Sulfur: 0,
+            VitaminE: 0.1,
+            VitaminK: 0.0002
+        ))
+
+
+        dryFruits.append(FoodItem(
+            Name: "Sultanas",
+            Type: "Dry Fruits",
+            Image: (UIImage(named: "Sultanas.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 299,
+            TotalMinerals: 2.2,
+            Carbohydrates: 79.0,
+            Water: 15.0,
+            Proteins: 2.5,
+            VitaminC: 0.0,
+            Iron: 0.003,
+            Calcium: 0.060,
+            Potassium: 0.749,
+            Fat: 0.5,
+            Fiber: 3.7,
+            Magnesium: 0.043,
+            VitaminB6: 0.02,
+            VitaminB2: 0.01,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0004,
+            Manganese: 0.0009,
+            Phosphorus: 0.05,
+            Sodium: 0.001,
+            Sugar: 65.0,
+            Sulfur: 0,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+
+        dryFruits.append(FoodItem(
+            Name: "Hazelnut",
+            Type: "Nuts",
+            Image: (UIImage(named: "Hazelnut.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "7-14",
+            TotalCalories: 628,
+            TotalMinerals: 4.0,
+            Carbohydrates: 16.7,
+            Water: 5.0,
+            Proteins: 14.1,
+            VitaminC: 0.0,
+            Iron: 0.004,
+            Calcium: 0.114,
+            Potassium: 0.680,
+            Fat: 60.8,
+            Fiber: 9.7,
+            Magnesium: 0.163,
+            VitaminB6: 0.07,
+            VitaminB2: 0.04,
+            VitaminA: 0.0001,
+            Zinc: 0.003,
+            Copper: 0.0015,
+            Manganese: 0.002,
+            Phosphorus: 0.41,
+            Sodium: 0.001,
+            Sugar: 4.3,
+            Sulfur: 0,
+            VitaminE: 15.03,
+            VitaminK: 0.0001
+        ))
+
+
+
+        dryFruits.append(FoodItem(
+            Name: "Makhana",
+            Type: "Seeds",
+            Image: (UIImage(named: "Makhana.png")) ?? .fruits,
+            Weight: 100,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 350,
+            TotalMinerals: 1.7,
+            Carbohydrates: 76.0,
+            Water: 7.0,
+            Proteins: 9.0,
+            VitaminC: 0.0,
+            Iron: 0.004,
+            Calcium: 0.03,
+            Potassium: 0.50,
+            Fat: 0.1,
+            Fiber: 14.0,
+            Magnesium: 0.15,
+            VitaminB6: 0.04,
+            VitaminB2: 0.02,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0003,
+            Manganese: 0.0005,
+            Phosphorus: 0.07,
+            Sodium: 0.002,
+            Sugar: 0.1,
+            Sulfur: 0,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+        
+        
+        
+        
+        
+        
+        // Vegetables initilization
+        
+        vegetables.append(FoodItem(
             Name: "Rhubarb",
             Type: "Vegetables",
             Image: (UIImage(named: "Rhubarb.png")) ?? .fruits,
             Weight: 100,
             PrecribedPerWeek: "1-2",
-            TotalCaluries: 21,
+            TotalCalories: 21,
             TotalMinerals: 1.4,
             Carbohydrates: 4.5,
             Water: 1.91,
@@ -1855,18 +2277,2623 @@ struct FoodItems {
             Phosphorus: 0.01,
             Sodium: 0.001,
             Sugar: 1.0,
-            Sulfer: 0,
+            Sulfur: 0,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+        
+        
+        vegetables.append(FoodItem(
+            Name: "Alfalfa",
+            Type: "Sprout",
+            Image: (UIImage(named: "Alfalfa.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 23.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 2.0,
+            Water: 92.0,
+            Proteins: 4.0,
+            VitaminC: 0.011,
+            Iron: 0.0011,
+            Calcium: 0.080,
+            Potassium: 0.260,
+            Fat: 0.2,
+            Fiber: 0.8,
+            Magnesium: 0.015,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.020,
+            Sodium: 0.002,
+            Sugar: 0.01,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0005
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Artichoke",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Artichoke.png")) ?? .vegetables,
+            Weight: 125.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 49.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 11.0,
+            Water: 87.0,
+            Proteins: 2.9,
+            VitaminC: 0.090,
+            Iron: 0.0020,
+            Calcium: 0.065,
+            Potassium: 0.370,
+            Fat: 0.2,
+            Fiber: 5.4,
+            Magnesium: 0.060,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.038,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.0006
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Asparagus",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Asparagus.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 20.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 3.7,
+            Water: 93.0,
+            Proteins: 2.2,
+            VitaminC: 0.025,
+            Iron: 0.0015,
+            Calcium: 0.024,
+            Potassium: 0.202,
+            Fat: 0.2,
+            Fiber: 2.2,
+            Magnesium: 0.015,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0003,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.021,
+            Sodium: 0.002,
+            Sugar: 0.01,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0003
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Beet Greens",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "BeetGreens.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 22.0,
+            TotalMinerals: 0.40,
+            Carbohydrates: 4.0,
+            Water: 91.0,
+            Proteins: 2.2,
+            VitaminC: 0.060,
+            Iron: 0.0016,
+            Calcium: 0.100,
+            Potassium: 0.325,
+            Fat: 0.2,
+            Fiber: 3.0,
+            Magnesium: 0.080,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0008,
+            Zinc: 0.0004,
+            Copper: 0.0002,
+            Manganese: 0.0007,
+            Phosphorus: 0.040,
+            Sodium: 0.003,
+            Sugar: 0.02,
+            Sulfur: 0.0003,
+            VitaminE: 0.0001,
+            VitaminK: 0.0015
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Beets",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "Beets.png")) ?? .vegetables,
+            Weight: 140.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 43.0,
+            TotalMinerals: 0.14,
+            Carbohydrates: 10.0,
+            Water: 88.0,
+            Proteins: 1.6,
+            VitaminC: 0.037,
+            Iron: 0.0010,
+            Calcium: 0.045,
+            Potassium: 0.325,
+            Fat: 0.2,
+            Fiber: 2.0,
+            Magnesium: 0.025,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.030,
+            Sodium: 0.002,
+            Sugar: 0.04,
+            Sulfur: 0.0002,
             VitaminE: 0.0001,
             VitaminK: 0.0002
         ))
 
 
-      
-    }
-    
-    
+        vegetables.append(FoodItem(
+            Name: "Bell Peppers",
+            Type: "Vegetable",
+            Image: (UIImage(named: "BellPeppers.png")) ?? .vegetables,
+            Weight: 110.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 31.0,
+            TotalMinerals: 0.17,
+            Carbohydrates: 6.0,
+            Water: 92.0,
+            Proteins: 1.0,
+            VitaminC: 0.160,
+            Iron: 0.0010,
+            Calcium: 0.014,
+            Potassium: 0.250,
+            Fat: 0.3,
+            Fiber: 2.2,
+            Magnesium: 0.015,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0010,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.020,
+            Sodium: 0.001,
+            Sugar: 0.05,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
 
-    
-    
+
+        vegetables.append(FoodItem(
+            Name: "Bok Choy",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "BokChoy.png")) ?? .vegetables,
+            Weight: 235.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 13.0,
+            TotalMinerals: 0.10,
+            Carbohydrates: 2.2,
+            Water: 94.0,
+            Proteins: 1.5,
+            VitaminC: 0.030,
+            Iron: 0.0010,
+            Calcium: 0.073,
+            Potassium: 0.320,
+            Fat: 0.2,
+            Fiber: 1.0,
+            Magnesium: 0.022,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0010,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.027,
+            Sodium: 0.001,
+            Sugar: 0.02,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0004
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Bottle Gourd",
+            Type: "Vegetable",
+            Image: (UIImage(named: "BottleGourd.png")) ?? .vegetables,
+            Weight: 450.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 14.0,
+            TotalMinerals: 0.10,
+            Carbohydrates: 3.8,
+            Water: 96.0,
+            Proteins: 0.6,
+            VitaminC: 0.020,
+            Iron: 0.0007,
+            Calcium: 0.020,
+            Potassium: 0.140,
+            Fat: 0.1,
+            Fiber: 1.0,
+            Magnesium: 0.014,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.015,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Broccoli",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Broccoli.png")) ?? .vegetables,
+            Weight: 275.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 95.0,
+            TotalMinerals: 0.45,
+            Carbohydrates: 6.6,
+            Water: 89.0,
+            Proteins: 8.0,
+            VitaminC: 0.156,
+            Iron: 0.0024,
+            Calcium: 0.091,
+            Potassium: 0.520,
+            Fat: 0.8,
+            Fiber: 2.6,
+            Magnesium: 0.053,
+            VitaminB6: 0.0006,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0010,
+            Zinc: 0.0005,
+            Copper: 0.0002,
+            Manganese: 0.0006,
+            Phosphorus: 0.050,
+            Sodium: 0.003,
+            Sugar: 0.03,
+            Sulfur: 0.0004,
+            VitaminE: 0.0003,
+            VitaminK: 0.0006
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Broccoli Rabe",
+            Type: "Vegetable",
+            Image: (UIImage(named: "BroccoliRabe.png")) ?? .vegetables,
+            Weight: 180.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 45.0,
+            TotalMinerals: 0.27,
+            Carbohydrates: 4.0,
+            Water: 91.0,
+            Proteins: 4.0,
+            VitaminC: 0.080,
+            Iron: 0.0018,
+            Calcium: 0.110,
+            Potassium: 0.340,
+            Fat: 0.6,
+            Fiber: 3.0,
+            Magnesium: 0.030,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0009,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0005,
+            Phosphorus: 0.036,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0012
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Brussels Sprouts",
+            Type: "Vegetable",
+            Image: (UIImage(named: "BrusselsSprouts.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 43.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 9.0,
+            Water: 86.0,
+            Proteins: 3.4,
+            VitaminC: 0.085,
+            Iron: 0.0015,
+            Calcium: 0.042,
+            Potassium: 0.389,
+            Fat: 0.3,
+            Fiber: 3.8,
+            Magnesium: 0.023,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0006,
+            Zinc: 0.0002,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.045,
+            Sodium: 0.004,
+            Sugar: 0.06,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.0012
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Cauliflower",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Cauliflower.png")) ?? .vegetables,
+            Weight: 600.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 150.0,
+            TotalMinerals: 0.15,
+            Carbohydrates: 12.0,
+            Water: 92.0,
+            Proteins: 5.0,
+            VitaminC: 0.144,
+            Iron: 0.0030,
+            Calcium: 0.075,
+            Potassium: 0.270,
+            Fat: 0.6,
+            Fiber: 6.0,
+            Magnesium: 0.036,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0012,
+            Zinc: 0.0004,
+            Copper: 0.0003,
+            Manganese: 0.0006,
+            Phosphorus: 0.045,
+            Sodium: 0.003,
+            Sugar: 0.04,
+            Sulfur: 0.0003,
+            VitaminE: 0.0003,
+            VitaminK: 0.0008
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Carrots",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Carrots.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 41.0,
+            TotalMinerals: 0.28,
+            Carbohydrates: 9.6,
+            Water: 88.0,
+            Proteins: 0.9,
+            VitaminC: 0.030,
+            Iron: 0.0007,
+            Calcium: 0.033,
+            Potassium: 0.320,
+            Fat: 0.2,
+            Fiber: 2.8,
+            Magnesium: 0.012,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0010,
+            Zinc: 0.0003,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.030,
+            Sodium: 0.002,
+            Sugar: 0.05,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Celery",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Celery.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 16.0,
+            TotalMinerals: 0.18,
+            Carbohydrates: 3.0,
+            Water: 95.0,
+            Proteins: 0.7,
+            VitaminC: 0.027,
+            Iron: 0.0007,
+            Calcium: 0.040,
+            Potassium: 0.260,
+            Fat: 0.2,
+            Fiber: 1.6,
+            Magnesium: 0.012,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.020,
+            Sodium: 0.080,
+            Sugar: 0.02,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0004
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Collard Greens",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "CollardGreens.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 32.0,
+            TotalMinerals: 0.53,
+            Carbohydrates: 6.0,
+            Water: 90.0,
+            Proteins: 3.0,
+            VitaminC: 0.035,
+            Iron: 0.0040,
+            Calcium: 0.232,
+            Potassium: 0.360,
+            Fat: 0.6,
+            Fiber: 4.0,
+            Magnesium: 0.044,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0060,
+            Zinc: 0.0005,
+            Copper: 0.0002,
+            Manganese: 0.0008,
+            Phosphorus: 0.050,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0012
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Crookneck Squash",
+            Type: "Vegetable",
+            Image: (UIImage(named: "CrookneckSquash.png")) ?? .vegetables,
+            Weight: 250.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 16.0,
+            TotalMinerals: 0.08,
+            Carbohydrates: 3.6,
+            Water: 95.0,
+            Proteins: 0.6,
+            VitaminC: 0.021,
+            Iron: 0.0005,
+            Calcium: 0.015,
+            Potassium: 0.220,
+            Fat: 0.2,
+            Fiber: 1.0,
+            Magnesium: 0.010,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0008,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.012,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Daikon Radish",
+            Type: "Vegetable",
+            Image: (UIImage(named: "DaikonRadish.png")) ?? .vegetables,
+            Weight: 270.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 30.0,
+            TotalMinerals: 0.19,
+            Carbohydrates: 6.0,
+            Water: 95.0,
+            Proteins: 0.7,
+            VitaminC: 0.027,
+            Iron: 0.0010,
+            Calcium: 0.020,
+            Potassium: 0.300,
+            Fat: 0.1,
+            Fiber: 1.6,
+            Magnesium: 0.013,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.002,
+            Sugar: 0.03,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Dandelion Greens",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "DandelionGreens.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 45.0,
+            TotalMinerals: 0.60,
+            Carbohydrates: 9.0,
+            Water: 85.0,
+            Proteins: 2.7,
+            VitaminC: 0.050,
+            Iron: 0.0030,
+            Calcium: 0.187,
+            Potassium: 0.397,
+            Fat: 0.7,
+            Fiber: 3.5,
+            Magnesium: 0.042,
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0050,
+            Zinc: 0.0004,
+            Copper: 0.0002,
+            Manganese: 0.0008,
+            Phosphorus: 0.060,
+            Sodium: 0.002,
+            Sugar: 0.05,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0015
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Eggplant",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Eggplant.png")) ?? .vegetables,
+            Weight: 230.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 28.0,
+            TotalMinerals: 0.18,
+            Carbohydrates: 6.0,
+            Water: 92.0,
+            Proteins: 1.0,
+            VitaminC: 0.020,
+            Iron: 0.0007,
+            Calcium: 0.015,
+            Potassium: 0.250,
+            Fat: 0.2,
+            Fiber: 2.5,
+            Magnesium: 0.015,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0004,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.003,
+            Sugar: 0.03,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.0003
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Endive",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Endive.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 17.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 3.4,
+            Water: 94.0,
+            Proteins: 1.0,
+            VitaminC: 0.030,
+            Iron: 0.0010,
+            Calcium: 0.024,
+            Potassium: 0.230,
+            Fat: 0.2,
+            Fiber: 1.3,
+            Magnesium: 0.013,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0003,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.002,
+            Sugar: 0.03,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0005
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Garlic",
+            Type: "Herb",
+            Image: (UIImage(named: "Garlic.png")) ?? .herbs,
+            Weight: 100.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 149.0,
+            TotalMinerals: 1.35,
+            Carbohydrates: 33.1,
+            Water: 58.0,
+            Proteins: 6.4,
+            VitaminC: 0.031,
+            Iron: 0.0012,
+            Calcium: 0.181,
+            Potassium: 0.401,
+            Fat: 0.5,
+            Fiber: 2.1,
+            Magnesium: 0.025,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0005,
+            Zinc: 0.0010,
+            Copper: 0.0003,
+            Manganese: 0.0011,
+            Phosphorus: 0.060,
+            Sodium: 0.010,
+            Sugar: 0.03,
+            Sulfur: 0.003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Green Amaranth Leaves",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "GreenAmaranthLeaves.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 23.0,
+            TotalMinerals: 0.55,
+            Carbohydrates: 4.7,
+            Water: 88.0,
+            Proteins: 2.6,
+            VitaminC: 0.070,
+            Iron: 0.0040,
+            Calcium: 0.218,
+            Potassium: 0.320,
+            Fat: 0.3,
+            Fiber: 2.1,
+            Magnesium: 0.070,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0020,
+            Zinc: 0.0004,
+            Copper: 0.0002,
+            Manganese: 0.0005,
+            Phosphorus: 0.060,
+            Sodium: 0.003,
+            Sugar: 0.02,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.0010
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Green Onions",
+            Type: "Vegetable",
+            Image: (UIImage(named: "GreenOnions.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 32.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 7.3,
+            Water: 90.0,
+            Proteins: 1.5,
+            VitaminC: 0.027,
+            Iron: 0.0010,
+            Calcium: 0.026,
+            Potassium: 0.230,
+            Fat: 0.2,
+            Fiber: 2.6,
+            Magnesium: 0.017,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0003,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.020,
+            Sodium: 0.003,
+            Sugar: 0.05,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0005
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Jicama",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Jicama.png")) ?? .vegetables,
+            Weight: 275.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 38.0,
+            TotalMinerals: 0.32,
+            Carbohydrates: 8.0,
+            Water: 90.0,
+            Proteins: 0.7,
+            VitaminC: 0.028,
+            Iron: 0.0008,
+            Calcium: 0.013,
+            Potassium: 0.300,
+            Fat: 0.1,
+            Fiber: 4.9,
+            Magnesium: 0.017,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.015,
+            Sodium: 0.003,
+            Sugar: 0.05,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Kale",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Kale.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 49.0,
+            TotalMinerals: 0.75,
+            Carbohydrates: 8.8,
+            Water: 84.0,
+            Proteins: 4.3,
+            VitaminC: 0.120,
+            Iron: 0.0028,
+            Calcium: 0.150,
+            Potassium: 0.491,
+            Fat: 0.9,
+            Fiber: 3.6,
+            Magnesium: 0.033,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0006,
+            Zinc: 0.0004,
+            Copper: 0.0002,
+            Manganese: 0.0008,
+            Phosphorus: 0.050,
+            Sodium: 0.002,
+            Sugar: 0.06,
+            Sulfur: 0.0004,
+            VitaminE: 0.0005,
+            VitaminK: 0.0010
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Kimchi",
+            Type: "Fermented Food",
+            Image: (UIImage(named: "Kimchi.png")) ?? .vegetables,
+            Weight: 190.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 57.0,
+            TotalMinerals: 0.2,
+            Carbohydrates: 12.0,
+            Water: 165.0,
+            Proteins: 1.9,
+            VitaminC: 0.02,
+            Iron: 0.0006,
+            Calcium: 0.06,
+            Potassium: 0.275,
+            Fat: 0.009,
+            Fiber: 0.02,
+            Magnesium: 0.022,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.001,
+            Zinc: 0.0003,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.035,
+            Sodium: 0.95,
+            Sugar: 0.0025,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.03
+        ))
+
+
+
+        vegetables.append(FoodItem(
+        vegetables.append(FoodItem(
+            Name: "Kohlrabi",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Kohlrabi.png")) ?? .vegetables,
+            Weight: 160.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 36.0,
+            TotalMinerals: 0.24,
+            Carbohydrates: 12.8,
+            Water: 140.0,
+            Proteins: 3.2,
+            VitaminC: 0.062,
+            Iron: 0.0096,
+            Calcium: 0.064,
+            Potassium: 0.560,
+            Fat: 0.016,
+            Fiber: 5.76,
+            Magnesium: 0.032,
+            VitaminB6: 0.00016,
+            VitaminB2: 0.00016,
+            VitaminA: 0.00016,
+            Zinc: 0.00032,
+            Copper: 0.00016,
+            Manganese: 0.00032,
+            Phosphorus: 0.040,
+            Sodium: 0.032,
+            Sugar: 0.004,
+            Sulfur: 0.00016,
+            VitaminE: 0.00016,
+            VitaminK: 0.00032
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Leeks",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Leeks.png")) ?? .vegetables,
+            Weight: 140.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 61.0,
+            TotalMinerals: 0.18,
+            Carbohydrates: 14.0,
+            Water: 120.0,
+            Proteins: 1.5,
+            VitaminC: 0.012,
+            Iron: 0.0015,
+            Calcium: 0.059,
+            Potassium: 0.320,
+            Fat: 0.003,
+            Fiber: 1.8,
+            Magnesium: 0.017,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.035,
+            Sodium: 0.020,
+            Sugar: 0.0025,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.000040
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Lettuce",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Lettuce.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 15.0,
+            TotalMinerals: 0.012,
+            Carbohydrates: 2.9,
+            Water: 95.0,
+            Proteins: 1.4,
+            VitaminC: 0.002,
+            Iron: 0.0006,
+            Calcium: 0.036,
+            Potassium: 0.194,
+            Fat: 0.2,
+            Fiber: 1.0,
+            Magnesium: 0.013,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.00074,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.00029,
+            Sodium: 0.028,
+            Sugar: 0.0008,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.000062
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Lotus Root",
+            Type: "Vegetable",
+            Image: (UIImage(named: "LotusRoot.png")) ?? .vegetables,
+            Weight: 250.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 74.0,
+            TotalMinerals: 0.45,
+            Carbohydrates: 17.0,
+            Water: 223.0,
+            Proteins: 2.6,
+            VitaminC: 0.025,
+            Iron: 0.0015,
+            Calcium: 0.073,
+            Potassium: 0.500,
+            Fat: 0.1,
+            Fiber: 2.6,
+            Magnesium: 0.040,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.065,
+            Sodium: 0.005,
+            Sugar: 0.017,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Mushroom",
+            Type: "Fungus",
+            Image: (UIImage(named: "Mushroom.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "7",
+            TotalCalories: 22.0,
+            TotalMinerals: 0.01,
+            Carbohydrates: 3.3,
+            Water: 91.0,
+            Proteins: 3.1,
+            VitaminC: 0.001,
+            Iron: 0.0005,
+            Calcium: 0.002,
+            Potassium: 0.31,
+            Fat: 0.003,
+            Fiber: 1.0,
+            Magnesium: 0.008,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.017,
+            Sodium: 0.003,
+            Sugar: 0.001,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.00001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Mustard Greens",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "MustardGreens.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "4-5",
+            TotalCalories: 27.0,
+            TotalMinerals: 0.04,
+            Carbohydrates: 4.0,
+            Water: 91.0,
+            Proteins: 2.8,
+            VitaminC: 0.060,
+            Iron: 0.0016,
+            Calcium: 0.115,
+            Potassium: 0.300,
+            Fat: 0.2,
+            Fiber: 3.2,
+            Magnesium: 0.027,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0010,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0006,
+            Phosphorus: 0.035,
+            Sodium: 0.010,
+            Sugar: 0.0015,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.0006
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Okra",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Okra.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 33.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 7.5,
+            Water: 90.0,
+            Proteins: 2.0,
+            VitaminC: 0.030,
+            Iron: 0.0008,
+            Calcium: 0.070,
+            Potassium: 0.299,
+            Fat: 0.2,
+            Fiber: 3.2,
+            Magnesium: 0.060,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0005,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.030,
+            Sodium: 0.004,
+            Sugar: 0.002,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0005
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Onion",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Onion.png")) ?? .vegetables,
+            Weight: 160.0,
+            PrecribedPerWeek: "4-5",
+            TotalCalories: 64.0,
+            TotalMinerals: 0.16,
+            Carbohydrates: 14.0,
+            Water: 144.0,
+            Proteins: 1.6,
+            VitaminC: 0.022,
+            Iron: 0.0022,
+            Calcium: 0.048,
+            Potassium: 0.320,
+            Fat: 0.16,
+            Fiber: 2.6,
+            Magnesium: 0.016,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.027,
+            Sodium: 0.008,
+            Sugar: 0.008,
+            Sulfur: 0.0004,
+            VitaminE: 0.0002,
+            VitaminK: 0.00003
+        ))
+
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Parsley",
+            Type: "Herb",
+            Image: (UIImage(named: "Parsley.png")) ?? .herbs,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 36.0,
+            TotalMinerals: 0.25,
+            Carbohydrates: 6.0,
+            Water: 84.0,
+            Proteins: 3.0,
+            VitaminC: 0.133,
+            Iron: 0.006,
+            Calcium: 0.200,
+            Potassium: 0.550,
+            Fat: 0.07,
+            Fiber: 2.0,
+            Magnesium: 0.050,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0004,
+            VitaminA: 0.008,
+            Zinc: 0.0005,
+            Copper: 0.0004,
+            Manganese: 0.0007,
+            Phosphorus: 0.036,
+            Sodium: 0.009,
+            Sugar: 0.001,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.002
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Parsnips",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "Parsnips.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 75.0,
+            TotalMinerals: 0.16,
+            Carbohydrates: 18.0,
+            Water: 79.0,
+            Proteins: 1.2,
+            VitaminC: 0.017,
+            Iron: 0.0014,
+            Calcium: 0.034,
+            Potassium: 0.400,
+            Fat: 0.3,
+            Fiber: 4.9,
+            Magnesium: 0.030,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.028,
+            Sodium: 0.002,
+            Sugar: 0.007,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Potato",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Potato.png")) ?? .vegetables,
+            Weight: 130.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 104.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 23.0,
+            Water: 105.0,
+            Proteins: 2.5,
+            VitaminC: 0.029,
+            Iron: 0.0017,
+            Calcium: 0.032,
+            Potassium: 0.450,
+            Fat: 0.1,
+            Fiber: 2.6,
+            Magnesium: 0.022,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.032,
+            Sodium: 0.002,
+            Sugar: 0.010,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Pumpkin",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Pumpkin.png")) ?? .vegetables,
+            Weight: 1300.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 340.0,
+            TotalMinerals: 0.15,
+            Carbohydrates: 80.0,
+            Water: 1170.0,
+            Proteins: 5.2,
+            VitaminC: 0.156,
+            Iron: 0.014,
+            Calcium: 0.130,
+            Potassium: 1.050,
+            Fat: 0.6,
+            Fiber: 10.4,
+            Magnesium: 0.074,
+            VitaminB6: 0.0013,
+            VitaminB2: 0.0006,
+            VitaminA: 0.0034,
+            Zinc: 0.0010,
+            Copper: 0.0006,
+            Manganese: 0.0012,
+            Phosphorus: 0.090,
+            Sodium: 0.013,
+            Sugar: 0.037,
+            Sulfur: 0.0006,
+            VitaminE: 0.0008,
+            VitaminK: 0.0009
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Purple Sweet Potato",
+            Type: "Vegetable",
+            Image: (UIImage(named: "PurpleSweetPotato.png")) ?? .vegetables,
+            Weight: 140.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 119.0,
+            TotalMinerals: 0.16,
+            Carbohydrates: 28.0,
+            Water: 99.0,
+            Proteins: 1.6,
+            VitaminC: 0.037,
+            Iron: 0.0021,
+            Calcium: 0.040,
+            Potassium: 0.460,
+            Fat: 0.2,
+            Fiber: 3.0,
+            Magnesium: 0.028,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0004,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.040,
+            Sodium: 0.001,
+            Sugar: 0.015,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Radicchio",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Radicchio.png")) ?? .vegetables,
+            Weight: 155.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 43.0,
+            TotalMinerals: 0.15,
+            Carbohydrates: 9.6,
+            Water: 139.0,
+            Proteins: 1.7,
+            VitaminC: 0.017,
+            Iron: 0.0022,
+            Calcium: 0.070,
+            Potassium: 0.280,
+            Fat: 0.3,
+            Fiber: 3.0,
+            Magnesium: 0.017,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0003,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.027,
+            Sodium: 0.002,
+            Sugar: 0.003,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0025
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Radish",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "Radish.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 16.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 3.4,
+            Water: 95.0,
+            Proteins: 0.7,
+            VitaminC: 0.027,
+            Iron: 0.0003,
+            Calcium: 0.020,
+            Potassium: 0.230,
+            Fat: 0.1,
+            Fiber: 1.6,
+            Magnesium: 0.013,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.015,
+            Sodium: 0.001,
+            Sugar: 0.002,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Red Cabbage",
+            Type: "Vegetable",
+            Image: (UIImage(named: "RedCabbage.png")) ?? .vegetables,
+            Weight: 850.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 255.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 58.0,
+            Water: 680.0,
+            Proteins: 5.3,
+            VitaminC: 0.085,
+            Iron: 0.0036,
+            Calcium: 0.092,
+            Potassium: 0.780,
+            Fat: 0.7,
+            Fiber: 14.0,
+            Magnesium: 0.051,
+            VitaminB6: 0.0014,
+            VitaminB2: 0.0008,
+            VitaminA: 0.0013,
+            Zinc: 0.0008,
+            Copper: 0.0006,
+            Manganese: 0.0012,
+            Phosphorus: 0.068,
+            Sodium: 0.008,
+            Sugar: 0.015,
+            Sulfur: 0.0005,
+            VitaminE: 0.0002,
+            VitaminK: 0.0014
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Red Onion",
+            Type: "Vegetable",
+            Image: (UIImage(named: "RedOnion.png")) ?? .vegetables,
+            Weight: 145.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 68.0,
+            TotalMinerals: 0.19,
+            Carbohydrates: 16.0,
+            Water: 127.0,
+            Proteins: 1.6,
+            VitaminC: 0.027,
+            Iron: 0.0025,
+            Calcium: 0.048,
+            Potassium: 0.320,
+            Fat: 0.16,
+            Fiber: 2.6,
+            Magnesium: 0.021,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.030,
+            Sodium: 0.002,
+            Sugar: 0.011,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.00005
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Rutabaga",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "Rutabaga.png")) ?? .vegetables,
+            Weight: 400.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 96.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 22.0,
+            Water: 320.0,
+            Proteins: 1.5,
+            VitaminC: 0.055,
+            Iron: 0.0028,
+            Calcium: 0.080,
+            Potassium: 0.320,
+            Fat: 0.6,
+            Fiber: 3.2,
+            Magnesium: 0.020,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0002,
+            Zinc: 0.0003,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.032,
+            Sodium: 0.002,
+            Sugar: 0.006,
+            Sulfur: 0.0003,
+            VitaminE: 0.0001,
+            VitaminK: 0.0002
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Sauerkraut",
+            Type: "Fermented Vegetable",
+            Image: (UIImage(named: "Sauerkraut.png")) ?? .vegetables,
+            Weight: 185.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 50.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 11.0,
+            Water: 150.0,
+            Proteins: 1.0,
+            VitaminC: 0.020,
+            Iron: 0.0012,
+            Calcium: 0.025,
+            Potassium: 0.180,
+            Fat: 0.2,
+            Fiber: 2.5,
+            Magnesium: 0.015,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.00005,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.025,
+            Sugar: 0.004,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0003
+        ))
+
+
+
+        vegetables.append(FoodItem(
+            Name: "Shallots",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Shallots.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 72.0,
+            TotalMinerals: 0.14,
+            Carbohydrates: 16.8,
+            Water: 80.0,
+            Proteins: 2.5,
+            VitaminC: 0.033,
+            Iron: 0.0015,
+            Calcium: 0.030,
+            Potassium: 0.300,
+            Fat: 0.1,
+            Fiber: 3.0,
+            Magnesium: 0.020,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.028,
+            Sodium: 0.001,
+            Sugar: 0.009,
+            Sulfur: 0.0003,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Spaghetti Squash",
+            Type: "Vegetable",
+            Image: (UIImage(named: "SpaghettiSquash.png")) ?? .vegetables,
+            Weight: 930.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 186.0,
+            TotalMinerals: 0.19,
+            Carbohydrates: 43.0,
+            Water: 743.0,
+            Proteins: 3.7,
+            VitaminC: 0.054,
+            Iron: 0.0031,
+            Calcium: 0.075,
+            Potassium: 0.780,
+            Fat: 0.8,
+            Fiber: 4.6,
+            Magnesium: 0.035,
+            VitaminB6: 0.0008,
+            VitaminB2: 0.0004,
+            VitaminA: 0.0005,
+            Zinc: 0.0005,
+            Copper: 0.0004,
+            Manganese: 0.0007,
+            Phosphorus: 0.068,
+            Sodium: 0.002,
+            Sugar: 0.012,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0010
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Spinach",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Spinach.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 23.0,
+            TotalMinerals: 0.10,
+            Carbohydrates: 3.6,
+            Water: 91.0,
+            Proteins: 2.9,
+            VitaminC: 0.028,
+            Iron: 0.0027,
+            Calcium: 0.099,
+            Potassium: 0.558,
+            Fat: 0.4,
+            Fiber: 2.2,
+            Magnesium: 0.079,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0021,
+            Zinc: 0.0005,
+            Copper: 0.0003,
+            Manganese: 0.0009,
+            Phosphorus: 0.048,
+            Sodium: 0.002,
+            Sugar: 0.007,
+            Sulfur: 0.0001,
+            VitaminE: 0.0007,
+            VitaminK: 0.0019
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Sweet Potato",
+            Type: "Vegetable",
+            Image: (UIImage(named: "SweetPotato.png")) ?? .vegetables,
+            Weight: 205.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 186.0,
+            TotalMinerals: 0.22,
+            Carbohydrates: 43.0,
+            Water: 133.0,
+            Proteins: 2.7,
+            VitaminC: 0.046,
+            Iron: 0.0027,
+            Calcium: 0.062,
+            Potassium: 0.670,
+            Fat: 0.3,
+            Fiber: 3.1,
+            Magnesium: 0.028,
+            VitaminB6: 0.0006,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0014,
+            Zinc: 0.0005,
+            Copper: 0.0003,
+            Manganese: 0.0005,
+            Phosphorus: 0.057,
+            Sodium: 0.002,
+            Sugar: 0.033,
+            Sulfur: 0.0003,
+            VitaminE: 0.0002,
+            VitaminK: 0.0004
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Swiss Chard",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "SwissChard.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 19.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 3.7,
+            Water: 91.0,
+            Proteins: 1.8,
+            VitaminC: 0.030,
+            Iron: 0.0018,
+            Calcium: 0.051,
+            Potassium: 0.379,
+            Fat: 0.2,
+            Fiber: 1.6,
+            Magnesium: 0.086,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0012,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0005,
+            Phosphorus: 0.023,
+            Sodium: 0.002,
+            Sugar: 0.006,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0015
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Potato",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Potato.png")) ?? .vegetables,
+            Weight: 130.0,
+            PrecribedPerWeek: "3-4",
+            TotalCalories: 104.0,
+            TotalMinerals: 0.15,
+            Carbohydrates: 23.0,
+            Water: 100.0,
+            Proteins: 2.7,
+            VitaminC: 0.029,
+            Iron: 0.0027,
+            Calcium: 0.050,
+            Potassium: 0.550,
+            Fat: 0.1,
+            Fiber: 2.3,
+            Magnesium: 0.024,
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0001,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.040,
+            Sodium: 0.001,
+            Sugar: 0.015,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Tomatillo",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Tomatillo.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 36.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 8.0,
+            Water: 91.0,
+            Proteins: 1.0,
+            VitaminC: 0.055,
+            Iron: 0.0007,
+            Calcium: 0.030,
+            Potassium: 0.250,
+            Fat: 0.3,
+            Fiber: 2.2,
+            Magnesium: 0.015,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.002,
+            Sugar: 0.002,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0005
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Turnips",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "Turnips.png")) ?? .vegetables,
+            Weight: 135.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 42.0,
+            TotalMinerals: 0.18,
+            Carbohydrates: 10.0,
+            Water: 118.0,
+            Proteins: 1.2,
+            VitaminC: 0.037,
+            Iron: 0.0015,
+            Calcium: 0.045,
+            Potassium: 0.280,
+            Fat: 0.1,
+            Fiber: 1.8,
+            Magnesium: 0.015,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0003,
+            Phosphorus: 0.027,
+            Sodium: 0.001,
+            Sugar: 0.005,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0003
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Water Chestnut",
+            Type: "Root Vegetable",
+            Image: (UIImage(named: "WaterChestnut.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 97.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 23.0,
+            Water: 74.0,
+            Proteins: 1.4,
+            VitaminC: 0.03,
+            Iron: 0.001,
+            Calcium: 0.05,
+            Potassium: 0.400,
+            Fat: 0.2,
+            Fiber: 2.0,
+            Magnesium: 0.027,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.00005,
+            Zinc: 0.0001,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.035,
+            Sodium: 0.002,
+            Sugar: 0.09,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0001
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Watercress",
+            Type: "Leafy Green",
+            Image: (UIImage(named: "Watercress.png")) ?? .vegetables,
+            Weight: 100.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 11.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 1.3,
+            Water: 93.0,
+            Proteins: 2.3,
+            VitaminC: 0.043,
+            Iron: 0.0021,
+            Calcium: 0.150,
+            Potassium: 0.330,
+            Fat: 0.1,
+            Fiber: 0.5,
+            Magnesium: 0.016,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0010,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0004,
+            Phosphorus: 0.025,
+            Sodium: 0.002,
+            Sugar: 0.01,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.0008
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Yellow Onions",
+            Type: "Vegetable",
+            Image: (UIImage(named: "YellowOnions.png")) ?? .vegetables,
+            Weight: 140.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 58.0,
+            TotalMinerals: 0.17,
+            Carbohydrates: 14.0,
+            Water: 89.0,
+            Proteins: 1.3,
+            VitaminC: 0.048,
+            Iron: 0.0024,
+            Calcium: 0.040,
+            Potassium: 0.320,
+            Fat: 0.2,
+            Fiber: 1.7,
+            Magnesium: 0.017,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0002,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.027,
+            Sodium: 0.002,
+            Sugar: 0.02,
+            Sulfur: 0.0003,
+            VitaminE: 0.0001,
+            VitaminK: 0.0003
+        ))
+
+
+        vegetables.append(FoodItem(
+            Name: "Zucchini",
+            Type: "Vegetable",
+            Image: (UIImage(named: "Zucchini.png")) ?? .vegetables,
+            Weight: 150.0,
+            PrecribedPerWeek: "2-3",
+            TotalCalories: 27.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 5.5,
+            Water: 93.0,
+            Proteins: 1.8,
+            VitaminC: 0.020,
+            Iron: 0.0011,
+            Calcium: 0.028,
+            Potassium: 0.320,
+            Fat: 0.3,
+            Fiber: 1.0,
+            Magnesium: 0.020,
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0006,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.022,
+            Sodium: 0.002,
+            Sugar: 0.04,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.0003
+        ))
+        
+        
+        beverages.append(FoodItem(
+            Name: "Apple Juice",
+            Type: "Beverage",
+            Image: (UIImage(named: "AppleJuice.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 114.0,
+            TotalMinerals: 0.14,
+            Carbohydrates: 29.0,
+            Water: 220.0,
+            Proteins: 0.0,
+            VitaminC: 0.025,
+            Iron: 0.0008,
+            Calcium: 0.015,
+            Potassium: 0.200,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.010,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.015,
+            Sodium: 0.010,
+            Sugar: 28.0,
+            Sulfur: 0.0002,
+            VitaminE: 0.0001,
+            VitaminK: 0.000020
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Bubble Tea",
+            Type: "Beverage",
+            Image: (UIImage(named: "BubbleTea.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 300.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 70.0,
+            Water: 200.0,
+            Proteins: 1.5,
+            Iron: 0.0010,
+            Calcium: 0.050,
+            Potassium: 0.250,
+            Fat: 10.0,
+            Fiber: 1.5,
+            Magnesium: 0.020,
+            Zinc: 0.0005,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.030,
+            Sodium: 0.050,
+            Sugar: 60.0,
+            Sulfur: 0.0002
+        ))
+
+
+
+        beverages.append(FoodItem(
+            Name: "Carbonated Energy Drink",
+            Type: "Beverage",
+            Image: (UIImage(named: "EnergyDrink.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 124.0,
+            TotalMinerals: 0.18,
+            Carbohydrates: 32.0,
+            Water: 220.0,
+            Proteins: 0.0,
+            VitaminC: 0.030,
+            Iron: 0.0010,
+            Calcium: 0.020,
+            Potassium: 0.150,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.015,
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0002,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.020,
+            Sodium: 0.040,
+            Sugar: 31.0,
+            Sulfur: 0.0004,
+            VitaminE: 0.0002,
+            VitaminK: 0.000050
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Coca-Cola",
+            Type: "Beverage",
+            Image: (UIImage(named: "CocaCola.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 105.0,
+            TotalMinerals: 0.03,
+            Carbohydrates: 27.5,
+            Water: 210.0,
+            Proteins: 0.0,
+            VitaminC: 0.0000,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.012,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.030,
+            Sugar: 27.5,
+            Sulfur: 0.0000,
+            VitaminE: 0.0000,
+            VitaminK: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Coconut Milk",
+            Type: "Beverage",
+            Image: (UIImage(named: "CoconutMilk.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 100.0,
+            TotalMinerals: 0.10,
+            Carbohydrates: 2.0,
+            Water: 210.0,
+            Proteins: 1.0,
+            VitaminC: 0.002,
+            Iron: 0.0008,
+            Calcium: 0.090,
+            Potassium: 0.300,
+            Fat: 9.0,
+            Fiber: 0.0,
+            Magnesium: 0.025,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.0001,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.060,
+            Sodium: 0.015,
+            Sugar: 1.0,
+            Sulfur: 0.0001,
+            VitaminE: 0.0002,
+            VitaminK: 0.000010
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Diet Coke",
+            Type: "Beverage",
+            Image: (UIImage(named: "DietCoke.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 0.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 0.0,
+            Water: 250.0,
+            Proteins: 0.0,
+            VitaminC: 0.0000,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.015,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.050,
+            Sugar: 0.0,
+            Sulfur: 0.0000,
+            VitaminE: 0.0000,
+            VitaminK: 0.0000
+        ))
+
+        beverages.append(FoodItem(
+            Name: "Diet Soda",
+            Type: "Beverage",
+            Image: (UIImage(named: "DietSoda.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 0.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 0.0,
+            Water: 250.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.010,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.030,
+            Sugar: 0.0,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Hot Milk",
+            Type: "Beverage",
+            Image: (UIImage(named: "HotMilk.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 150.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 12.0,
+            Water: 220.0,
+            Proteins: 8.0,
+            VitaminC: 0.001,
+            Iron: 0.0007,
+            Calcium: 0.300,
+            Potassium: 0.400,
+            Fat: 8.0,
+            Fiber: 0.0,
+            Magnesium: 0.030,
+            VitaminB6: 0.0004,
+            VitaminB2: 0.0010,
+            VitaminA: 0.0004,
+            Zinc: 0.0008,
+            Copper: 0.0003,
+            Manganese: 0.0001,
+            Phosphorus: 0.250,
+            Sodium: 0.050,
+            Sugar: 12.0,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.000020
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Diet Coke",
+            Type: "Beverage",
+            Image: (UIImage(named: "DietCoke.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 0.0,
+            TotalMinerals: 0.01,
+            Carbohydrates: 0.0,
+            Water: 250.0,
+            Proteins: 0.0,
+            VitaminC: 0.0000,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.010,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.040,
+            Sugar: 0.0,
+            Sulfur: 0.0000,
+            VitaminE: 0.0000,
+            VitaminK: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Hot Chocolate",
+            Type: "Beverage",
+            Image: (UIImage(named: "HotChocolate.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 190.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 25.0,
+            Water: 220.0,
+            Proteins: 4.0,
+            VitaminC: 0.002,
+            Iron: 0.0015,
+            Calcium: 0.250,
+            Potassium: 0.300,
+            Fat: 8.0,
+            Fiber: 2.0,
+            Magnesium: 0.050,
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0005,
+            VitaminA: 0.0003,
+            Zinc: 0.0003,
+            Copper: 0.0002,
+            Manganese: 0.0004,
+            Phosphorus: 0.120,
+            Sodium: 0.060,
+            Sugar: 24.0,
+            Sulfur: 0.0002,
+            VitaminE: 0.0002,
+            VitaminK: 0.000015
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Iced Tea",
+            Type: "Beverage",
+            Image: (UIImage(named: "IcedTea.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 5.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 1.0,
+            Water: 245.0,
+            Proteins: 0.0,
+            VitaminC: 0.0005,
+            Iron: 0.0001,
+            Calcium: 0.0005,
+            Potassium: 0.020,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0002,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0001,
+            Phosphorus: 0.0005,
+            Sodium: 0.005,
+            Sugar: 1.0,
+            Sulfur: 0.0000,
+            VitaminE: 0.0000,
+            VitaminK: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Lemonade",
+            Type: "Beverage",
+            Image: (UIImage(named: "Lemonade.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 80.0,
+            TotalMinerals: 0.05,
+            Carbohydrates: 22.0,
+            Water: 220.0,
+            Proteins: 0.0,
+            VitaminC: 0.025,
+            Iron: 0.0005,
+            Calcium: 0.020,
+            Potassium: 0.150,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.010,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.010,
+            Sodium: 0.010,
+            Sugar: 21.0,
+            Sulfur: 0.0001,
+            VitaminE: 0.0001,
+            VitaminK: 0.000010
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Mango Juice",
+            Type: "Beverage",
+            Image: (UIImage(named: "MangoJuice.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 125.0,
+            TotalMinerals: 0.10,
+            Carbohydrates: 30.0,
+            Water: 220.0,
+            Proteins: 0.5,
+            Iron: 0.0008,
+            Calcium: 0.020,
+            Potassium: 0.200,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.015,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.015,
+            Sodium: 0.005,
+            Sugar: 30.0,
+            Sulfur: 0.0001
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Milk",
+            Type: "Beverage",
+            Image: (UIImage(named: "Milk.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 150.0,
+            TotalMinerals: 0.30,
+            Carbohydrates: 12.0,
+            Water: 220.0,
+            Proteins: 8.0,
+            Iron: 0.0007,
+            Calcium: 0.300,
+            Potassium: 0.400,
+            Fat: 8.0,
+            Fiber: 0.0,
+            Magnesium: 0.030,
+            Zinc: 0.0008,
+            Copper: 0.0003,
+            Manganese: 0.0001,
+            Phosphorus: 0.250,
+            Sodium: 0.050,
+            Sugar: 12.0,
+            Sulfur: 0.0002
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Milkshake",
+            Type: "Beverage",
+            Image: (UIImage(named: "Milkshake.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 220.0,
+            TotalMinerals: 0.35,
+            Carbohydrates: 30.0,
+            Water: 200.0,
+            Proteins: 6.0,
+            Iron: 0.0010,
+            Calcium: 0.250,
+            Potassium: 0.300,
+            Fat: 12.0,
+            Fiber: 0.5,
+            Magnesium: 0.040,
+            Zinc: 0.0005,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.200,
+            Sodium: 0.060,
+            Sugar: 28.0,
+            Sulfur: 0.0002
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Mountain Dew",
+            Type: "Beverage",
+            Image: (UIImage(named: "MountainDew.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 105.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 27.5,
+            Water: 220.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.015,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.050,
+            Sugar: 27.5,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Orange Juice",
+            Type: "Beverage",
+            Image: (UIImage(named: "OrangeJuice.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 120.0,
+            TotalMinerals: 0.12,
+            Carbohydrates: 28.0,
+            Water: 220.0,
+            Proteins: 1.0,
+            Iron: 0.0007,
+            Calcium: 0.030,
+            Potassium: 0.200,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.015,
+            Zinc: 0.0002,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.010,
+            Sugar: 27.0,
+            Sulfur: 0.0001
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Pepsi",
+            Type: "Beverage",
+            Image: (UIImage(named: "Pepsi.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 105.0,
+            TotalMinerals: 0.03,
+            Carbohydrates: 27.5,
+            Water: 220.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.015,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.030,
+            Sugar: 27.5,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Soda",
+            Type: "Beverage",
+            Image: (UIImage(named: "Soda.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 100.0,
+            TotalMinerals: 0.03,
+            Carbohydrates: 26.0,
+            Water: 220.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.015,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.030,
+            Sugar: 26.0,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Smoothie",
+            Type: "Beverage",
+            Image: (UIImage(named: "Smoothie.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 180.0,
+            TotalMinerals: 0.25,
+            Carbohydrates: 35.0,
+            Water: 200.0,
+            Proteins: 3.0,
+            Iron: 0.0010,
+            Calcium: 0.050,
+            Potassium: 0.300,
+            Fat: 4.0,
+            Fiber: 3.0,
+            Magnesium: 0.030,
+            Zinc: 0.0005,
+            Copper: 0.0002,
+            Manganese: 0.0003,
+            Phosphorus: 0.050,
+            Sodium: 0.015,
+            Sugar: 30.0,
+            Sulfur: 0.0002
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Sparkling Water",
+            Type: "Beverage",
+            Image: (UIImage(named: "SparklingWater.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 0.0,
+            TotalMinerals: 0.01,
+            Carbohydrates: 0.0,
+            Water: 250.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.010,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.015,
+            Sugar: 0.0,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Tea",
+            Type: "Beverage",
+            Image: (UIImage(named: "Tea.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 2.0,
+            TotalMinerals: 0.02,
+            Carbohydrates: 0.5,
+            Water: 245.0,
+            Proteins: 0.0,
+            Iron: 0.0001,
+            Calcium: 0.002,
+            Potassium: 0.015,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.001,
+            Zinc: 0.0001,
+            Copper: 0.0001,
+            Manganese: 0.0001,
+            Phosphorus: 0.001,
+            Sodium: 0.005,
+            Sugar: 0.0,
+            Sulfur: 0.0000
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Tomato Juice",
+            Type: "Beverage",
+            Image: (UIImage(named: "TomatoJuice.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 50.0,
+            TotalMinerals: 0.20,
+            Carbohydrates: 10.0,
+            Water: 230.0,
+            Proteins: 1.5,
+            Iron: 0.0008,
+            Calcium: 0.030,
+            Potassium: 0.250,
+            Fat: 0.0,
+            Fiber: 1.0,
+            Magnesium: 0.015,
+            Zinc: 0.0003,
+            Copper: 0.0001,
+            Manganese: 0.0002,
+            Phosphorus: 0.020,
+            Sodium: 0.020,
+            Sugar: 8.0,
+            Sulfur: 0.0001
+        ))
+
+
+        beverages.append(FoodItem(
+            Name: "Tonic Water",
+            Type: "Beverage",
+            Image: (UIImage(named: "TonicWater.png")) ?? .beverages,
+            Weight: 250.0,
+            PrecribedPerWeek: "1-2",
+            TotalCalories: 90.0,
+            TotalMinerals: 0.05,
+            Carbohydrates: 23.0,
+            Water: 220.0,
+            Proteins: 0.0,
+            Iron: 0.0000,
+            Calcium: 0.0000,
+            Potassium: 0.010,
+            Fat: 0.0,
+            Fiber: 0.0,
+            Magnesium: 0.0000,
+            Zinc: 0.0000,
+            Copper: 0.0000,
+            Manganese: 0.0000,
+            Phosphorus: 0.0000,
+            Sodium: 0.015,
+            Sugar: 23.0,
+            Sulfur: 0.0000
+        ))
+
+
+
+        
+        
+        
+        
+        
+        
+        
+    }
 
 }

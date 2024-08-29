@@ -71,6 +71,7 @@ class UserLogin: SignInFormat {
         //setting paddng
         nameField.leftView = paddingView
         nameField.leftViewMode = .always
+        nameField.textColor = .black
         
         nameField.layer.borderColor = AppCommons.themeColor
         nameField.layer.cornerRadius = 6.0

@@ -63,14 +63,18 @@ class HomeScreen: HomeScreenFormat {
         buttonsBox.layer.borderColor = AppCommons.lightBorderColor
         
         // Add buttons to the buttonsBox
-        buttonsBox.addSubview(foodItemsButton)
+        buttonsBox.addSubview(fruitsButton)
+        buttonsBox.addSubview(dryFruitListButton)
+        buttonsBox.addSubview(vegetableListButton)
         buttonsBox.addSubview(humanNeedsButton)
         buttonsBox.addSubview(perfectPlateButton)
         
         
         
         // Configure buttons
-        setupLargeButton(button: foodItemsButton, title: "Food Items")
+        setupLargeButton(button: fruitsButton, title: "Fruits")
+        setupLargeButton(button: dryFruitListButton, title: "Dry Fruits")
+        setupLargeButton(button: vegetableListButton, title: "Vegetables")
         setupLargeButton(button: humanNeedsButton, title: "Human Needs")
         setupLargeButton(button: perfectPlateButton, title: "Perfect Plate")
         // Constraints for buttonsBox
@@ -83,19 +87,31 @@ class HomeScreen: HomeScreenFormat {
         ])
         
         // Setting target view
-        foodItemsButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+        fruitsButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
+        dryFruitListButton.addTarget(self, action: #selector(goToDryFruitList), for: .touchUpInside)
+        vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
-        perfectPlateButton.addTarget(self, action: #selector(goToFoodList), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
         
         
         // Constraints for buttons
         NSLayoutConstraint.activate([
-            foodItemsButton.topAnchor.constraint(equalTo: buttonsBox.topAnchor, constant: 4),
-            foodItemsButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
-            foodItemsButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
-            foodItemsButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
+            fruitsButton.topAnchor.constraint(equalTo: buttonsBox.topAnchor, constant: 4),
+            fruitsButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
+            fruitsButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
+            fruitsButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
             
-            humanNeedsButton.topAnchor.constraint(equalTo: foodItemsButton.bottomAnchor, constant: 4),
+            dryFruitListButton.topAnchor.constraint(equalTo: fruitsButton.bottomAnchor, constant: 4),
+            dryFruitListButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
+            dryFruitListButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
+            dryFruitListButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
+            
+            vegetableListButton.topAnchor.constraint(equalTo: dryFruitListButton.bottomAnchor, constant: 4),
+            vegetableListButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
+            vegetableListButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
+            vegetableListButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
+            
+            humanNeedsButton.topAnchor.constraint(equalTo: vegetableListButton.bottomAnchor, constant: 4),
             humanNeedsButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
             humanNeedsButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
             humanNeedsButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
@@ -111,6 +127,7 @@ class HomeScreen: HomeScreenFormat {
     func setupLargeButton(button: UIButton, title: String) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 12
+        button.setTitleColor(AppCommons.textColor3, for: .normal)
         button.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
         button.setTitle(title, for: .normal)
         button.layer.borderWidth = 2.0

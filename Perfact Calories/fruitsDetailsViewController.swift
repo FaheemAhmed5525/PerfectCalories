@@ -1,5 +1,5 @@
 //
-//  FoodItemDetailViewController.swift
+//  FruitsDetailsViewController.swift
 //  Perfact Calories
 //
 //  Created by Faheeam Ahmed on 23/08/2024.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITableViewDataSource {
-    
-    
+
+///View Controller for fruits
+class fruitsDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITableViewDataSource {
     
     
     //itenNameLabel will print the name of the food item to the user
@@ -53,10 +53,10 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         setupTableView()
         
         
-//        ///Observe for landscape and portrait and adjust the screen accordingly
-//        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+        //        ///Observe for landscape and portrait and adjust the screen accordingly
+        //        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
         view.bringSubviewToFront(sidebar)
-
+        
     }
     
     
@@ -99,10 +99,10 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         itemListContainer.addArrangedSubview(imageView)
         
         NSLayoutConstraint.activate([
-           // imageView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 52),
+            // imageView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 52),
             imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 300),
-           // imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            // imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
     }
@@ -147,12 +147,12 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
             itemListContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             itemListContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
-//
-//        NSLayoutConstraint.activate([
-//            itemListContainer.topAnchor.constraint(equalTo: topbar.bottomAnchor),
-//            itemListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
-//            itemListContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
-//            itemListContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
+        //
+        //        NSLayoutConstraint.activate([
+        //            itemListContainer.topAnchor.constraint(equalTo: topbar.bottomAnchor),
+        //            itemListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
+        //            itemListContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
+        //            itemListContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
     }
     
     
@@ -172,16 +172,16 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         
         tableView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
-
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("this \(dataValue.count)")
+        //        print("this \(dataValue.count)")
         return dataValue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         //clear the previous data
@@ -196,13 +196,15 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = rowData.0
-//        print("\(rowData.0)")
+        //        print("\(rowData.0)")
         nameLabel.font = .systemFont(ofSize: 24)
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        //converting small value in mg and 
+        
+        
+        //converting small value in mg and
         let value = rowData.1
         var valueString: String
         if value >= 1000 {
@@ -218,7 +220,10 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
             valueString = "\(value * 1000000) µm"
         }
         valueLabel.text = "\(valueString)"
-//        print("\(rowData.1)")
+        
+        
+        
+        //        print("\(rowData.1)")
         valueLabel.font = .systemFont(ofSize: 20)
         valueLabel.textAlignment = .right
         
@@ -228,7 +233,7 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
             nameLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 6),
             nameLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -6),
             nameLabel.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 6),
-        
+            
             valueLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 6),
             valueLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -6),
             valueLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 6),
@@ -265,21 +270,13 @@ class FoodItemDetailViewController: HomeScreenFormat, UITableViewDelegate, UITab
         dataValue.append(("Phosphorus", Float(foodItem?.phosphorus ?? 0.0)))
         dataValue.append(("Sodium", Float(foodItem?.sodium ?? 0.0)))
         dataValue.append(("Sugar", Float(foodItem?.sugar ?? 0.0)))
-        dataValue.append(("Sulfer", Float(foodItem?.sulfer ?? 0.0)))
+        dataValue.append(("Sulfur", Float(foodItem?.sulfur ?? 0.0)))
         dataValue.append(("Vitamin E", Float(foodItem?.vitaminE ?? 0.0)))
         dataValue.append(("Vitamin K", Float(foodItem?.vitaminK ?? 0.0)))
-
+        
+        
         
     }
     
-    
-//    //function to be called on orientation changed
-//    @objc func orientationChanged() {
-//        if UIDevice.current.orientation.isLandscape {
-//            print("Landscape")
-//        }
-//        else if UIDevice.current.orientation.isPortrait {
-//            print("Portrait")
-//        }
-//    }
+
 }
