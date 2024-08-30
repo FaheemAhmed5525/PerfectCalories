@@ -54,8 +54,9 @@ class GetInfo: SignInFormat {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.locale = .current
         datePicker.datePickerMode = .date
+        
         datePicker.preferredDatePickerStyle = .wheels
-        datePicker.tintColor = UIColor(cgColor: AppCommons.themeColor)
+        datePicker.tintColor = AppCommons.textColor3
         datePicker.layer.borderWidth = 1.0
         datePicker.layer.borderColor = AppCommons.themeColor
         datePicker.layer.cornerRadius = 12.0
@@ -88,7 +89,7 @@ class GetInfo: SignInFormat {
         weightField.layer.borderWidth = 1.5
         weightField.placeholder = "Your Weight"
         weightField.textAlignment = .center
-        
+        weightField.textColor = AppCommons.textColor2
         NSLayoutConstraint.activate([
             weightField.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 12),
             weightField.heightAnchor.constraint(equalToConstant: 60),

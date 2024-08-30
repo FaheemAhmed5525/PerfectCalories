@@ -117,9 +117,11 @@ class User{
     
     /// function that loads loged user
     func laodLoggedUser()-> String {
+        print("---------starting the loadingloged user--------------")
         do {
             let name = try keychain.get("logged_user_name")      // check if any user is loged in
             if name != "" {
+                print("---------endting the loading loged user--------------")
                 return self.loadUser(name: name ?? "loading_error")    // laod the loged user
             }
             else {
@@ -143,7 +145,7 @@ class User{
     ///function takes caller as argument and store it to file and returns true else returns false
     public func storeUser()-> String {
         User.currentUser = User.totalUsers
-        
+        print("---------starting the store user--------------")
         do {
             var storedName: String
             for i in 0 ... User.totalUsers  {
@@ -158,6 +160,7 @@ class User{
             try keychain.set("\(self.birthDateInSec)", key: "birthdate_\(User.currentUser)")
             try keychain.set(self.name, key: "logged_user_name")
             User.totalUsers += 1
+            print("---------ending the store user--------------")
             return "storing_successful"
         } catch {
             return "storing_error"

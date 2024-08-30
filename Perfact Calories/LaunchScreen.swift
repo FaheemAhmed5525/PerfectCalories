@@ -8,11 +8,11 @@
 import UIKit
 
 class LaunchScreen: AppCommons {
-
+    
     let appName = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         
         view.backgroundColor = AppCommons.appBackgroundColor
@@ -29,7 +29,7 @@ class LaunchScreen: AppCommons {
             }
             else {
                 self.goToUserLogin()
-                    
+                
             }
         }
         
@@ -57,14 +57,15 @@ class LaunchScreen: AppCommons {
     }
     
     func goToHomeScreen() {
-            let nextScreen = HomeScreen()
-            navigationController?.setViewControllers([nextScreen], animated: true)
-        }
-        
-    func goToUserLogin() {
-            let nextScreen = UserLogin()
-            navigationController?.setViewControllers([nextScreen], animated: false)
-        }
-    
+        let nextScreen = HomeScreen()
+        navigationController?.setViewControllers([nextScreen], animated: true)
     }
     
+    
+    func goToUserLogin() {
+        let nextScreen = UserLogin()
+        navigationController?.setViewControllers([nextScreen], animated: false)
+        
+    }
+    
+}

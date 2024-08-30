@@ -222,7 +222,7 @@ extension UIView {
     func setupAsSidebarButton(button: UIButton, title: String, position: Int) {
         self.addSubview(button)
         
-        let height = 50
+        let height = 40
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -236,7 +236,7 @@ extension UIView {
         
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: self.topAnchor, constant: CGFloat(height * position) ),
-            button.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/4),
+            button.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/8),
             button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])

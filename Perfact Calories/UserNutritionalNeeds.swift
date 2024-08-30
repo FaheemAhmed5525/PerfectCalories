@@ -86,8 +86,10 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.backgroundColor = AppCommons.appBackgroundColor2
         
         //clear the previous data
         for subview in cell.contentView.subviews{
@@ -102,10 +104,11 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = rowData.0
         nameLabel.font = .systemFont(ofSize: 24)
+        nameLabel.textColor = AppCommons.textColor
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        valueLabel.textColor = AppCommons.textColor
         //converting small value in mg and
         let value = rowData.1
         var valueString: String

@@ -47,7 +47,6 @@ class SignInFormat: AppCommons {
         elementsBox.layer.borderWidth = 2.0
         elementsBox.layer.cornerRadius = 12.0
         elementsBox.backgroundColor = .white
-        
         NSLayoutConstraint.activate([
             elementsBox.widthAnchor.constraint(equalToConstant: 330),
             elementsBox.heightAnchor.constraint(equalToConstant: 350),

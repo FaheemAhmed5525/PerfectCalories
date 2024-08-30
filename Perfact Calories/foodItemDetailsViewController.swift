@@ -183,6 +183,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = AppCommons.appBackgroundColor2
         
         //clear the previous data
         for subview in cell.contentView.subviews{
@@ -197,6 +198,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = rowData.0
         nameLabel.font = .systemFont(ofSize: 24)
+        nameLabel.textColor = AppCommons.textColor
         
         let valueLabel = UILabel()
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -205,6 +207,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         
         //converting small value in mg and
         let value = rowData.1
+        valueLabel.textColor = AppCommons.textColor
         var valueString: String
         if value >= 1000 {
             valueString = "\(value / 1000) kg"
