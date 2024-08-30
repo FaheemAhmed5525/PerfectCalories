@@ -174,7 +174,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             print("Selected food item index: \(itemIndex)")
             
             // Pass the selected food item to the next screen
-            let nextScreen = fruitsDetailsViewController()
+            let nextScreen = foodItemDetailsViewController()
             nextScreen.foodItem = foodItems[itemIndex]    // Assuming you have a foodItem property in FoodItemDetailViewController
             
             navigationController?.pushViewController(nextScreen, animated: true)

@@ -27,8 +27,6 @@ class AppCommons: UIViewController {
     
     //instantiating the food item, all food item will be added to array by initilizer
     static let foods = FoodItems()
-
-    
     
     
     

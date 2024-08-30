@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D1AF7CB2C7875970092D25E /* FoodItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */; };
 		0D43AA8B2C7D5A6400E8B415 /* HumanNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */; };
-		0DA0CB182C805F9700B69970 /* fruitsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0CB172C805F9600B69970 /* fruitsDetailsViewController.swift */; };
+		0D9490772C818E330084ACE3 /* foodItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9490762C818E330084ACE3 /* foodItemDetailsViewController.swift */; };
+		0D9490792C8198AC0084ACE3 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9490782C8198AC0084ACE3 /* LaunchScreen.swift */; };
 		0DA95D472C7DF50C0045755D /* UserNutritionalNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */; };
 		0DAA4E872C7352BD00C3880C /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E862C7352BD00C3880C /* GetInfo.swift */; };
 		0DAA4E892C73530D00C3880C /* SignInFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E882C73530D00C3880C /* SignInFormat.swift */; };
@@ -52,7 +53,8 @@
 /* Begin PBXFileReference section */
 		0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemsViewController.swift; sourceTree = "<group>"; };
 		0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanNeeds.swift; sourceTree = "<group>"; };
-		0DA0CB172C805F9600B69970 /* fruitsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fruitsDetailsViewController.swift; sourceTree = "<group>"; };
+		0D9490762C818E330084ACE3 /* foodItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = foodItemDetailsViewController.swift; sourceTree = "<group>"; };
+		0D9490782C8198AC0084ACE3 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNutritionalNeeds.swift; sourceTree = "<group>"; };
 		0DAA4E862C7352BD00C3880C /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
 		0DAA4E882C73530D00C3880C /* SignInFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFormat.swift; sourceTree = "<group>"; };
@@ -127,23 +129,24 @@
 		0DCBCE252C73165900A45528 /* Perfact Calories */ = {
 			isa = PBXGroup;
 			children = (
-				0DA0CB172C805F9600B69970 /* fruitsDetailsViewController.swift */,
 				0DCBCE262C73165900A45528 /* AppDelegate.swift */,
-				0DCBCE5C2C734E3000A45528 /* User.swift */,
 				0DCBCE282C73165900A45528 /* SceneDelegate.swift */,
-				0DCBCE582C734CC000A45528 /* UserLogin.swift */,
+				0DCBCE5C2C734E3000A45528 /* User.swift */,
+				0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */,
+				0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */,
 				0DCBCE2F2C73165C00A45528 /* Assets.xcassets */,
+				0DB1187E2C76F04E000DD1A6 /* ViewController.swift */,
 				0DCBCE312C73165C00A45528 /* LaunchScreen.storyboard */,
 				0DCBCE342C73165C00A45528 /* Info.plist */,
-				0DAA4E862C7352BD00C3880C /* GetInfo.swift */,
-				0DAA4E882C73530D00C3880C /* SignInFormat.swift */,
 				0DAA4E8C2C73680700C3880C /* AppCommons.swift */,
+				0D9490782C8198AC0084ACE3 /* LaunchScreen.swift */,
+				0DAA4E882C73530D00C3880C /* SignInFormat.swift */,
+				0DCBCE582C734CC000A45528 /* UserLogin.swift */,
+				0DAA4E862C7352BD00C3880C /* GetInfo.swift */,
 				0DAA4E8A2C7367D000C3880C /* HomeScreenFormat.swift */,
 				0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */,
-				0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */,
-				0DB1187E2C76F04E000DD1A6 /* ViewController.swift */,
 				0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */,
-				0D43AA8A2C7D5A6400E8B415 /* HumanNeeds.swift */,
+				0D9490762C818E330084ACE3 /* foodItemDetailsViewController.swift */,
 				0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */,
 			);
 			path = "Perfact Calories";
@@ -308,16 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9490772C818E330084ACE3 /* foodItemDetailsViewController.swift in Sources */,
 				0D1AF7CB2C7875970092D25E /* FoodItemsViewController.swift in Sources */,
 				0DAA4E8D2C73680700C3880C /* AppCommons.swift in Sources */,
 				0D43AA8B2C7D5A6400E8B415 /* HumanNeeds.swift in Sources */,
 				0DAA4E892C73530D00C3880C /* SignInFormat.swift in Sources */,
-				0DA0CB182C805F9700B69970 /* fruitsDetailsViewController.swift in Sources */,
 				0DA95D472C7DF50C0045755D /* UserNutritionalNeeds.swift in Sources */,
 				0DCBCE272C73165900A45528 /* AppDelegate.swift in Sources */,
 				0DAA4E8B2C7367D000C3880C /* HomeScreenFormat.swift in Sources */,
 				0DB1187F2C76F04E000DD1A6 /* ViewController.swift in Sources */,
 				0DC2B8DB2C75BBF500B65EC8 /* FoodItem.swift in Sources */,
+				0D9490792C8198AC0084ACE3 /* LaunchScreen.swift in Sources */,
 				0DCBCE592C734CC000A45528 /* UserLogin.swift in Sources */,
 				0DAA4E8F2C736B9500C3880C /* HomeScreen.swift in Sources */,
 				0DCBCE5D2C734E3000A45528 /* User.swift in Sources */,

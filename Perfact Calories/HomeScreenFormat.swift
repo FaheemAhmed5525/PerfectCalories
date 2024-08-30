@@ -24,8 +24,10 @@ class HomeScreenFormat: AppCommons {
     let fruitsButton = UIButton()
     let dryFruitListButton = UIButton()
     let vegetableListButton = UIButton()
+    let beveragesListButton = UIButton()
     let humanNeedsButton = UIButton()
     let perfectPlateButton = UIButton()
+    let LogoutButton = UIButton()
 
     
     //topbar view contains app title, and sidebar button
@@ -121,15 +123,17 @@ class HomeScreenFormat: AppCommons {
             sidebar.topAnchor.constraint(equalTo: topbar.bottomAnchor),
             sidebar.rightAnchor.constraint(equalTo: view.rightAnchor),
             sidebar.widthAnchor.constraint(equalToConstant: 200),
-            sidebar.heightAnchor.constraint(equalToConstant: 320)])
+            sidebar.heightAnchor.constraint(equalToConstant: 410)])
         
         /// adding targets to the buttons:
         homeButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
         fruitsButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
         dryFruitListButton.addTarget(self, action: #selector(goToDryFruitList), for: .touchUpInside)
         vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
+        beveragesListButton.addTarget(self, action: #selector(goToBeverageList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
         perfectPlateButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
+        LogoutButton.addTarget(self, action: #selector(goToUserLogin), for: .touchUpInside)
 
         
         
@@ -137,8 +141,10 @@ class HomeScreenFormat: AppCommons {
         sidebar.setupAsSidebarButton(button: fruitsButton, title: "Fruits", position: 1)
         sidebar.setupAsSidebarButton(button: dryFruitListButton, title: "Dry Fruits", position: 2)
         sidebar.setupAsSidebarButton(button: vegetableListButton, title: "Vegetables", position: 3)
-        sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 4)
-        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 5)
+        sidebar.setupAsSidebarButton(button: beveragesListButton, title: "Beverages", position: 4)
+        sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 5)
+        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 6)
+        sidebar.setupAsSidebarButton(button: LogoutButton, title: "Logout", position: 7)
         
     }
     
@@ -182,6 +188,14 @@ class HomeScreenFormat: AppCommons {
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
+    @objc func goToBeverageList() {
+        sidebar.isHidden = true
+        print("---------Beverage List---------")
+        let nextScreen = FoodItemsViewController()
+        nextScreen.foodItems = AppCommons.foods.beverages
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
     @objc func goToNutritionalNeeds() {
         sidebar.isHidden = true
         print("----------Nutritional Needs-------")
@@ -189,7 +203,17 @@ class HomeScreenFormat: AppCommons {
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
-
+    @objc func goToUserLogin() {
+        let result = AppCommons.user.endThisSession()
+        if result == "logout_successful" {
+            let nextScreen = UserLogin()
+            navigationController?.setViewControllers([nextScreen], animated: false)
+        }
+        else {
+            print("-----Logout error---------")
+        }
+    }
+    
     
 
 }

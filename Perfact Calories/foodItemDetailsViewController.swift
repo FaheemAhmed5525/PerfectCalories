@@ -10,7 +10,7 @@ import UIKit
 
 
 ///View Controller for fruits
-class fruitsDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITableViewDataSource {
+class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITableViewDataSource {
     
     
     //itenNameLabel will print the name of the food item to the user
@@ -196,7 +196,6 @@ class fruitsDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITabl
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = rowData.0
-        //        print("\(rowData.0)")
         nameLabel.font = .systemFont(ofSize: 24)
         
         let valueLabel = UILabel()
@@ -211,7 +210,7 @@ class fruitsDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITabl
             valueString = "\(value / 1000) kg"
         }
         else if value >= 1{
-            valueString = "\(value)  g"
+            valueString = "\(value)   g"
         }
         else if value >= 0.001{
             valueString = "\(value * 1000) mg"

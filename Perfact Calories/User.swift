@@ -97,11 +97,12 @@ class User{
         do {
             var storedName: String
             for i in 0 ... User.totalUsers  {
-                storedName = try keychain.get("name_\(i)") ?? ""
-                if name == storedName {
+                storedName = try keychain.get("name_\(i)") ?? ""        // If this is the username we are searching for
+                if name == storedName {                                 // laod the user
                     self.name = try keychain.get("name_\(i)") ?? ""
                     self.weight = Int(try keychain.get("weight_\(i)") ?? "") ?? 0
                     self.birthDateInSec = Double(try keychain.get("birthdate_\(i)") ?? "") ?? 0.0
+                    try keychain.set(self.name, key: "logged_user_name")      // set this user as loged user
                     User.currentUser = i
                     return "loading_successful"
                 }
@@ -113,6 +114,31 @@ class User{
             ///Code to load user
             return "no_such_user"
     }
+    
+    /// function that loads loged user
+    func laodLoggedUser()-> String {
+        do {
+            let name = try keychain.get("logged_user_name")      // check if any user is loged in
+            if name != "" {
+                return self.loadUser(name: name ?? "loading_error")    // laod the loged user
+            }
+            else {
+                return "no_logged_user"
+            }
+        } catch {
+            return "loading_error"
+        }
+    }
+    
+    func endThisSession()-> String {
+        do {
+            try keychain.set("", key: "logged_user_name")
+            return "logout_successful"
+        } catch {
+            return "logout_error"
+        }
+    }
+    
     
     ///function takes caller as argument and store it to file and returns true else returns false
     public func storeUser()-> String {
@@ -130,12 +156,16 @@ class User{
             try keychain.set(self.name, key: "name_\(User.currentUser)")
             try keychain.set("\(self.weight)", key: "weight_\(User.currentUser)")
             try keychain.set("\(self.birthDateInSec)", key: "birthdate_\(User.currentUser)")
-            
+            try keychain.set(self.name, key: "logged_user_name")
             User.totalUsers += 1
             return "storing_successful"
         } catch {
             return "storing_error"
         }
+        
+    }
+    
+    func getCurrentUser() {
         
     }
     

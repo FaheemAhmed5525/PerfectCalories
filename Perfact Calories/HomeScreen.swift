@@ -66,8 +66,10 @@ class HomeScreen: HomeScreenFormat {
         buttonsBox.addSubview(fruitsButton)
         buttonsBox.addSubview(dryFruitListButton)
         buttonsBox.addSubview(vegetableListButton)
+        buttonsBox.addSubview(beveragesListButton)
         buttonsBox.addSubview(humanNeedsButton)
         buttonsBox.addSubview(perfectPlateButton)
+        buttonsBox.addSubview(LogoutButton)
         
         
         
@@ -75,8 +77,10 @@ class HomeScreen: HomeScreenFormat {
         setupLargeButton(button: fruitsButton, title: "Fruits")
         setupLargeButton(button: dryFruitListButton, title: "Dry Fruits")
         setupLargeButton(button: vegetableListButton, title: "Vegetables")
+        setupLargeButton(button: beveragesListButton, title: "Beverages")
         setupLargeButton(button: humanNeedsButton, title: "Human Needs")
         setupLargeButton(button: perfectPlateButton, title: "Perfect Plate")
+        setupLargeButton(button: LogoutButton, title: "Logout")
         // Constraints for buttonsBox
         view.addSubview(buttonsBox)
         NSLayoutConstraint.activate([
@@ -90,8 +94,10 @@ class HomeScreen: HomeScreenFormat {
         fruitsButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
         dryFruitListButton.addTarget(self, action: #selector(goToDryFruitList), for: .touchUpInside)
         vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
+        beveragesListButton.addTarget(self, action: #selector(goToBeverageList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
         perfectPlateButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
+        LogoutButton.addTarget(self, action: #selector(goToUserLogin), for: .touchUpInside)
         
         
         // Constraints for buttons
@@ -111,7 +117,12 @@ class HomeScreen: HomeScreenFormat {
             vegetableListButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
             vegetableListButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
             
-            humanNeedsButton.topAnchor.constraint(equalTo: vegetableListButton.bottomAnchor, constant: 4),
+            beveragesListButton.topAnchor.constraint(equalTo: vegetableListButton.bottomAnchor, constant: 4),
+            beveragesListButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
+            beveragesListButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
+            beveragesListButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
+            
+            humanNeedsButton.topAnchor.constraint(equalTo: beveragesListButton.bottomAnchor, constant: 4),
             humanNeedsButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
             humanNeedsButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
             humanNeedsButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
@@ -120,6 +131,11 @@ class HomeScreen: HomeScreenFormat {
             perfectPlateButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
             perfectPlateButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
             perfectPlateButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
+            
+            LogoutButton.topAnchor.constraint(equalTo: perfectPlateButton.bottomAnchor, constant: 4),
+            LogoutButton.leadingAnchor.constraint(equalTo: buttonsBox.leadingAnchor, constant: 6),
+            LogoutButton.trailingAnchor.constraint(equalTo: buttonsBox.trailingAnchor, constant: -6),
+            LogoutButton.heightAnchor.constraint(equalTo: buttonsBox.heightAnchor, multiplier: 1/9),
         ])
     }
     

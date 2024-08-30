@@ -3143,7 +3143,7 @@ struct FoodItems {
 
 
 
-        vegetables.append(FoodItem(
+
         vegetables.append(FoodItem(
             Name: "Kohlrabi",
             Type: "Vegetable",
@@ -4222,19 +4222,26 @@ struct FoodItems {
             Carbohydrates: 70.0,
             Water: 200.0,
             Proteins: 1.5,
-            Iron: 0.0010,
+            VitaminC: 0.0, Iron: 0.0010,
             Calcium: 0.050,
             Potassium: 0.250,
             Fat: 10.0,
             Fiber: 1.5,
             Magnesium: 0.020,
-            Zinc: 0.0005,
-            Copper: 0.0002,
-            Manganese: 0.0003,
-            Phosphorus: 0.030,
-            Sodium: 0.050,
-            Sugar: 60.0,
-            Sulfur: 0.0002
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0003,
+            Zinc: 0.030,
+            Copper: 0.050,
+            Manganese: 60.0,
+            Phosphorus: 0.0002,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
+            
+        
         ))
 
 
@@ -4269,6 +4276,7 @@ struct FoodItems {
             Sulfur: 0.0004,
             VitaminE: 0.0002,
             VitaminK: 0.000050
+            
         ))
 
 
@@ -4302,6 +4310,8 @@ struct FoodItems {
             Sulfur: 0.0000,
             VitaminE: 0.0000,
             VitaminK: 0.0000
+
+            
         ))
 
 
@@ -4381,19 +4391,24 @@ struct FoodItems {
             Carbohydrates: 0.0,
             Water: 250.0,
             Proteins: 0.0,
-            Iron: 0.0000,
+            VitaminC: 0.0, Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.010,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
+            Copper: 0.030,
+            Manganese: 0.0,
             Phosphorus: 0.0000,
-            Sodium: 0.030,
+            Sodium: 0.0,
             Sugar: 0.0,
-            Sulfur: 0.0000
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4573,19 +4588,24 @@ struct FoodItems {
             Carbohydrates: 30.0,
             Water: 220.0,
             Proteins: 0.5,
-            Iron: 0.0008,
+            VitaminC: 0.0, Iron: 0.0008,
             Calcium: 0.020,
             Potassium: 0.200,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.015,
-            Zinc: 0.0001,
-            Copper: 0.0001,
-            Manganese: 0.0002,
-            Phosphorus: 0.015,
-            Sodium: 0.005,
-            Sugar: 30.0,
-            Sulfur: 0.0001
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.015,
+            Copper: 0.005,
+            Manganese: 30.0,
+            Phosphorus: 0.0001,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4600,19 +4620,24 @@ struct FoodItems {
             Carbohydrates: 12.0,
             Water: 220.0,
             Proteins: 8.0,
-            Iron: 0.0007,
+            VitaminC: 0.0, Iron: 0.0007,
             Calcium: 0.300,
             Potassium: 0.400,
             Fat: 8.0,
             Fiber: 0.0,
             Magnesium: 0.030,
-            Zinc: 0.0008,
-            Copper: 0.0003,
-            Manganese: 0.0001,
-            Phosphorus: 0.250,
-            Sodium: 0.050,
-            Sugar: 12.0,
-            Sulfur: 0.0002
+            VitaminB6: 0.0008,
+            VitaminB2: 0.0003,
+            VitaminA: 0.0001,
+            Zinc: 0.250,
+            Copper: 0.050,
+            Manganese: 12.0,
+            Phosphorus: 0.0002,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4627,19 +4652,24 @@ struct FoodItems {
             Carbohydrates: 30.0,
             Water: 200.0,
             Proteins: 6.0,
-            Iron: 0.0010,
+            VitaminC: 0.0, Iron: 0.0010,
             Calcium: 0.250,
             Potassium: 0.300,
             Fat: 12.0,
             Fiber: 0.5,
             Magnesium: 0.040,
-            Zinc: 0.0005,
-            Copper: 0.0002,
-            Manganese: 0.0003,
-            Phosphorus: 0.200,
-            Sodium: 0.060,
-            Sugar: 28.0,
-            Sulfur: 0.0002
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0003,
+            Zinc: 0.200,
+            Copper: 0.060,
+            Manganese: 28.0,
+            Phosphorus: 0.0002,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4654,19 +4684,24 @@ struct FoodItems {
             Carbohydrates: 27.5,
             Water: 220.0,
             Proteins: 0.0,
-            Iron: 0.0000,
+            VitaminC: 0.0, Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.015,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
+            Copper: 0.050,
+            Manganese: 27.5,
             Phosphorus: 0.0000,
-            Sodium: 0.050,
-            Sugar: 27.5,
-            Sulfur: 0.0000
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4681,19 +4716,24 @@ struct FoodItems {
             Carbohydrates: 28.0,
             Water: 220.0,
             Proteins: 1.0,
-            Iron: 0.0007,
+            VitaminC: 0.0, Iron: 0.0007,
             Calcium: 0.030,
             Potassium: 0.200,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.015,
-            Zinc: 0.0002,
-            Copper: 0.0001,
-            Manganese: 0.0002,
-            Phosphorus: 0.020,
-            Sodium: 0.010,
-            Sugar: 27.0,
-            Sulfur: 0.0001
+            VitaminB6: 0.0002,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.020,
+            Copper: 0.010,
+            Manganese: 27.0,
+            Phosphorus: 0.0001,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4708,19 +4748,24 @@ struct FoodItems {
             Carbohydrates: 27.5,
             Water: 220.0,
             Proteins: 0.0,
-            Iron: 0.0000,
+            VitaminC: 0.0, Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.015,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
-            Phosphorus: 0.0000,
-            Sodium: 0.030,
-            Sugar: 27.5,
-            Sulfur: 0.0000
+            Copper: 0.030,
+            Manganese: 27.5,
+            Phosphorus: 0.000,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4735,19 +4780,24 @@ struct FoodItems {
             Carbohydrates: 26.0,
             Water: 220.0,
             Proteins: 0.0,
-            Iron: 0.0000,
+            VitaminC: 0.0, Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.015,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
+            Copper: 0.030,
+            Manganese: 26.0,
             Phosphorus: 0.0000,
-            Sodium: 0.030,
-            Sugar: 26.0,
-            Sulfur: 0.0000
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4762,19 +4812,24 @@ struct FoodItems {
             Carbohydrates: 35.0,
             Water: 200.0,
             Proteins: 3.0,
-            Iron: 0.0010,
+            VitaminC: 0.0, Iron: 0.0010,
             Calcium: 0.050,
             Potassium: 0.300,
             Fat: 4.0,
             Fiber: 3.0,
             Magnesium: 0.030,
-            Zinc: 0.0005,
-            Copper: 0.0002,
-            Manganese: 0.0003,
-            Phosphorus: 0.050,
-            Sodium: 0.015,
-            Sugar: 30.0,
-            Sulfur: 0.0002
+            VitaminB6: 0.0005,
+            VitaminB2: 0.0002,
+            VitaminA: 0.0003,
+            Zinc: 0.050,
+            Copper: 0.015,
+            Manganese: 30.0,
+            Phosphorus: 0.0002,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4789,19 +4844,24 @@ struct FoodItems {
             Carbohydrates: 0.0,
             Water: 250.0,
             Proteins: 0.0,
-            Iron: 0.0000,
+            VitaminC: 0.0, Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.010,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
+            Copper: 0.015,
+            Manganese: 0.0,
             Phosphorus: 0.0000,
-            Sodium: 0.015,
+            Sodium: 0.0,
             Sugar: 0.0,
-            Sulfur: 0.0000
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4816,19 +4876,25 @@ struct FoodItems {
             Carbohydrates: 0.5,
             Water: 245.0,
             Proteins: 0.0,
+            VitaminC: 0.0,
             Iron: 0.0001,
             Calcium: 0.002,
             Potassium: 0.015,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.001,
-            Zinc: 0.0001,
-            Copper: 0.0001,
-            Manganese: 0.0001,
-            Phosphorus: 0.001,
-            Sodium: 0.005,
+            VitaminB6: 0.0001,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0001,
+            Zinc: 0.001,
+            Copper: 0.005,
+            Manganese: 0.0,
+            Phosphorus: 0.0000,
+            Sodium: 0.0,
             Sugar: 0.0,
-            Sulfur: 0.0000
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4843,19 +4909,25 @@ struct FoodItems {
             Carbohydrates: 10.0,
             Water: 230.0,
             Proteins: 1.5,
+            VitaminC: 0.0, 
             Iron: 0.0008,
             Calcium: 0.030,
             Potassium: 0.250,
             Fat: 0.0,
             Fiber: 1.0,
             Magnesium: 0.015,
-            Zinc: 0.0003,
-            Copper: 0.0001,
-            Manganese: 0.0002,
-            Phosphorus: 0.020,
-            Sodium: 0.020,
-            Sugar: 8.0,
-            Sulfur: 0.0001
+            VitaminB6: 0.0003,
+            VitaminB2: 0.0001,
+            VitaminA: 0.0002,
+            Zinc: 0.020,
+            Copper: 0.020,
+            Manganese: 8.0,
+            Phosphorus: 0.0001,
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
 
 
@@ -4870,28 +4942,26 @@ struct FoodItems {
             Carbohydrates: 23.0,
             Water: 220.0,
             Proteins: 0.0,
+            VitaminC: 0.0, 
             Iron: 0.0000,
             Calcium: 0.0000,
             Potassium: 0.010,
             Fat: 0.0,
             Fiber: 0.0,
             Magnesium: 0.0000,
+            VitaminB6: 0.0000,
+            VitaminB2: 0.0000,
+            VitaminA: 0.0000,
             Zinc: 0.0000,
-            Copper: 0.0000,
-            Manganese: 0.0000,
+            Copper: 0.015,
+            Manganese: 23.0,
             Phosphorus: 0.0000,
-            Sodium: 0.015,
-            Sugar: 23.0,
-            Sulfur: 0.0000
+            Sodium: 0.0,
+            Sugar: 0.0,
+            Sulfur: 0.0,
+            VitaminE: 0.0,
+            VitaminK: 0.0
         ))
-
-
-
-        
-        
-        
-        
-        
         
         
     }

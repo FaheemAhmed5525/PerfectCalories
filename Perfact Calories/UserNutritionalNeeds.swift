@@ -65,6 +65,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         tableView.estimatedRowHeight = 45
         tableView.dataSource  = self
         tableView.delegate = self
+        tableView.layer.cornerRadius = 12
         tableView.backgroundColor = AppCommons.appBackgroundColor2
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
@@ -112,7 +113,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
             valueString = "\(value / 1000) kg"
         }
         else if value >= 1{
-            valueString = "\(value)  g"
+            valueString = "\(value)   g"
         }
         else if value >= 0.001{
             valueString = "\(value * 1000) mg"
