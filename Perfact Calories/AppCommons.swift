@@ -11,6 +11,9 @@ class AppCommons: UIViewController {
 
     
     ///Colors to be used on the user login screen
+    static var gradientColor1 = UIColor.red.cgColor
+    static var gradientColor2 = UIColor.white.cgColor
+    static var gradientColor3 = UIColor.yellow.cgColor
     static let themeColor = CGColor(red: 5/255, green: 245/255, blue: 5/255, alpha: 1.0)
     static let themeColorOnTouch = CGColor(red: 105/255, green: 245/255, blue: 105/255, alpha: 1.0)
     static let appBackgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
@@ -36,7 +39,11 @@ class AppCommons: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = AppCommons.appBackgroundColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [AppCommons.gradientColor1, AppCommons.gradientColor3, AppCommons.gradientColor1
+        ]
+        view.layer.addSublayer(gradientLayer)
         
         //adding all fooditems to the food item array
        // AppCommons.foods.addFoodItemsToArray()

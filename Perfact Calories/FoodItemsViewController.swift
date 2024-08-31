@@ -43,17 +43,17 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
         view.addSubview(scrollView)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = .init(red: 200/255, green: 200/255, blue: 240/255, alpha: 1.0)
+        scrollView.backgroundColor = .none//init(red: 200/255, green: 200/255, blue: 240/255, alpha: 1.0)
         scrollView.layer.borderColor = AppCommons.lightBorderColor
-        scrollView.layer.borderWidth = 2.0
-        scrollView.layer.cornerRadius = 12.0
+        scrollView.layer.borderWidth = 0.0
+        scrollView.layer.cornerRadius = 24.0
         scrollView.isScrollEnabled = true
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 6),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6)
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
         ])
     }
     
@@ -62,7 +62,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
         scrollView.addSubview(itemListContainer)
         
         itemListContainer.translatesAutoresizingMaskIntoConstraints = false
-        itemListContainer.backgroundColor = .clear
+        itemListContainer.backgroundColor = .none
         itemListContainer.layer.borderWidth = 0
         itemListContainer.layer.cornerRadius = 12.0
         itemListContainer.distribution = .fillEqually
@@ -84,7 +84,8 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             let box = UIView()
             itemListContainer.addArrangedSubview(box)
             box.translatesAutoresizingMaskIntoConstraints = false
-            box.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+            box.backgroundColor = .init(red: 240/255, green: 200/255, blue: 200/255, alpha: 1.0)
+
             box.layer.borderColor = AppCommons.borderColor
             box.layer.borderWidth = 1.0
             box.layer.cornerRadius = 12.0

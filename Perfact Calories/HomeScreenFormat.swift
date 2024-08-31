@@ -46,8 +46,12 @@ class HomeScreenFormat: AppCommons {
         setupTopbar()
         setupSidebar()
         
+        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
+    
+    
+    
     
     
     ///func setupTopbar customizes topbar
@@ -55,7 +59,9 @@ class HomeScreenFormat: AppCommons {
         view.addSubview(topbar)
         
         topbar.translatesAutoresizingMaskIntoConstraints = false
-        topbar.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        
+        topbar.layer.addSublayer(CAGradientLayer(layer: [AppCommons.gradientColor1, AppCommons.gradientColor2]))
+        //topbar.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
         topbar.layer.borderWidth = 0.0
         
         NSLayoutConstraint.activate([
@@ -74,17 +80,17 @@ class HomeScreenFormat: AppCommons {
         topbar.addSubview(screenTitle)
         
         screenTitle.translatesAutoresizingMaskIntoConstraints = false
-        screenTitle.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+      //  screenTitle.backgroundColor = .none//UIColor(cgColor: AppCommons.themeColor)
         screenTitle.text = "Perfact Calories"
-        screenTitle.textColor = AppCommons.textColor
+        screenTitle.textColor = AppCommons.textColor3
         screenTitle.textAlignment = .left
-        screenTitle.font = .systemFont(ofSize: 40, weight: .bold)
+        screenTitle.font = .systemFont(ofSize: 48, weight: .bold)
         
         NSLayoutConstraint.activate([
             screenTitle.bottomAnchor.constraint(equalTo: topbar.bottomAnchor),
             screenTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             screenTitle.widthAnchor.constraint(equalToConstant: 300),
-            screenTitle.heightAnchor.constraint(equalToConstant: 42)])
+            screenTitle.heightAnchor.constraint(equalToConstant: 60)])
     }
     
     ///func setupSidebar customizes sidebar
@@ -147,6 +153,9 @@ class HomeScreenFormat: AppCommons {
         sidebar.setupAsSidebarButton(button: LogoutButton, title: "Logout", position: 7)
         
     }
+    
+    
+
     
         
     

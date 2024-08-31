@@ -115,14 +115,14 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         scrollView.backgroundColor = .init(red: 220/255, green: 220/255, blue: 240/255, alpha: 1.0) //AppCommons.appBackgroundColor
         scrollView.layer.borderColor = AppCommons.lightBorderColor
         scrollView.layer.borderWidth = 2.0
-        scrollView.layer.cornerRadius = 12.0
+        scrollView.layer.cornerRadius = 24.0
         scrollView.isScrollEnabled = true
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 52),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6)])
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)])
     }
     
     

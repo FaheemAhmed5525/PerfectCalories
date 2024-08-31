@@ -26,6 +26,9 @@ class HomeScreen: HomeScreenFormat {
         setupButtonsBox()
     }
     
+    override func setupScreenTitle() {
+        //Donothing
+    }
     // Function to customize the welcome label
     func setupWelcomeLabel() {
         view.addSubview(welcomeMessage)
@@ -56,11 +59,11 @@ class HomeScreen: HomeScreenFormat {
     
     // Function to customize the buttons box
     func setupButtonsBox() {
-        buttonsBox.backgroundColor = AppCommons.appBackgroundColor2
-        buttonsBox.layer.cornerRadius = 12
+        buttonsBox.backgroundColor = .none//AppCommons.appBackgroundColor2
+        buttonsBox.layer.cornerRadius = 24
         buttonsBox.translatesAutoresizingMaskIntoConstraints = false
-        buttonsBox.layer.borderWidth = 2.0
-        buttonsBox.layer.borderColor = AppCommons.lightBorderColor
+        buttonsBox.layer.borderWidth = 0.0
+       // buttonsBox.layer.borderColor = .none//AppCommons.lightBorderColor
         
         // Add buttons to the buttonsBox
         buttonsBox.addSubview(fruitsButton)
@@ -86,8 +89,8 @@ class HomeScreen: HomeScreenFormat {
         NSLayoutConstraint.activate([
             buttonsBox.topAnchor.constraint(equalTo: welcomeMessage.bottomAnchor),
             buttonsBox.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
-            buttonsBox.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            buttonsBox.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
+            buttonsBox.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            buttonsBox.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
         ])
         
         // Setting target view
@@ -142,9 +145,9 @@ class HomeScreen: HomeScreenFormat {
     // Function to customize each button
     func setupLargeButton(button: UIButton, title: String) {
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 12
-        button.setTitleColor(AppCommons.textColor3, for: .normal)
-        button.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        button.layer.cornerRadius = 24
+        button.setTitleColor(.black/*AppCommons.textColor*/, for: .normal)
+        button.backgroundColor = .white//UIColor(cgColor: AppCommons.themeColor)
         button.setTitle(title, for: .normal)
         button.layer.borderWidth = 2.0
         button.layer.borderColor = AppCommons.borderColor
