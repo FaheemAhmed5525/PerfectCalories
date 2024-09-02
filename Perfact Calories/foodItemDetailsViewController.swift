@@ -165,7 +165,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         tableView.estimatedRowHeight = 45
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = AppCommons.appBackgroundColor2
+        tableView.backgroundColor = AppCommons.buttonsBackgroundColor
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         itemListContainer.addArrangedSubview(tableView)
@@ -183,7 +183,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = AppCommons.appBackgroundColor2
+        cell.backgroundColor = AppCommons.buttonsBackgroundColor
         
         //clear the previous data
         for subview in cell.contentView.subviews{

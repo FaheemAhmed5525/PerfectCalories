@@ -84,7 +84,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             let box = UIView()
             itemListContainer.addArrangedSubview(box)
             box.translatesAutoresizingMaskIntoConstraints = false
-            box.backgroundColor = .init(red: 240/255, green: 200/255, blue: 200/255, alpha: 1.0)
+            box.backgroundColor = AppCommons.buttonsBackgroundColor
 
             box.layer.borderColor = AppCommons.borderColor
             box.layer.borderWidth = 1.0

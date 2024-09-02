@@ -13,9 +13,6 @@ class LaunchScreen: AppCommons {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        view.backgroundColor = AppCommons.appBackgroundColor
         setupLogo()
         
         // wait for some time

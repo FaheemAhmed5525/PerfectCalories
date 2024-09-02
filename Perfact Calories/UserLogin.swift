@@ -111,7 +111,7 @@ class UserLogin: SignInFormat {
         
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.setTitle("Add as new", for: .normal)
-        registerButton.setTitleColor(UIColor(cgColor: AppCommons.themeColor), for: .normal)
+        registerButton.setTitleColor(AppCommons.textColor, for: .normal)
         registerButton.backgroundColor = .clear
         registerButton.layer.cornerRadius = 6.0
         registerButton.layer.borderWidth = 2.0
@@ -139,7 +139,7 @@ class UserLogin: SignInFormat {
         nextButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
         nextButton.layer.cornerRadius = 6.0
         nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = AppCommons.themeColor
+        nextButton.layer.borderColor = AppCommons.borderColor
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([

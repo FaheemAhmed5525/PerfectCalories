@@ -54,9 +54,10 @@ class GetInfo: SignInFormat {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.locale = .current
         datePicker.datePickerMode = .date
-        
+        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
         datePicker.preferredDatePickerStyle = .wheels
-        datePicker.tintColor = AppCommons.textColor3
+        datePicker.backgroundColor = .white
+        //datePicker.tintColor = AppCommons.textColor3
         datePicker.layer.borderWidth = 1.0
         datePicker.layer.borderColor = AppCommons.themeColor
         datePicker.layer.cornerRadius = 12.0
@@ -66,7 +67,7 @@ class GetInfo: SignInFormat {
             datePicker.topAnchor.constraint(equalTo: elementsBox.topAnchor, constant: 12),
             datePicker.leadingAnchor.constraint(equalTo: elementsBox.leadingAnchor, constant: 12),
             datePicker.trailingAnchor.constraint(equalTo: elementsBox.trailingAnchor, constant: -12),
-            datePicker.heightAnchor.constraint(equalToConstant: 150)])
+            datePicker.heightAnchor.constraint(equalTo: elementsBox.heightAnchor, multiplier: 2/5)])
     }
     
     
@@ -89,7 +90,7 @@ class GetInfo: SignInFormat {
         weightField.layer.borderWidth = 1.5
         weightField.placeholder = "Your Weight"
         weightField.textAlignment = .center
-        weightField.textColor = AppCommons.textColor2
+        weightField.textColor = AppCommons.textColor
         NSLayoutConstraint.activate([
             weightField.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 12),
             weightField.heightAnchor.constraint(equalToConstant: 60),
@@ -126,7 +127,7 @@ class GetInfo: SignInFormat {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(AppCommons.textColor, for: .normal)
-        nextButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        //nextButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
         nextButton.layer.cornerRadius = 6.0
         nextButton.layer.borderWidth = 1.0
         nextButton.layer.borderColor = AppCommons.themeColor

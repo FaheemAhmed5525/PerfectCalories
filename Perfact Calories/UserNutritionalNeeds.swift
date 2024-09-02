@@ -66,7 +66,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         tableView.dataSource  = self
         tableView.delegate = self
         tableView.layer.cornerRadius = 12
-        tableView.backgroundColor = AppCommons.appBackgroundColor2
+        tableView.backgroundColor = AppCommons.buttonsBackgroundColor
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         NSLayoutConstraint.activate([
@@ -89,7 +89,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.backgroundColor = AppCommons.appBackgroundColor2
+        cell.backgroundColor = AppCommons.buttonsBackgroundColor
         
         //clear the previous data
         for subview in cell.contentView.subviews{

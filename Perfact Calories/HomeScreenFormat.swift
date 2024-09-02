@@ -98,7 +98,7 @@ class HomeScreenFormat: AppCommons {
         topbar.addSubview(sidebarButton)
         
         sidebarButton.translatesAutoresizingMaskIntoConstraints = false
-        sidebarButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        sidebarButton.backgroundColor = UIColor(cgColor: AppCommons.gradientColor1)
         sidebarButton.setTitle("\\/", for: .normal)
         sidebarButton.titleLabel?.font = .systemFont(ofSize: 20)
         sidebarButton.setTitleColor(AppCommons.textColor3, for: .normal)
@@ -119,7 +119,7 @@ class HomeScreenFormat: AppCommons {
         view.addSubview(sidebar)
         
         sidebar.translatesAutoresizingMaskIntoConstraints = false
-        sidebar.layer.borderColor = AppCommons.borderColor
+        sidebar.layer.borderColor = .none
         sidebar.layer.borderWidth = 1
         sidebar.layer.cornerRadius = 12
         sidebar.backgroundColor = .none
@@ -128,8 +128,8 @@ class HomeScreenFormat: AppCommons {
         NSLayoutConstraint.activate([
             sidebar.topAnchor.constraint(equalTo: topbar.bottomAnchor),
             sidebar.rightAnchor.constraint(equalTo: view.rightAnchor),
-            sidebar.widthAnchor.constraint(equalToConstant: 200),
-            sidebar.heightAnchor.constraint(equalToConstant: 410)])
+            sidebar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 3/7),
+            sidebar.heightAnchor.constraint(equalToConstant: 380)])
         
         /// adding targets to the buttons:
         homeButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
@@ -231,20 +231,21 @@ extension UIView {
     func setupAsSidebarButton(button: UIButton, title: String, position: Int) {
         self.addSubview(button)
         
-        let height = 40
+        let height = 32
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 24)
+        button.setTitleColor(AppCommons.textColor3, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20)
         button.titleLabel?.textAlignment = .left
-        button.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
-        button.layer.cornerRadius = 2.0
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = AppCommons.themeColor
+        button.backgroundColor = AppCommons.buttonsBackgroundColor
+        button.layer.cornerRadius = 0
+        button.layer.borderWidth = 0
+        button.layer.borderColor = .none
+        button.layer.opacity = 0.8
 
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: self.topAnchor, constant: CGFloat(height * position) ),
+            button.topAnchor.constraint(equalTo: self.topAnchor, constant: CGFloat((height + 12) * position) ),
             button.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/8),
             button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
