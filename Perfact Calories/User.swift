@@ -172,4 +172,15 @@ class User{
         
     }
     
+    func getAgeGroup()-> NeedGroup {
+        let userAge = Int(AppCommons.user.Age)
+        for group in HomeScreenFormat.ageGroups.ageGroups {
+            
+            if userAge < group.maxAge {
+                return group
+            }
+        }
+        return HomeScreenFormat.ageGroups.ageGroups[HomeScreenFormat.ageGroups.ageGroups.count - 2]
+    }
+    
 }

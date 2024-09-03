@@ -96,7 +96,6 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 12.0
         imageView.contentMode = .scaleAspectFill
-        itemListContainer.addArrangedSubview(imageView)
         
         NSLayoutConstraint.activate([
             // imageView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 52),
@@ -165,7 +164,8 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         tableView.estimatedRowHeight = 45
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = AppCommons.buttonsBackgroundColor
+        tableView.backgroundColor = .white
+        tableView.allowsSelection = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         itemListContainer.addArrangedSubview(tableView)
@@ -183,7 +183,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = AppCommons.buttonsBackgroundColor
+        cell.backgroundColor = .white
         
         //clear the previous data
         for subview in cell.contentView.subviews{
@@ -247,6 +247,8 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    
     
     //convert to array to print
     func addElementToArray() {

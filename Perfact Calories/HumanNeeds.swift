@@ -76,8 +76,8 @@ class NeedGroup {
 struct HumanNeeds {
 
    
-    var ageGroups: [NeedGroup] = []
-    var ageGroup: NeedGroup
+    var ageGroups: [NeedGroup] = []  ///array that hold the age groups
+    var ageGroup: NeedGroup          /// item used for appending agegroups to ageGroups
     
     init() {
         

@@ -82,9 +82,9 @@ class HomeScreenFormat: AppCommons {
         screenTitle.translatesAutoresizingMaskIntoConstraints = false
       //  screenTitle.backgroundColor = .none//UIColor(cgColor: AppCommons.themeColor)
         screenTitle.text = "Perfact Calories"
-        screenTitle.textColor = AppCommons.textColor3
+        screenTitle.textColor = UIColor(cgColor: AppCommons.themeColor)
         screenTitle.textAlignment = .left
-        screenTitle.font = .systemFont(ofSize: 48, weight: .bold)
+        screenTitle.font = .systemFont(ofSize: 40, weight: .bold)
         
         NSLayoutConstraint.activate([
             screenTitle.bottomAnchor.constraint(equalTo: topbar.bottomAnchor),
@@ -138,7 +138,7 @@ class HomeScreenFormat: AppCommons {
         vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
         beveragesListButton.addTarget(self, action: #selector(goToBeverageList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
-        perfectPlateButton.addTarget(self, action: #selector(goToFruitList), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToPerfectPlate), for: .touchUpInside)
         LogoutButton.addTarget(self, action: #selector(goToUserLogin), for: .touchUpInside)
 
         
@@ -149,7 +149,7 @@ class HomeScreenFormat: AppCommons {
         sidebar.setupAsSidebarButton(button: vegetableListButton, title: "Vegetables", position: 3)
         sidebar.setupAsSidebarButton(button: beveragesListButton, title: "Beverages", position: 4)
         sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 5)
-        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Calories Calculator", position: 6)
+        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Nutritious", position: 6)
         sidebar.setupAsSidebarButton(button: LogoutButton, title: "Logout", position: 7)
         
     }
@@ -212,6 +212,13 @@ class HomeScreenFormat: AppCommons {
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
+    @objc func goToPerfectPlate() {
+        sidebar.isHidden = true
+        print("------Perfect Plate------")
+        let nextScreen = PerfactPlateViewController()
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
+    
     @objc func goToUserLogin() {
         let result = AppCommons.user.endThisSession()
         if result == "logout_successful" {
@@ -237,7 +244,7 @@ extension UIView {
         button.setTitleColor(AppCommons.textColor3, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20)
         button.titleLabel?.textAlignment = .left
-        button.backgroundColor = AppCommons.buttonsBackgroundColor
+        button.backgroundColor = .white
         button.layer.cornerRadius = 0
         button.layer.borderWidth = 0
         button.layer.borderColor = .none

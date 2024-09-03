@@ -57,7 +57,7 @@ class GetInfo: SignInFormat {
         datePicker.setValue(UIColor.black, forKeyPath: "textColor")
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.backgroundColor = .white
-        //datePicker.tintColor = AppCommons.textColor3
+        datePicker.tintColor = AppCommons.textColor3
         datePicker.layer.borderWidth = 1.0
         datePicker.layer.borderColor = AppCommons.themeColor
         datePicker.layer.cornerRadius = 12.0

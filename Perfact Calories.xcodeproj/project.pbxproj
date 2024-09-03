@@ -18,6 +18,7 @@
 		0DAA4E8D2C73680700C3880C /* AppCommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E8C2C73680700C3880C /* AppCommons.swift */; };
 		0DAA4E8F2C736B9500C3880C /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */; };
 		0DB1187F2C76F04E000DD1A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1187E2C76F04E000DD1A6 /* ViewController.swift */; };
+		0DB2AA4B2C86C77D009C5E8B /* PerfactPlateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2AA4A2C86C77D009C5E8B /* PerfactPlateViewController.swift */; };
 		0DC2B8DB2C75BBF500B65EC8 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */; };
 		0DCBCE272C73165900A45528 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE262C73165900A45528 /* AppDelegate.swift */; };
 		0DCBCE292C73165900A45528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCBCE282C73165900A45528 /* SceneDelegate.swift */; };
@@ -62,6 +63,7 @@
 		0DAA4E8C2C73680700C3880C /* AppCommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommons.swift; sourceTree = "<group>"; };
 		0DAA4E8E2C736B9500C3880C /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0DB1187E2C76F04E000DD1A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DB2AA4A2C86C77D009C5E8B /* PerfactPlateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfactPlateViewController.swift; sourceTree = "<group>"; };
 		0DC2B8DA2C75BBF500B65EC8 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		0DCBCE232C73165900A45528 /* Perfact Calories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Perfact Calories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCBCE262C73165900A45528 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				0D1AF7CA2C7875970092D25E /* FoodItemsViewController.swift */,
 				0D9490762C818E330084ACE3 /* foodItemDetailsViewController.swift */,
 				0DA95D462C7DF50C0045755D /* UserNutritionalNeeds.swift */,
+				0DB2AA4A2C86C77D009C5E8B /* PerfactPlateViewController.swift */,
 			);
 			path = "Perfact Calories";
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				0DB1187F2C76F04E000DD1A6 /* ViewController.swift in Sources */,
 				0DC2B8DB2C75BBF500B65EC8 /* FoodItem.swift in Sources */,
 				0D9490792C8198AC0084ACE3 /* LaunchScreen.swift in Sources */,
+				0DB2AA4B2C86C77D009C5E8B /* PerfactPlateViewController.swift in Sources */,
 				0DCBCE592C734CC000A45528 /* UserLogin.swift in Sources */,
 				0DAA4E8F2C736B9500C3880C /* HomeScreen.swift in Sources */,
 				0DCBCE5D2C734E3000A45528 /* User.swift in Sources */,
