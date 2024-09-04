@@ -117,7 +117,7 @@ class PerfactPlateViewController: HomeScreenFormat {
         fruitItem.layer.borderWidth = 1.0
         fruitItem.layer.cornerRadius = 12.0
         fruitItem.clipsToBounds = true
-        fruitItem.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        fruitItem.heightAnchor.constraint(equalToConstant: 160).isActive = true
         fruitItem.widthAnchor.constraint(equalTo: itemListContainer.widthAnchor).isActive = true
 
         
@@ -132,7 +132,7 @@ class PerfactPlateViewController: HomeScreenFormat {
         let itemNameLabel = UILabel()
         fruitItem.addSubview(itemNameLabel)
         itemNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        itemNameLabel.text = String("\(foodItem.Name)")
+        itemNameLabel.text = "\(foodItem.Name)"
         itemNameLabel.textColor = AppCommons.textColor
         itemNameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         itemNameLabel.layer.borderWidth = 0
@@ -141,12 +141,22 @@ class PerfactPlateViewController: HomeScreenFormat {
         let quantityLabel = UILabel()
         fruitItem.addSubview(quantityLabel)
         quantityLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityLabel.text = String("Quantity: \(quantity) g")
-        quantityLabel.textAlignment = .right
+        quantityLabel.textAlignment = .left
         quantityLabel.textColor = AppCommons.textColor3
         quantityLabel.font = .systemFont(ofSize: 22)
+        quantityLabel.numberOfLines = 0
         quantityLabel.layer.borderWidth = 0
-
+        
+        if foodItem.Weight == 100 {
+            quantityLabel.text = "Eat \(Int(quantity/100) * 100) grams of \(foodItem.Name.lowercased()) today"
+        }
+        else {
+            let number = Int(quantity / foodItem.Weight)
+            if number == 0 || number == 1 {
+                quantityLabel.text = "Eat one \(foodItem.Name.lowercased()) today"
+            }
+            quantityLabel.text = "Eat \(number) to \(number + 1) \(foodItem.Name.lowercased())s today"
+        }
         
         let imageView = UIImageView()
         imageView.image = foodItem.Image
@@ -162,13 +172,15 @@ class PerfactPlateViewController: HomeScreenFormat {
             itemNameLabel.widthAnchor.constraint(equalToConstant: 200),
             itemNameLabel.heightAnchor.constraint(equalToConstant: CGFloat(itemHeight)),
             
-            quantityLabel.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 12),
+            quantityLabel.bottomAnchor.constraint(equalTo: fruitItem.bottomAnchor, constant: -6),
             quantityLabel.leadingAnchor.constraint(equalTo: fruitItem.leadingAnchor, constant: 12),
+            quantityLabel.trailingAnchor.constraint(equalTo: fruitItem.trailingAnchor, constant: -12),
+            quantityLabel.heightAnchor.constraint(equalToConstant: 52),
             
-            imageView.topAnchor.constraint(equalTo: fruitItem.topAnchor, constant:  12),
+            imageView.topAnchor.constraint(equalTo: fruitItem.topAnchor, constant:  6),
             imageView.trailingAnchor.constraint(equalTo: fruitItem.trailingAnchor, constant: -12),
             imageView.widthAnchor.constraint(equalToConstant: 156),
-            imageView.heightAnchor.constraint(equalToConstant: 156)
+            imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         
@@ -186,7 +198,7 @@ class PerfactPlateViewController: HomeScreenFormat {
         dryFruitItem.layer.borderWidth = 1.0
         dryFruitItem.layer.cornerRadius = 12.0
         dryFruitItem.clipsToBounds = true
-        dryFruitItem.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        dryFruitItem.heightAnchor.constraint(equalToConstant: 164).isActive = true
         dryFruitItem.widthAnchor.constraint(equalTo: itemListContainer.widthAnchor).isActive = true
         
         
@@ -210,12 +222,26 @@ class PerfactPlateViewController: HomeScreenFormat {
         let quantityLabel = UILabel()
         dryFruitItem.addSubview(quantityLabel)
         quantityLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityLabel.text = String("Quantity: \(quantity) g")
-        quantityLabel.textAlignment = .right
+        quantityLabel.textAlignment = .left
         quantityLabel.textColor = AppCommons.textColor3
         quantityLabel.font = .systemFont(ofSize: 22)
+        quantityLabel.numberOfLines = 0
         quantityLabel.layer.borderWidth = 0
 
+        if foodItem.Weight == 100 {
+            quantityLabel.text = "Eat \(Int(quantity/10) * 10) grams of \(foodItem.Name.lowercased()) today"
+        }
+        else {
+            let number = Int(quantity / foodItem.Weight)
+            if number == 0 {
+                quantityLabel.text = "Eat one \(foodItem.Name.lowercased()) today"
+            }
+            else{
+                quantityLabel.text = "Eat \(number) to \(number + 1) \(foodItem.Name.lowercased())s today"
+            }
+            
+        }
+        
         
         let imageView = UIImageView()
         imageView.image = foodItem.Image
@@ -231,13 +257,15 @@ class PerfactPlateViewController: HomeScreenFormat {
             itemNameLabel.widthAnchor.constraint(equalToConstant: 200),
             itemNameLabel.heightAnchor.constraint(equalToConstant: CGFloat(itemHeight)),
             
-            quantityLabel.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 12),
+            quantityLabel.bottomAnchor.constraint(equalTo: dryFruitItem.bottomAnchor, constant: -6),
             quantityLabel.leadingAnchor.constraint(equalTo: dryFruitItem.leadingAnchor, constant: 12),
+            quantityLabel.trailingAnchor.constraint(equalTo: dryFruitItem.trailingAnchor, constant: -12),
+            quantityLabel.heightAnchor.constraint(equalToConstant: 56),
             
-            imageView.topAnchor.constraint(equalTo: dryFruitItem.topAnchor, constant: 12),
+            imageView.topAnchor.constraint(equalTo: dryFruitItem.topAnchor, constant: 6),
             imageView.trailingAnchor.constraint(equalTo: dryFruitItem.trailingAnchor, constant: -12),
             imageView.widthAnchor.constraint(equalToConstant: 156),
-            imageView.heightAnchor.constraint(equalToConstant: 156)
+            imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -253,17 +281,17 @@ class PerfactPlateViewController: HomeScreenFormat {
         vegetablesBox.layer.borderWidth = 1.0
         vegetablesBox.layer.cornerRadius = 12.0
         vegetablesBox.clipsToBounds = true
-        vegetablesBox.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        vegetablesBox.heightAnchor.constraint(equalToConstant: 164).isActive = true
         vegetablesBox.widthAnchor.constraint(equalTo: itemListContainer.widthAnchor).isActive = true
         
         
         
-        let quantityOfDryFruits = Float(0.12)  //12%
+        let quantityOfVegetables = Float(0.25/2)  //25% for cooked vegetales
         
         let foodItem = AppCommons.foods.vegetables[Int.random(in: 0..<AppCommons.foods.vegetables.count)]
         //quantity of the food to be taken
-        let quantity = round(Float((foodItem.Weight / foodItem.totalCalories) * requiredCalories * quantityOfDryFruits))
-        
+        let quantity = round(Float((foodItem.Weight / foodItem.totalCalories) * requiredCalories * quantityOfVegetables) / 2)   ///two times a day so divided by 2
+        let quantityInCups = Int(quantity / 230)
         
         let itemNameLabel = UILabel()
         vegetablesBox.addSubview(itemNameLabel)
@@ -277,12 +305,22 @@ class PerfactPlateViewController: HomeScreenFormat {
         let quantityLabel = UILabel()
         vegetablesBox.addSubview(quantityLabel)
         quantityLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityLabel.text = String("Quantity: \(quantity) g")
-        quantityLabel.textAlignment = .right
+        quantityLabel.textAlignment = .left
         quantityLabel.textColor = AppCommons.textColor3
         quantityLabel.font = .systemFont(ofSize: 22)
+        quantityLabel.numberOfLines = 0
         quantityLabel.layer.borderWidth = 0
 
+        if quantityInCups == 0 || quantityInCups == 1 {
+            quantityLabel.text = "Have 1 cup of \(foodItem.Name.lowercased()) two times today"
+
+        }
+        else {
+            quantityLabel.text = "Have \(quantityInCups - 1) to \(quantityInCups) cups of \(foodItem.Name.lowercased()) two times today"
+        }
+        
+
+        
         
         let imageView = UIImageView()
         imageView.image = foodItem.Image
@@ -298,13 +336,15 @@ class PerfactPlateViewController: HomeScreenFormat {
             itemNameLabel.widthAnchor.constraint(equalToConstant: 200),
             itemNameLabel.heightAnchor.constraint(equalToConstant: CGFloat(itemHeight)),
             
-            quantityLabel.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 12),
+            quantityLabel.bottomAnchor.constraint(equalTo: vegetablesBox.bottomAnchor, constant: -6),
             quantityLabel.leadingAnchor.constraint(equalTo: vegetablesBox.leadingAnchor, constant: 12),
+            quantityLabel.trailingAnchor.constraint(equalTo: vegetablesBox.trailingAnchor, constant: -12),
+            quantityLabel.heightAnchor.constraint(equalToConstant: 56),
             
-            imageView.topAnchor.constraint(equalTo: vegetablesBox.topAnchor, constant: 12),
+            imageView.topAnchor.constraint(equalTo: vegetablesBox.topAnchor, constant: 6),
             imageView.trailingAnchor.constraint(equalTo: vegetablesBox.trailingAnchor, constant: -12),
             imageView.widthAnchor.constraint(equalToConstant: 156),
-            imageView.heightAnchor.constraint(equalToConstant: 156)
+            imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -320,24 +360,18 @@ class PerfactPlateViewController: HomeScreenFormat {
         beveragesBox.layer.borderWidth = 1.0
         beveragesBox.layer.cornerRadius = 12.0
         beveragesBox.clipsToBounds = true
-        beveragesBox.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        beveragesBox.heightAnchor.constraint(equalToConstant: 164).isActive = true
 //        beveragesBox.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
 //        beveragesBox.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         beveragesBox.widthAnchor.constraint(equalTo: itemListContainer.widthAnchor).isActive = true
         
         
         
-        let quantityOfDryFruits = Float(0.12)  //12%
-        
-        let foodItem = AppCommons.foods.beverages[Int.random(in: 0..<AppCommons.foods.beverages.count)]
-        //quantity of the food to be taken
-        let quantity = round(Float((foodItem.Weight / foodItem.totalCalories) * requiredCalories * quantityOfDryFruits))
-        
+        let quantityOfBeverages = Float(0.12)  //12%
         
         let itemNameLabel = UILabel()
         beveragesBox.addSubview(itemNameLabel)
         itemNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        itemNameLabel.text = String("\(foodItem.Name)")
         itemNameLabel.textColor = AppCommons.textColor
         itemNameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         itemNameLabel.layer.borderWidth = 0
@@ -346,20 +380,42 @@ class PerfactPlateViewController: HomeScreenFormat {
         let quantityLabel = UILabel()
         beveragesBox.addSubview(quantityLabel)
         quantityLabel.translatesAutoresizingMaskIntoConstraints = false
-        quantityLabel.text = String("Quantity: \(quantity) g")
-        quantityLabel.textAlignment = .right
+        quantityLabel.textAlignment = .left
         quantityLabel.textColor = AppCommons.textColor3
         quantityLabel.font = .systemFont(ofSize: 22)
+        quantityLabel.numberOfLines = 0
         quantityLabel.layer.borderWidth = 0
-
+        
         
         let imageView = UIImageView()
-        imageView.image = foodItem.Image
         beveragesBox.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 12.0
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
+        
+        var processCompleted = false
+        while processCompleted == false {
+            let foodItem = AppCommons.foods.beverages[Int.random(in: 0..<AppCommons.foods.beverages.count)]
+            //quantity of the food to be taken
+            if foodItem.totalCalories == 0 {
+                continue
+            }
+            let quantity = round(Float((foodItem.Weight / foodItem.totalCalories) * requiredCalories * quantityOfBeverages))
+            let quantityInGlass = Int(quantity / 220)       //convertng to number of galsses
+            
+            //Setting text to labels
+            itemNameLabel.text = String("\(foodItem.Name)")
+            quantityLabel.text = "Have \(quantityInGlass - 1) to \(quantityInGlass) glass of \(foodItem.Name.lowercased()) today"
+            
+            imageView.image = foodItem.Image
+ 
+            
+            processCompleted = true
+            
+        }
+        
+        
         
         NSLayoutConstraint.activate([
             itemNameLabel.topAnchor.constraint(equalTo: beveragesBox.topAnchor, constant: 24),
@@ -367,13 +423,15 @@ class PerfactPlateViewController: HomeScreenFormat {
             itemNameLabel.widthAnchor.constraint(equalToConstant: 200),
             itemNameLabel.heightAnchor.constraint(equalToConstant: CGFloat(itemHeight)),
             
-            quantityLabel.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 12),
+            quantityLabel.bottomAnchor.constraint(equalTo: beveragesBox.bottomAnchor, constant: -6),
             quantityLabel.leadingAnchor.constraint(equalTo: beveragesBox.leadingAnchor, constant: 12),
+            quantityLabel.trailingAnchor.constraint(equalTo: beveragesBox.trailingAnchor, constant: -12),
+            quantityLabel.heightAnchor.constraint(equalToConstant: 56),
             
-            imageView.topAnchor.constraint(equalTo: beveragesBox.topAnchor, constant: 12),
+            imageView.topAnchor.constraint(equalTo: beveragesBox.topAnchor, constant: 6),
             imageView.trailingAnchor.constraint(equalTo: beveragesBox.trailingAnchor, constant: -12),
             imageView.widthAnchor.constraint(equalToConstant: 156),
-            imageView.heightAnchor.constraint(equalToConstant: 156)
+            imageView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     

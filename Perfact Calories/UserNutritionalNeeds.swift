@@ -14,6 +14,12 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
     static var dataValue: [(String, Float)] = []
     
+    
+    //constant header at he to of table
+    let headerView = UIView()
+    
+    
+    //constains data to be presented
     let tableView = UITableView()
     
     
@@ -25,6 +31,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
 
         selectUsersAgeGroup()
         addElementToArray()
+        setupHeaderView()
         setupTableView()
 
         view.bringSubviewToFront(sidebar)
@@ -54,7 +61,48 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         }
     }
     
-    
+    //customizing the header view
+    func setupHeaderView() {
+        view.addSubview(headerView)
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .white
+        headerView.layer.borderWidth = 1.0
+        headerView.layer.borderColor = UIColor.black.cgColor
+        headerView.layer.cornerRadius = 12
+        
+        let componentLabel = UILabel()
+        componentLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        componentLabel.textColor = .black
+        componentLabel.numberOfLines = 0
+        componentLabel.text = "Nutirtional Components"
+        
+        let valuesLabel = UILabel()
+        valuesLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        valuesLabel.textColor = .black
+        valuesLabel.numberOfLines = 0
+        valuesLabel.text = "Nutritional Values"
+        
+        headerView.addSubview(componentLabel)
+        headerView.addSubview(valuesLabel)
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 6),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            headerView.heightAnchor.constraint(equalToConstant: 46),
+        
+            componentLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 6),
+            componentLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 6),
+            componentLabel.trailingAnchor.constraint(equalTo: headerView.centerXAnchor, constant: -6),
+            componentLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -6),
+        
+            valuesLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 6),
+            valuesLabel.leadingAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 6),
+            valuesLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -6),
+            valuesLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -6)])
+    }
+
     
     //setupTableView customizes the tableView
     func setupTableView() {
@@ -66,11 +114,12 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         tableView.dataSource  = self
         tableView.delegate = self
         tableView.layer.cornerRadius = 12
-        tableView.backgroundColor = AppCommons.buttonsBackgroundColor
+        tableView.allowsSelection = false
+        tableView.backgroundColor = .none
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topbar.safeAreaLayoutGuide.bottomAnchor, constant: 12),
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)])
@@ -89,7 +138,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.backgroundColor = AppCommons.buttonsBackgroundColor
+        cell.backgroundColor = .white
         
         //clear the previous data
         for subview in cell.contentView.subviews{

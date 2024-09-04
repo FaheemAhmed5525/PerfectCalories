@@ -95,7 +95,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             box.layer.borderColor = AppCommons.borderColor
             box.layer.borderWidth = 1.0
             box.layer.cornerRadius = 12.0
-            box.heightAnchor.constraint(equalToConstant: 70).isActive = true
+            box.heightAnchor.constraint(equalToConstant: 98).isActive = true
             box.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
 
             // Assign a unique tag to the box for identifying which item was clicked
@@ -116,23 +116,23 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             // AverageWeight prints the average weight of the item
             let perWeekLabel = UILabel()
             perWeekLabel.translatesAutoresizingMaskIntoConstraints = false
-            perWeekLabel.text = String(foodItems[i].prescribedPerWeek) + " per week"
+            perWeekLabel.text = "Weekly intake: \(foodItems[i].prescribedPerWeek)"
             perWeekLabel.textColor = AppCommons.textColor3
             perWeekLabel.font = .systemFont(ofSize: 20)
             perWeekLabel.layer.borderWidth = 0.0
             
-            // TypeLabel shows the type of the food item like fruit, vegetable, or else
-            let typeLabel = UILabel()
-            typeLabel.translatesAutoresizingMaskIntoConstraints = false
-            typeLabel.text = "Type: " + String(foodItems[i].type)
-            typeLabel.textColor = AppCommons.textColor3
-            typeLabel.font = .systemFont(ofSize: 20)
-            typeLabel.layer.borderWidth = 0.0
+//            // TypeLabel shows the type of the food item like fruit, vegetable, or else
+//            let typeLabel = UILabel()
+//            typeLabel.translatesAutoresizingMaskIntoConstraints = false
+//            typeLabel.text = "Type: " + String(foodItems[i].type)
+//            typeLabel.textColor = AppCommons.textColor3
+//            typeLabel.font = .systemFont(ofSize: 20)
+//            typeLabel.layer.borderWidth = 0.0
             
             // CaloriesLabel prints the total calories in food item
             let caloriesLabel = UILabel()
             caloriesLabel.translatesAutoresizingMaskIntoConstraints = false
-            caloriesLabel.text = "Total Calories: " + String(foodItems[i].totalCalories)
+            caloriesLabel.text = "Average Calories: " + String(foodItems[i].totalCalories)
             caloriesLabel.textColor = AppCommons.textColor3
             caloriesLabel.font = .systemFont(ofSize: 20)
             caloriesLabel.layer.borderWidth = 0
@@ -141,28 +141,28 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             box.addSubview(nameLabel)
             box.addSubview(caloriesLabel)
             box.addSubview(perWeekLabel)
-            box.addSubview(typeLabel)
+//            box.addSubview(typeLabel)
 
             // Applying constraints to the labels to put them in view: box
             NSLayoutConstraint.activate([
                 nameLabel.topAnchor.constraint(equalTo: box.topAnchor, constant: 2),
-                nameLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 20),
+                nameLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 12),
                 nameLabel.widthAnchor.constraint(equalToConstant: 300),
                 nameLabel.heightAnchor.constraint(equalToConstant: 40),
                 
                 perWeekLabel.bottomAnchor.constraint(equalTo: box.bottomAnchor, constant: -4),
                 perWeekLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 12),
-                perWeekLabel.widthAnchor.constraint(equalToConstant: 150),
+                perWeekLabel.widthAnchor.constraint(equalToConstant: 220),
                 perWeekLabel.heightAnchor.constraint(equalToConstant: 20),
                 
-                typeLabel.topAnchor.constraint(equalTo: box.topAnchor, constant: 4),
-                typeLabel.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -4),
-                typeLabel.widthAnchor.constraint(equalToConstant: 120),
-                typeLabel.heightAnchor.constraint(equalToConstant: 20),
+//                typeLabel.topAnchor.constraint(equalTo: box.topAnchor, constant: 4),
+//                typeLabel.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -4),
+//                typeLabel.widthAnchor.constraint(equalToConstant: 120),
+//                typeLabel.heightAnchor.constraint(equalToConstant: 20),
                 
-                caloriesLabel.bottomAnchor.constraint(equalTo: box.bottomAnchor, constant: -4),
-                caloriesLabel.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -4),
-                caloriesLabel.widthAnchor.constraint(equalToConstant: 180),
+                caloriesLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
+                caloriesLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 12),
+                caloriesLabel.widthAnchor.constraint(equalToConstant: 220),
                 caloriesLabel.heightAnchor.constraint(equalToConstant: 20),
             ])
         }
