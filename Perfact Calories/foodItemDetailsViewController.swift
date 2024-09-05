@@ -252,7 +252,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     
     //convert to array to print
     func addElementToArray() {
-
+        
         dataValue.append(("Weight", Float(foodItem?.Weight ?? 0.0)))
         dataValue.append(("Total Calories", Float(foodItem?.totalCalories ?? 0.0)))
         dataValue.append(("Water", Float(foodItem?.water ?? 0.0)))

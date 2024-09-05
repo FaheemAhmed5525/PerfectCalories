@@ -178,13 +178,12 @@ class User{
             
             if userAge < group.maxAge {
                 let changeFactor = ((group.averageWeight - Float(AppCommons.user.weight)) / Float(AppCommons.user.weight))
-                
-                let userRequirement = NeedGroup(
+                let chagedGroup = NeedGroup(
                     minAgeYears: Float(group.minAge/31557600),
                     maxAgeYears: Float(group.maxAge/31557600),
                     minAgeMonths: Float((group.minAge % 31557600) / 2626560),
                     maxAgeMonths: Float((group.maxAge % 31557600) / 2626560),
-                    totalCaluries: group.totalCaluries + group.totalCaluries * changeFactor,
+                    totalCaluries: (group.totalCaluries + group.totalCaluries * changeFactor),
                     totalMinerals: group.totalMinerals + group.totalMinerals * changeFactor,
                     carbohydrates: group.carbohydrates + group.carbohydrates * changeFactor,
                     water: group.water + group.water * changeFactor,
@@ -210,7 +209,9 @@ class User{
                     vitaminK: group.vitaminK + group.vitaminK * changeFactor,
                     averageWeight: group.averageWeight
                 )
-                return userRequirement
+                
+
+                return chagedGroup
             }
         }
         return HomeScreenFormat.ageGroups.ageGroups[HomeScreenFormat.ageGroups.ageGroups.count - 2]

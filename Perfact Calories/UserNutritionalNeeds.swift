@@ -12,7 +12,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
     
     
-    static var dataValue: [(String, Float)] = []
+    var dataValue: [(String, Float)] = []
 
     
     // Constant header at the top of table
@@ -21,6 +21,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     // Constains data to be presented
     let tableView = UITableView()
     
+    let requirementDetails = AppCommons.user.getAgeGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,8 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         //setup to of screen
         setupScreenTitle()
 
-        selectUsersAgeGroup()
+        
+//        selectUsersAgeGroup()
         addElementToArray()
         setupTextView()
         setupHeaderView()
@@ -50,18 +52,19 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
 
     
-    //The functions return the index of the age group the user belongs to
-    func selectUsersAgeGroup(){
-        let userAge = AppCommons.user.Age
-        for i in 0...HomeScreenFormat.ageGroups.ageGroups.count {
-            
-            if Int(userAge) <= HomeScreenFormat.ageGroups.ageGroups[i].maxAge {
-                HomeScreenFormat.selectedAgeGroup = HomeScreenFormat.ageGroups.ageGroups[i]
-                
-                break
-            }
-        }
-    }
+//    //The functions return the index of the age group the user belongs to
+//    func selectUsersAgeGroup(){
+//        HomeScreenFormat.selectedAgeGroup = UserNutritionalNeeds.user.getAgeGroup()
+//        let userAge = AppCommons.user.Age
+//        for i in 0...HomeScreenFormat.ageGroups.ageGroups.count {
+//            
+//            if Int(userAge) <= HomeScreenFormat.ageGroups.ageGroups[i].maxAge {
+//                HomeScreenFormat.selectedAgeGroup = HomeScreenFormat.ageGroups.ageGroups[i]
+//                
+//                break
+//            }
+//        }
+//    }
     
 
 
@@ -139,7 +142,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UserNutritionalNeeds.dataValue.count
+        return dataValue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,7 +156,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         }
         
         //getting one row
-        let rowData = UserNutritionalNeeds.dataValue[indexPath.row]
+        let rowData = dataValue[indexPath.row]
         
         //Print the name of the fruit
         let nameLabel = UILabel()
@@ -166,19 +169,25 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.textColor = AppCommons.textColor
         //converting small value in mg and
-        let value = rowData.1
+        var value = rowData.1
         var valueString: String
         if value >= 1000 {
-            valueString = "\(value / 1000) kg"
+            value = value / 1000                                //converted to KG
+            valueString = "\(round(value * 10) / 10) kg"        //rounding and converting to string
         }
         else if value >= 1{
-            valueString = "\(value)   g"
+            valueString = "\(round(value * 10) / 10)   g"       //rounding and converting to string
+
         }
         else if value >= 0.001{
-            valueString = "\(value * 1000) mg"
+            value = value * 1000
+            valueString = "\(round(value * 10) / 10) mg"        //rounding and converting to string
+
         }
         else {
-            valueString = "\(value * 1000000) µm"
+            value = value * 1000000
+            valueString = "\(round(value * 10) / 10) µm"        //rounding and converting to string
+
         }
         valueLabel.text = "\(valueString)"
         valueLabel.font = .systemFont(ofSize: 20)
@@ -215,28 +224,28 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     func addElementToArray() {
         
         
-        UserNutritionalNeeds.dataValue.append(("Total Calories", Float(HomeScreenFormat.selectedAgeGroup?.totalCaluries ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Water", Float(HomeScreenFormat.selectedAgeGroup?.water ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Protiens", Float(HomeScreenFormat.selectedAgeGroup?.proteins ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin C", Float(HomeScreenFormat.selectedAgeGroup?.vitaminC ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Iron", Float(HomeScreenFormat.selectedAgeGroup?.iron ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Calcium", Float(HomeScreenFormat.selectedAgeGroup?.calcium ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Potassium", Float(HomeScreenFormat.selectedAgeGroup?.potassium ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Fat", Float(HomeScreenFormat.selectedAgeGroup?.fat ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Fiber", Float(HomeScreenFormat.selectedAgeGroup?.fiber ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Magnesium", Float(HomeScreenFormat.selectedAgeGroup?.magnesium ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin B6", Float(HomeScreenFormat.selectedAgeGroup?.vitaminB2 ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin B2", Float(HomeScreenFormat.selectedAgeGroup?.vitaminB2 ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin A", Float(HomeScreenFormat.selectedAgeGroup?.vitaminA ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Zinc", Float(HomeScreenFormat.selectedAgeGroup?.zinc ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Copper", Float(HomeScreenFormat.selectedAgeGroup?.copper ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Manganese", Float(HomeScreenFormat.selectedAgeGroup?.manganese ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Phosphorus", Float(HomeScreenFormat.selectedAgeGroup?.phosphorus ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Sodium", Float(HomeScreenFormat.selectedAgeGroup?.sodium ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Sugar", Float(HomeScreenFormat.selectedAgeGroup?.sugar ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Sulfer", Float(HomeScreenFormat.selectedAgeGroup?.sulfer ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin E", Float(HomeScreenFormat.selectedAgeGroup?.vitaminE ?? 0.0)))
-        UserNutritionalNeeds.dataValue.append(("Vitamin K", Float(HomeScreenFormat.selectedAgeGroup?.vitaminK ?? 0.0)))
+        dataValue.append(("Total Calories", Float(requirementDetails.totalCaluries)))
+        dataValue.append(("Water", Float(requirementDetails.water)))
+        dataValue.append(("Protiens", Float(requirementDetails.proteins)))
+        dataValue.append(("Vitamin C", Float(requirementDetails.vitaminC)))
+        dataValue.append(("Iron", Float(requirementDetails.iron)))
+        dataValue.append(("Calcium", Float(requirementDetails.calcium)))
+        dataValue.append(("Potassium", Float(requirementDetails.potassium)))
+        dataValue.append(("Fat", Float(requirementDetails.fat)))
+        dataValue.append(("Fiber", Float(requirementDetails.fiber)))
+        dataValue.append(("Magnesium", Float(requirementDetails.magnesium)))
+        dataValue.append(("Vitamin B6", Float(requirementDetails.vitaminB2)))
+        dataValue.append(("Vitamin B2", Float(requirementDetails.vitaminB2)))
+        dataValue.append(("Vitamin A", Float(requirementDetails.vitaminA)))
+        dataValue.append(("Zinc", Float(requirementDetails.zinc)))
+        dataValue.append(("Copper", Float(requirementDetails.copper)))
+        dataValue.append(("Manganese", Float(requirementDetails.manganese)))
+        dataValue.append(("Phosphorus", Float(requirementDetails.phosphorus)))
+        dataValue.append(("Sodium", Float(requirementDetails.sodium)))
+        dataValue.append(("Sugar", Float(requirementDetails.sugar)))
+        dataValue.append(("Sulfer", Float(requirementDetails.sulfer)))
+        dataValue.append(("Vitamin E", Float(requirementDetails.vitaminE)))
+        dataValue.append(("Vitamin K", Float(requirementDetails.vitaminK)))
 
     }
 
