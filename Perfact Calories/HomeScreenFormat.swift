@@ -16,6 +16,9 @@ class HomeScreenFormat: AppCommons {
     //sidebar view that contain items
     let sidebar = UIView()
     
+    // Discribing text
+    let textView = UIView()
+    
     //sidebarButton: hide and unhide sidebar
     let sidebarButton = UIButton()
     
@@ -45,6 +48,10 @@ class HomeScreenFormat: AppCommons {
         
         setupTopbar()
         setupSidebar()
+        
+        // Adding tap gesture to the box that takes it to FoodItemsDetailView
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(hideSidebar))
+        view.addGestureRecognizer(gesture)
         
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
@@ -82,7 +89,7 @@ class HomeScreenFormat: AppCommons {
         screenTitle.translatesAutoresizingMaskIntoConstraints = false
       //  screenTitle.backgroundColor = .none//UIColor(cgColor: AppCommons.themeColor)
         screenTitle.text = "Perfact Calories"
-        screenTitle.textColor = UIColor(cgColor: AppCommons.themeColor)
+        screenTitle.textColor = AppCommons.textColor3
         screenTitle.textAlignment = .left
         screenTitle.font = .systemFont(ofSize: 40, weight: .bold)
         
@@ -138,7 +145,7 @@ class HomeScreenFormat: AppCommons {
         vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
         beveragesListButton.addTarget(self, action: #selector(goToBeverageList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
-        perfectPlateButton.addTarget(self, action: #selector(goToPerfectPlate), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToHealthyFood), for: .touchUpInside)
         LogoutButton.addTarget(self, action: #selector(goToUserLogin), for: .touchUpInside)
 
         
@@ -149,13 +156,53 @@ class HomeScreenFormat: AppCommons {
         sidebar.setupAsSidebarButton(button: vegetableListButton, title: "Vegetables", position: 3)
         sidebar.setupAsSidebarButton(button: beveragesListButton, title: "Beverages", position: 4)
         sidebar.setupAsSidebarButton(button: humanNeedsButton, title: "Human needs", position: 5)
-        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Nutritious", position: 6)
+        sidebar.setupAsSidebarButton(button: perfectPlateButton, title: "Healthy Food", position: 6)
         sidebar.setupAsSidebarButton(button: LogoutButton, title: "Logout", position: 7)
         
     }
     
     
 
+    //customizing the header view
+    func setupTextView() {
+        view.addSubview(textView)
+        
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = .white
+        textView.layer.borderWidth = 1.0
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.cornerRadius = 12
+        
+        // hint label display the user a text about the given details
+        let textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.text = "Nutrients values are as per Your age requirements."
+        textLabel.textColor = AppCommons.textColor3
+        textLabel.font = .systemFont(ofSize: 20)
+        textLabel.numberOfLines = 0
+        textLabel.layer.cornerRadius = 12.0
+        
+        
+        textView.addSubview(textLabel)
+
+        
+        NSLayoutConstraint.activate([
+            textView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 6),
+            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            textView.heightAnchor.constraint(equalToConstant: 60),
+            
+            textLabel.topAnchor.constraint(equalTo: textView.topAnchor),
+            textLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor, constant: 12),
+            textLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: -12),
+            textLabel.heightAnchor.constraint(equalTo: textView.heightAnchor),
+        ])
+    }
+    
+    
+    @objc func hideSidebar() {
+        sidebar.isHidden = true
+    }
     
         
     
@@ -168,14 +215,12 @@ class HomeScreenFormat: AppCommons {
     //controler functions
     @objc func goToHome() {
         sidebar.isHidden = true
-        print("----------Home Screen-----------")
         let homeScreen = HomeScreen()
         navigationController?.setViewControllers([homeScreen], animated: true)
     }
     
     @objc func goToFruitList() {
         sidebar.isHidden = true
-        print("----------Fruit list Screen-----------")
         let nextScreen = FoodItemsViewController()
         nextScreen.foodItems = AppCommons.foods.fruits
         navigationController?.pushViewController(nextScreen, animated: true)
@@ -183,7 +228,6 @@ class HomeScreenFormat: AppCommons {
     
     @objc func goToDryFruitList() {
         sidebar.isHidden = true
-        print("__________Dry Fruit List----------")
         let nextScreen = FoodItemsViewController()
         nextScreen.foodItems = AppCommons.foods.dryFruits
         navigationController?.pushViewController(nextScreen, animated: true)
@@ -191,7 +235,6 @@ class HomeScreenFormat: AppCommons {
     
     @objc func goToVegetableList() {
         sidebar.isHidden = true
-        print("__________Vegetable List----------")
         let nextScreen = FoodItemsViewController()
         nextScreen.foodItems = AppCommons.foods.vegetables
         navigationController?.pushViewController(nextScreen, animated: true)
@@ -199,7 +242,6 @@ class HomeScreenFormat: AppCommons {
     
     @objc func goToBeverageList() {
         sidebar.isHidden = true
-        print("---------Beverage List---------")
         let nextScreen = FoodItemsViewController()
         nextScreen.foodItems = AppCommons.foods.beverages
         navigationController?.pushViewController(nextScreen, animated: true)
@@ -207,15 +249,13 @@ class HomeScreenFormat: AppCommons {
     
     @objc func goToNutritionalNeeds() {
         sidebar.isHidden = true
-        print("----------Nutritional Needs-------")
         let nextScreen = UserNutritionalNeeds()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
-    @objc func goToPerfectPlate() {
+    @objc func goToHealthyFood() {
         sidebar.isHidden = true
-        print("------Perfect Plate------")
-        let nextScreen = PerfactPlateViewController()
+        let nextScreen = UserHealthyFood()
         navigationController?.pushViewController(nextScreen, animated: true)
     }
     
@@ -226,7 +266,6 @@ class HomeScreenFormat: AppCommons {
             navigationController?.setViewControllers([nextScreen], animated: false)
         }
         else {
-            print("-----Logout error---------")
         }
     }
     

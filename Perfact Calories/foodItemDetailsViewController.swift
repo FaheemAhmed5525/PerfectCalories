@@ -252,8 +252,7 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
     
     //convert to array to print
     func addElementToArray() {
-        
-        
+
         dataValue.append(("Weight", Float(foodItem?.Weight ?? 0.0)))
         dataValue.append(("Total Calories", Float(foodItem?.totalCalories ?? 0.0)))
         dataValue.append(("Water", Float(foodItem?.water ?? 0.0)))
@@ -261,14 +260,14 @@ class foodItemDetailsViewController: HomeScreenFormat, UITableViewDelegate, UITa
         dataValue.append(("Vitamin C", Float(foodItem?.vitaminC ?? 0.0)))
         dataValue.append(("Iron", Float(foodItem?.iron ?? 0.0)))
         dataValue.append(("Calcium", Float(foodItem?.calcium ?? 0.0)))
-        dataValue.append(("Potassium", Float(HomeScreenFormat.selectedFood?.potassium ?? 0.0)))
+        dataValue.append(("Potassium", Float(foodItem?.potassium ?? 0.0)))
         dataValue.append(("Fat", Float(foodItem?.fat ?? 0.0)))
         dataValue.append(("Fiber", Float(foodItem?.fiber ?? 0.0)))
         dataValue.append(("Magnesium", Float(foodItem?.magnesium ?? 0.0)))
         dataValue.append(("Vitamin B6", Float(foodItem?.vitaminB2 ?? 0.0)))
         dataValue.append(("Vitamin B2", Float(foodItem?.vitaminB2 ?? 0.0)))
         dataValue.append(("Vitamin A", Float(foodItem?.vitaminA ?? 0.0)))
-        dataValue.append(("Zinc", Float(HomeScreenFormat.selectedFood?.zinc ?? 0.0)))
+        dataValue.append(("Zinc", Float(foodItem?.zinc ?? 0.0)))
         dataValue.append(("Copper", Float(foodItem?.copper ?? 0.0)))
         dataValue.append(("Manganese", Float(foodItem?.manganese ?? 0.0)))
         dataValue.append(("Phosphorus", Float(foodItem?.phosphorus ?? 0.0)))

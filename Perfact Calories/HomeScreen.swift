@@ -82,7 +82,7 @@ class HomeScreen: HomeScreenFormat {
         setupLargeButton(button: vegetableListButton, title: "Vegetables")
         setupLargeButton(button: beveragesListButton, title: "Beverages")
         setupLargeButton(button: humanNeedsButton, title: "Human Needs")
-        setupLargeButton(button: perfectPlateButton, title: "Nutritious Plate")
+        setupLargeButton(button: perfectPlateButton, title: "Select Healthy Food")
         setupLargeButton(button: LogoutButton, title: "Logout")
         // Constraints for buttonsBox
         view.addSubview(buttonsBox)
@@ -99,7 +99,7 @@ class HomeScreen: HomeScreenFormat {
         vegetableListButton.addTarget(self, action: #selector(goToVegetableList), for: .touchUpInside)
         beveragesListButton.addTarget(self, action: #selector(goToBeverageList), for: .touchUpInside)
         humanNeedsButton.addTarget(self, action: #selector(goToNutritionalNeeds), for: .touchUpInside)
-        perfectPlateButton.addTarget(self, action: #selector(goToPerfectPlate), for: .touchUpInside)
+        perfectPlateButton.addTarget(self, action: #selector(goToHealthyFood), for: .touchUpInside)
         LogoutButton.addTarget(self, action: #selector(goToUserLogin), for: .touchUpInside)
         
         
@@ -151,7 +151,8 @@ class HomeScreen: HomeScreenFormat {
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
         button.layer.borderWidth = 2.0
-        button.layer.borderColor = AppCommons.borderColor
+        button.layer.borderColor = UIColor.systemBlue.cgColor
+        
     }
     
 

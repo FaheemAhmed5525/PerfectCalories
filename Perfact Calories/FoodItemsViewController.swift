@@ -92,7 +92,7 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             box.translatesAutoresizingMaskIntoConstraints = false
             box.backgroundColor = .white
 
-            box.layer.borderColor = AppCommons.borderColor
+            box.layer.borderColor = UIColor.systemBlue.cgColor
             box.layer.borderWidth = 1.0
             box.layer.cornerRadius = 12.0
             box.heightAnchor.constraint(equalToConstant: 98).isActive = true
@@ -136,11 +136,21 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             caloriesLabel.textColor = AppCommons.textColor3
             caloriesLabel.font = .systemFont(ofSize: 20)
             caloriesLabel.layer.borderWidth = 0
+            
+            // Small image of food item to be shown on the view box
+            let imageView = UIImageView()
+            imageView.image = foodItems[i].Image
+            box.addSubview(imageView)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.layer.cornerRadius = 12.0
+            imageView.clipsToBounds = true
+            imageView.contentMode = .scaleAspectFill
 
             // Adding labels to view: box
             box.addSubview(nameLabel)
             box.addSubview(caloriesLabel)
             box.addSubview(perWeekLabel)
+            box.addSubview(imageView)
 //            box.addSubview(typeLabel)
 
             // Applying constraints to the labels to put them in view: box
@@ -164,6 +174,11 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
                 caloriesLabel.leadingAnchor.constraint(equalTo: box.leadingAnchor, constant: 12),
                 caloriesLabel.widthAnchor.constraint(equalToConstant: 220),
                 caloriesLabel.heightAnchor.constraint(equalToConstant: 20),
+                
+                imageView.topAnchor.constraint(equalTo: box.topAnchor, constant: 6),
+                imageView.trailingAnchor.constraint(equalTo: box.trailingAnchor, constant: -12),
+                imageView.widthAnchor.constraint(equalToConstant: 106),
+                imageView.heightAnchor.constraint(equalToConstant: 84)
             ])
         }
     }
@@ -177,8 +192,6 @@ class FoodItemsViewController: HomeScreenFormat, UIGestureRecognizerDelegate {
             guard let tappedBox = sender.view else { return }
             let itemIndex = tappedBox.tag
             
-            // Print the food item index
-            print("Selected food item index: \(itemIndex)")
             
             // Pass the selected food item to the next screen
             let nextScreen = foodItemDetailsViewController()

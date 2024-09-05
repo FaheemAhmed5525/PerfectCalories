@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class GetInfo: SignInFormat {
 
     //datePicker get userbirthDate
@@ -47,20 +48,18 @@ class GetInfo: SignInFormat {
     
     
     
-    ///function setupDatePicker cutomizes datePicker
+    
+    // setupDatePicker customize datePicker
     func setupDatePicker() {
         elementsBox.addSubview(datePicker)
         
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        datePicker.locale = .current
-        datePicker.datePickerMode = .date
-        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
         datePicker.preferredDatePickerStyle = .wheels
-        datePicker.backgroundColor = .white
-        datePicker.tintColor = AppCommons.textColor3
+        datePicker.setValue(UIColor.black, forKey: "textColor")
         datePicker.layer.borderWidth = 1.0
-        datePicker.layer.borderColor = AppCommons.themeColor
+        datePicker.layer.borderColor = AppCommons.borderColor
         datePicker.layer.cornerRadius = 12.0
+        datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         
         NSLayoutConstraint.activate([
@@ -70,33 +69,61 @@ class GetInfo: SignInFormat {
             datePicker.heightAnchor.constraint(equalTo: elementsBox.heightAnchor, multiplier: 2/5)])
     }
     
+//    ///func setupWeightInputField customizes the weightField
+//    func setupWeightInputField() {
+//        elementsBox.addSubview(weightField)
+//        
+//        weightField.translatesAutoresizingMaskIntoConstraints = false
+//        //clear defaults
+//        weightField.borderStyle = .none
+//        weightField.backgroundColor = .clear
+//        
+//        //setting paddng
+//        weightField.leftView = paddingView
+//        weightField.leftViewMode = .always
+//        
+//        weightField.layer.borderColor = AppCommons.themeColor
+//        weightField.layer.cornerRadius = 6.0
+//        weightField.layer.borderWidth = 1.5
+//        weightField.placeholder = "Your Weight"
+//        weightField.textAlignment = .center
+//        weightField.textColor = AppCommons.textColor
+//        NSLayoutConstraint.activate([
+//            weightField.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 12),
+//            weightField.heightAnchor.constraint(equalToConstant: 60),
+//            weightField.widthAnchor.constraint(equalToConstant: 120),
+//            weightField.centerXAnchor.constraint(equalTo: elementsBox.centerXAnchor)])
+//        
+//    }
     
-    
-    ///func setupWeightInputField customizes the weightField
     func setupWeightInputField() {
         elementsBox.addSubview(weightField)
         
         weightField.translatesAutoresizingMaskIntoConstraints = false
+        
         //clear defaults
         weightField.borderStyle = .none
         weightField.backgroundColor = .clear
-        
+
         //setting paddng
-        weightField.leftView = paddingView
+        //weightField.leftView = paddingView
         weightField.leftViewMode = .always
-        
-        weightField.layer.borderColor = AppCommons.themeColor
         weightField.layer.cornerRadius = 6.0
         weightField.layer.borderWidth = 1.5
-        weightField.placeholder = "Your Weight"
+        
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.gray
+        ]
+        weightField.attributedPlaceholder = NSAttributedString(string: "Your Weight", attributes: attributes)
+        weightField.textColor = .black
         weightField.textAlignment = .center
-        weightField.textColor = AppCommons.textColor
+        
         NSLayoutConstraint.activate([
             weightField.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 12),
             weightField.heightAnchor.constraint(equalToConstant: 60),
             weightField.widthAnchor.constraint(equalToConstant: 120),
             weightField.centerXAnchor.constraint(equalTo: elementsBox.centerXAnchor)])
-        
     }
     
     
@@ -127,10 +154,11 @@ class GetInfo: SignInFormat {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.setTitle("Next", for: .normal)
         nextButton.setTitleColor(AppCommons.textColor, for: .normal)
-        //nextButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        nextButton.backgroundColor = UIColor(cgColor: AppCommons.themeColor)
+        
         nextButton.layer.cornerRadius = 6.0
         nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = AppCommons.themeColor
+        nextButton.layer.borderColor = UIColor.black.cgColor
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([

@@ -36,8 +36,9 @@ class NeedGroup {
     let sulfer: Float
     let vitaminE: Float
     let vitaminK: Float
+    let averageWeight: Float
     
-    init(minAgeYears: Float, maxAgeYears: Float, minAgeMonths: Float, maxAgeMonths: Float, totalCaluries: Float, totalMinerals: Float, carbohydrates: Float, water: Float, proteins: Float, vitaminC: Float, iron: Float, calcium: Float, potassium: Float, fat: Float, fiber: Float, magnesium: Float, vitaminB6: Float, vitaminB2: Float, vitaminA: Float, zinc: Float, copper: Float, manganese: Float, phosphorus: Float, sodium: Float, sugar: Float, sulfer: Float, vitaminE: Float, vitaminK: Float) {
+    init(minAgeYears: Float, maxAgeYears: Float, minAgeMonths: Float, maxAgeMonths: Float, totalCaluries: Float, totalMinerals: Float, carbohydrates: Float, water: Float, proteins: Float, vitaminC: Float, iron: Float, calcium: Float, potassium: Float, fat: Float, fiber: Float, magnesium: Float, vitaminB6: Float, vitaminB2: Float, vitaminA: Float, zinc: Float, copper: Float, manganese: Float, phosphorus: Float, sodium: Float, sugar: Float, sulfer: Float, vitaminE: Float, vitaminK: Float, averageWeight: Float) {
         
         //here year and months are converted to seconds and then stored
         
@@ -69,6 +70,10 @@ class NeedGroup {
         self.sulfer = sulfer
         self.vitaminE = vitaminE
         self.vitaminK = vitaminK
+        self.averageWeight = averageWeight
+    }
+    func findChangeCoefficient()->Int {
+        return 0
     }
 }
 
@@ -109,7 +114,8 @@ struct HumanNeeds {
             sugar: 0.5,
             sulfer: 0.0,
             vitaminE: 0.0001,
-            vitaminK: 0.0000005
+            vitaminK: 0.0000005,
+            averageWeight: 3.25
         )
         ageGroups.append(ageGroup)
         
@@ -142,7 +148,8 @@ struct HumanNeeds {
             sugar: 1.0,
             sulfer: 0.0,
             vitaminE: 0.0002,
-            vitaminK: 0.000001
+            vitaminK: 0.000001,
+            averageWeight: 3.9
         )
         ageGroups.append(ageGroup)
         
@@ -175,7 +182,8 @@ struct HumanNeeds {
             sugar: 2.0,
             sulfer: 0.0,
             vitaminE: 0.0005,
-            vitaminK: 0.000002
+            vitaminK: 0.000002,
+            averageWeight: 5.1
         )
         ageGroups.append(ageGroup)
         
@@ -208,7 +216,8 @@ struct HumanNeeds {
             sugar: 5.0,
             sulfer: 0.0,
             vitaminE: 0.001,
-            vitaminK: 0.000005
+            vitaminK: 0.000005,
+            averageWeight: 6.8
         )
         ageGroups.append(ageGroup)
         
@@ -240,7 +249,8 @@ struct HumanNeeds {
             sugar: 5.0,
             sulfer: 0.0,
             vitaminE: 0.002,
-            vitaminK: 0.00001
+            vitaminK: 0.00001,
+            averageWeight: 7.9
         )
         ageGroups.append(ageGroup)
         
@@ -273,7 +283,8 @@ struct HumanNeeds {
             sugar: 10.0,
             sulfer: 0.0,
             vitaminE: 0.003,
-            vitaminK: 0.000015
+            vitaminK: 0.000015,
+            averageWeight: 8.9
         )
         ageGroups.append(ageGroup)
         
@@ -306,7 +317,8 @@ struct HumanNeeds {
             sugar: 15.0,
             sulfer: 0.0,
             vitaminE: 0.004,
-            vitaminK: 0.00002
+            vitaminK: 0.00002,
+            averageWeight: 10.1
         )
         ageGroups.append(ageGroup)
         
@@ -339,7 +351,8 @@ struct HumanNeeds {
             sugar: 20.0,
             sulfer: 0.0,
             vitaminE: 0.005,
-            vitaminK: 0.00002
+            vitaminK: 0.00002,
+            averageWeight: 11.4
         )
         ageGroups.append(ageGroup)
         
@@ -348,7 +361,7 @@ struct HumanNeeds {
             minAgeYears: 1,
             maxAgeYears: 2,
             minAgeMonths: 6,
-            maxAgeMonths: 24,
+            maxAgeMonths: 0,
             totalCaluries: 1000,
             totalMinerals: 1.8,
             carbohydrates: 130.0,
@@ -372,7 +385,8 @@ struct HumanNeeds {
             sugar: 25.0,
             sulfer: 0.0,
             vitaminE: 0.006,
-            vitaminK: 0.00003
+            vitaminK: 0.00003,
+            averageWeight: 12.8
         )
         ageGroups.append(ageGroup)
         
@@ -380,8 +394,8 @@ struct HumanNeeds {
         ageGroup  = NeedGroup(
             minAgeYears: 2,
             maxAgeYears: 4,
-            minAgeMonths: 24,
-            maxAgeMonths: 48,
+            minAgeMonths: 0,
+            maxAgeMonths: 0,
             totalCaluries: 1300,
             totalMinerals: 2.5,
             carbohydrates: 150.0,
@@ -405,7 +419,8 @@ struct HumanNeeds {
             sugar: 30.0,
             sulfer: 0.0,
             vitaminE: 0.007,
-            vitaminK: 0.00005
+            vitaminK: 0.00005,
+            averageWeight: 15.5
         )
         ageGroups.append(ageGroup)
         
@@ -438,7 +453,8 @@ struct HumanNeeds {
             sugar: 30.0,
             sulfer: 0.0,
             vitaminE: 0.009,
-            vitaminK: 0.00004
+            vitaminK: 0.00004,
+            averageWeight: 18.3
         )
         ageGroups.append(ageGroup)
         
@@ -471,7 +487,8 @@ struct HumanNeeds {
             sugar: 35.0,
             sulfer: 0.0,
             vitaminE: 0.010,
-            vitaminK: 0.00005
+            vitaminK: 0.00005,
+            averageWeight: 22.8
         )
         ageGroups.append(ageGroup)
         
@@ -504,7 +521,8 @@ struct HumanNeeds {
             sugar: 40.0,
             sulfer: 0.0,
             vitaminE: 0.012,
-            vitaminK: 0.00006
+            vitaminK: 0.00006,
+            averageWeight: 32.2
         )
         ageGroups.append(ageGroup)
         
@@ -537,7 +555,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00007
+            vitaminK: 0.00007,
+            averageWeight: 44
         )
         ageGroups.append(ageGroup)
         
@@ -570,7 +589,8 @@ struct HumanNeeds {
             sugar: 60.0,
             sulfer: 0.0,
             vitaminE: 0.020,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 50
         )
         ageGroups.append(ageGroup)
         
@@ -604,7 +624,8 @@ struct HumanNeeds {
             sugar: 60.0,
             sulfer: 0.0,
             vitaminE: 0.020,
-            vitaminK: 0.00009
+            vitaminK: 0.00009,
+            averageWeight: 64
         )
         ageGroups.append(ageGroup)
         
@@ -638,7 +659,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 72
         )
         ageGroups.append(ageGroup)
         
@@ -672,7 +694,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 72
         )
         ageGroups.append(ageGroup)
         
@@ -706,7 +729,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 81
         )
         ageGroups.append(ageGroup)
         
@@ -740,7 +764,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 85
         )
         ageGroups.append(ageGroup)
         
@@ -774,7 +799,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 75
         )
         ageGroups.append(ageGroup)
         
@@ -808,7 +834,8 @@ struct HumanNeeds {
             sugar: 50.0,
             sulfer: 0.0,
             vitaminE: 0.015,
-            vitaminK: 0.00008
+            vitaminK: 0.00008,
+            averageWeight: 75
         )
         ageGroups.append(ageGroup)
         

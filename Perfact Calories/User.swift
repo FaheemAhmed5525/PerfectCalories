@@ -117,11 +117,10 @@ class User{
     
     /// function that loads loged user
     func laodLoggedUser()-> String {
-        print("---------starting the loadingloged user--------------")
+        
         do {
             let name = try keychain.get("logged_user_name")      // check if any user is loged in
             if name != "" {
-                print("---------endting the loading loged user--------------")
                 return self.loadUser(name: name ?? "loading_error")    // laod the loged user
             }
             else {
@@ -132,6 +131,8 @@ class User{
         }
     }
     
+    
+    // Log out the user
     func endThisSession()-> String {
         do {
             try keychain.set("", key: "logged_user_name")
@@ -145,7 +146,7 @@ class User{
     ///function takes caller as argument and store it to file and returns true else returns false
     public func storeUser()-> String {
         User.currentUser = User.totalUsers
-        print("---------starting the store user--------------")
+        
         do {
             var storedName: String
             for i in 0 ... User.totalUsers  {
@@ -160,7 +161,6 @@ class User{
             try keychain.set("\(self.birthDateInSec)", key: "birthdate_\(User.currentUser)")
             try keychain.set(self.name, key: "logged_user_name")
             User.totalUsers += 1
-            print("---------ending the store user--------------")
             return "storing_successful"
         } catch {
             return "storing_error"
@@ -177,7 +177,40 @@ class User{
         for group in HomeScreenFormat.ageGroups.ageGroups {
             
             if userAge < group.maxAge {
-                return group
+                let changeFactor = ((group.averageWeight - Float(AppCommons.user.weight)) / Float(AppCommons.user.weight))
+                
+                let userRequirement = NeedGroup(
+                    minAgeYears: Float(group.minAge/31557600),
+                    maxAgeYears: Float(group.maxAge/31557600),
+                    minAgeMonths: Float((group.minAge % 31557600) / 2626560),
+                    maxAgeMonths: Float((group.maxAge % 31557600) / 2626560),
+                    totalCaluries: group.totalCaluries + group.totalCaluries * changeFactor,
+                    totalMinerals: group.totalMinerals + group.totalMinerals * changeFactor,
+                    carbohydrates: group.carbohydrates + group.carbohydrates * changeFactor,
+                    water: group.water + group.water * changeFactor,
+                    proteins: group.proteins + group.proteins * changeFactor,
+                    vitaminC: group.vitaminC + group.vitaminC * changeFactor,
+                    iron: group.iron + group.iron * changeFactor,
+                    calcium: group.calcium + group.calcium * changeFactor,
+                    potassium: group.potassium + group.potassium * changeFactor,
+                    fat: group.fat + group.fat * changeFactor,
+                    fiber: group.fiber + group.fiber * changeFactor,
+                    magnesium: group.magnesium + group.magnesium * changeFactor,
+                    vitaminB6: group.vitaminB6 + group.vitaminB6 * changeFactor,
+                    vitaminB2: group.vitaminB6 + group.vitaminB2 * changeFactor,
+                    vitaminA: group.vitaminA + group.vitaminA * changeFactor,
+                    zinc: group.zinc + group.zinc * changeFactor,
+                    copper: group.copper + group.copper * changeFactor,
+                    manganese: group.manganese + group.manganese * changeFactor,
+                    phosphorus: group.phosphorus + group.phosphorus * changeFactor,
+                    sodium: group.sodium + group.sodium * changeFactor,
+                    sugar: group.sugar + group.sugar * changeFactor,
+                    sulfer: group.sulfer + group.sulfer * changeFactor,
+                    vitaminE: group.vitaminE + group.vitaminE * changeFactor,
+                    vitaminK: group.vitaminK + group.vitaminK * changeFactor,
+                    averageWeight: group.averageWeight
+                )
+                return userRequirement
             }
         }
         return HomeScreenFormat.ageGroups.ageGroups[HomeScreenFormat.ageGroups.ageGroups.count - 2]

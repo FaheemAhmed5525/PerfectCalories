@@ -13,13 +13,12 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
     
     static var dataValue: [(String, Float)] = []
+
     
-    
-    //constant header at he to of table
+    // Constant header at the top of table
     let headerView = UIView()
     
-    
-    //constains data to be presented
+    // Constains data to be presented
     let tableView = UITableView()
     
     
@@ -31,6 +30,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
 
         selectUsersAgeGroup()
         addElementToArray()
+        setupTextView()
         setupHeaderView()
         setupTableView()
 
@@ -42,11 +42,13 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     //Change the title of the screen
     override func setupScreenTitle() {
         super.setupScreenTitle()
-        screenTitle.text = "Nutritions for You"
+        screenTitle.text = "Nutrients for You"
+        screenTitle.font = .systemFont(ofSize: 32)
+        
     }
     
     
-    
+
     
     //The functions return the index of the age group the user belongs to
     func selectUsersAgeGroup(){
@@ -61,6 +63,9 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         }
     }
     
+
+
+
     //customizing the header view
     func setupHeaderView() {
         view.addSubview(headerView)
@@ -72,37 +77,40 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         headerView.layer.cornerRadius = 12
         
         let componentLabel = UILabel()
-        componentLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        componentLabel.translatesAutoresizingMaskIntoConstraints = false
+        componentLabel.font = .systemFont(ofSize: 24, weight: .bold)
         componentLabel.textColor = .black
         componentLabel.numberOfLines = 0
-        componentLabel.text = "Nutirtional Components"
+        componentLabel.text = "Nutrients"
         
         let valuesLabel = UILabel()
-        valuesLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        valuesLabel.translatesAutoresizingMaskIntoConstraints = false
+        valuesLabel.font = .systemFont(ofSize: 24, weight: .bold)
         valuesLabel.textColor = .black
         valuesLabel.numberOfLines = 0
-        valuesLabel.text = "Nutritional Values"
+        valuesLabel.text = "Nutrient Values"
         
         headerView.addSubview(componentLabel)
         headerView.addSubview(valuesLabel)
         
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 6),
+            headerView.topAnchor.constraint(equalTo: topbar.bottomAnchor, constant: 72),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            headerView.heightAnchor.constraint(equalToConstant: 46),
-        
-            componentLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 6),
+            headerView.heightAnchor.constraint(equalToConstant: 40),
+            
+            componentLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
             componentLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 6),
             componentLabel.trailingAnchor.constraint(equalTo: headerView.centerXAnchor, constant: -6),
-            componentLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -6),
-        
-            valuesLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 6),
-            valuesLabel.leadingAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 6),
-            valuesLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -6),
-            valuesLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -6)])
-    }
+            componentLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8),
 
+            valuesLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 8),
+            valuesLabel.leftAnchor.constraint(equalTo: headerView.centerXAnchor, constant: 6),
+            valuesLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -6),
+            valuesLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -8)
+        ])
+    }
+    
     
     //setupTableView customizes the tableView
     func setupTableView() {
@@ -119,7 +127,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 12),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -12),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)])
@@ -137,7 +145,6 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         cell.backgroundColor = .white
         
         //clear the previous data
@@ -180,6 +187,8 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
         cell.contentView.addSubview(nameLabel)
         cell.contentView.addSubview(valueLabel)
         
+
+        
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 6),
             nameLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -6),
@@ -189,6 +198,8 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
             valueLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -6),
             valueLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 6),
             valueLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -6)])
+        
+
         return cell
     }
     
@@ -202,6 +213,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     
     //convert to array to print
     func addElementToArray() {
+        
         
         UserNutritionalNeeds.dataValue.append(("Total Calories", Float(HomeScreenFormat.selectedAgeGroup?.totalCaluries ?? 0.0)))
         UserNutritionalNeeds.dataValue.append(("Water", Float(HomeScreenFormat.selectedAgeGroup?.water ?? 0.0)))
@@ -229,7 +241,7 @@ class UserNutritionalNeeds: HomeScreenFormat, UITableViewDelegate, UITableViewDa
     }
 
     
-    
+
     
     
 }

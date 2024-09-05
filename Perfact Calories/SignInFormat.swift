@@ -32,7 +32,7 @@ class SignInFormat: AppCommons {
         view.addSubview(screenLabel)
         
         screenLabel.text = "Your Name"
-        screenLabel.textColor = UIColor(cgColor: AppCommons.themeColor)
+        screenLabel.textColor = AppCommons.textColor3
         screenLabel.textAlignment = .center
         screenLabel.font = UIFont.boldSystemFont(ofSize: 32)
 
